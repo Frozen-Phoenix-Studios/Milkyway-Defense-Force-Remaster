@@ -3,17 +3,26 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputReader : MonoBehaviour
 {
+    private PlayerControls _controls;
+
     public Vector2 move;
     public bool shoot;
     
-    public void OnMove(InputValue value)
+    
+    
+    private void Start()
     {
-        MoveInput(value.Get<Vector2>());
+        _controls = new PlayerControls();
+        _controls.Player.Enable();
+    }
+    
 
+    private void Update()
+    {
+        move = _controls.Player.Move.ReadValue<Vector2>().normalized;
+        shoot = _controls.Player.Shoot.WasPerformedThisFrame();
     }
 
-    public void MoveInput(Vector2 moveDirection)
-    {
-        move = moveDirection.normalized;
-    }
+
+    
 }

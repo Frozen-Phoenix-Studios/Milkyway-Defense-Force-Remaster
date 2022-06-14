@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
-[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerInputReader))]
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Vector3 _startingPosition = Vector3.zero;
     [SerializeField] private PlayerInputReader _input;
-    [SerializeField] private Movement _movement;
+    [FormerlySerializedAs("_movement")] [SerializeField] private PlayerMovement playerMovement;
 
 
     private void Awake()
@@ -17,8 +18,8 @@ public class Player : MonoBehaviour
         if (_input == null)
             Debug.LogError("The player input reader is null");
 
-        _movement = GetComponent<Movement>();
-        if (_movement == null)
+        playerMovement = GetComponent<PlayerMovement>();
+        if (playerMovement == null)
             Debug.LogError("The movement controller is null");
     }
 
