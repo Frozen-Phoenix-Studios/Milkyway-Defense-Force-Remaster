@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using FrozenPhoenixStudiosUtilities;
 using UnityEngine;
@@ -16,10 +17,21 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private void Start()
     {
+        _gameOver = false;
         _spawnDelay = new WaitForSeconds(_spawnSpeed);
         StartCoroutine(SpawnRoutine());
     }
-    //spawn enemies every 5 seconds
+
+    private void OnEnable()
+    {
+        GameManager.OnGameOver += OnGameOver; 
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= OnGameOver; 
+
+    }
 
     private Vector2 CreateRandomSpawnPoint()
     {
@@ -39,4 +51,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
     }
     private void SpawnEnemy() => Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
+
+    private void OnGameOver() => _gameOver = true;
 }

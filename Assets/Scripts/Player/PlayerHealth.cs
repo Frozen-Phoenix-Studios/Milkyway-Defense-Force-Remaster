@@ -14,6 +14,9 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         if (_health <= 0)
         {
             Debug.Log("Player Died");
+            GameManager.Instance.SetGameOver();
+            Destroy(gameObject);
+
         }
     }
 }
