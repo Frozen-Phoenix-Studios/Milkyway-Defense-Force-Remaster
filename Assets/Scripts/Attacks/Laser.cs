@@ -20,7 +20,7 @@ public class Laser : MonoBehaviour, IDoDamage
         Movement();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         foreach (var damageableTag in _damageableTags)
         {
