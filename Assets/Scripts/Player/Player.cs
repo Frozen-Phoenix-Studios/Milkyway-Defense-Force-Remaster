@@ -9,9 +9,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Vector3 _startingPosition = Vector3.zero;
     [SerializeField] private PlayerInputReader _input;
-    [FormerlySerializedAs("_movement")] [SerializeField] private PlayerMovement playerMovement;
-
-
+    [SerializeField] private PlayerMovement playerMovement;
+    
     private void Awake()
     {
         _input = GetComponent<PlayerInputReader>();
@@ -27,6 +26,4 @@ public class Player : MonoBehaviour
     {
         transform.position = _startingPosition;
     }
-    
-    
 }
