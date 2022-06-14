@@ -1,0 +1,2841 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 2560
+    y: 0
+    width: 2560
+    height: 1440
+  m_ShowMode: 0
+  m_Title: Package Manager
+  m_RootView: {fileID: 4}
+  m_MinSize: {x: 800, y: 271}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 1
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 8
+    y: 51
+    width: 2544
+    height: 1381
+  m_ShowMode: 4
+  m_Title: Project
+  m_RootView: {fileID: 5}
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 0
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: PackageManagerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 1440
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 1440
+  m_MinSize: {x: 800, y: 271}
+  m_MaxSize: {x: 4000, y: 4021}
+  vertical: 0
+  controlID: 268
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 8}
+  - {fileID: 7}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2544
+    height: 1381
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_UseTopView: 1
+  m_TopViewHeight: 30
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2544
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: Course
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 1361
+    width: 2544
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 13}
+  - {fileID: 16}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 2544
+    height: 1331
+  m_MinSize: {x: 300, y: 300}
+  m_MaxSize: {x: 24288, y: 24288}
+  vertical: 0
+  controlID: 260
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 11}
+  - {fileID: 12}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1609
+    height: 1331
+  m_MinSize: {x: 100, y: 300}
+  m_MaxSize: {x: 8096, y: 24288}
+  vertical: 1
+  controlID: 251
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1609
+    height: 500
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  - {fileID: 21}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 500
+    width: 1609
+    height: 620
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 1120
+    width: 1609
+    height: 211
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 22}
+  m_Panes:
+  - {fileID: 22}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 14}
+  - {fileID: 15}
+  m_Position:
+    serializedVersion: 2
+    x: 1609
+    y: 0
+    width: 394
+    height: 1331
+  m_MinSize: {x: 100, y: 200}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 229
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 394
+    height: 609
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 23}
+  m_Panes:
+  - {fileID: 23}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 609
+    width: 394
+    height: 722
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 24}
+  m_Panes:
+  - {fileID: 24}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: InspectorWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 2003
+    y: 0
+    width: 541
+    height: 1331
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 25}
+  m_Panes:
+  - {fileID: 25}
+  - {fileID: 26}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 2
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Package Manager
+    m_Image: {fileID: -2824328813065806953, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 2560
+    y: 0
+    width: 2560
+    height: 1419
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: -544
+    y: 73
+    width: 543
+    height: 1326
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_Spl:
+    ID: 12349
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 942
+    - 314
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 1256
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 18}
+    m_NewResultList:
+    - id: 1013
+      uniqueId: '[Testing Ground][suite]'
+      name: Testing Ground
+      fullName: Testing Ground
+      resultStatus: 2
+      duration: 5.8791604
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1157
+      uniqueId: '[PlayTests.dll][suite]'
+      name: PlayTests.dll
+      fullName: D:/unity/JW_M-Architecture/Library/ScriptAssemblies/PlayTests.dll
+      resultStatus: 2
+      duration: 5.8392754
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1081
+      parentUniqueId: '[Testing Ground][suite]'
+    - id: 1158
+      uniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+      name: InventoryTests
+      fullName: InventoryTests
+      resultStatus: 2
+      duration: 5.834116
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1157
+      parentUniqueId: '[PlayTests.dll][suite]'
+    - id: 1082
+      uniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+      name: inventory_panel_tests
+      fullName: InventoryTests.inventory_panel_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1158
+      parentUniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+    - id: 1084
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_empty_inventory_has_all_slots_empty]
+      name: bound_to_empty_inventory_has_all_slots_empty
+      fullName: InventoryTests.inventory_panel_tests.bound_to_empty_inventory_has_all_slots_empty
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1111
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+      name: bound_to_inventory_fills_slot_for_each_item
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1085
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(0)]
+      name: bound_to_inventory_fills_slot_for_each_item(0)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(0)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1086
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(1)]
+      name: bound_to_inventory_fills_slot_for_each_item(1)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(1)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1087
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(2)]
+      name: bound_to_inventory_fills_slot_for_each_item(2)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(2)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1088
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(3)]
+      name: bound_to_inventory_fills_slot_for_each_item(3)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(3)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1089
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(4)]
+      name: bound_to_inventory_fills_slot_for_each_item(4)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(4)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1090
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(5)]
+      name: bound_to_inventory_fills_slot_for_each_item(5)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(5)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1091
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(6)]
+      name: bound_to_inventory_fills_slot_for_each_item(6)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(6)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1092
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(7)]
+      name: bound_to_inventory_fills_slot_for_each_item(7)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(7)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1093
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(8)]
+      name: bound_to_inventory_fills_slot_for_each_item(8)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(8)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1094
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(9)]
+      name: bound_to_inventory_fills_slot_for_each_item(9)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(9)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1095
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(10)]
+      name: bound_to_inventory_fills_slot_for_each_item(10)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(10)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1096
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(11)]
+      name: bound_to_inventory_fills_slot_for_each_item(11)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(11)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1097
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(12)]
+      name: bound_to_inventory_fills_slot_for_each_item(12)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(12)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1098
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(13)]
+      name: bound_to_inventory_fills_slot_for_each_item(13)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(13)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1099
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(14)]
+      name: bound_to_inventory_fills_slot_for_each_item(14)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(14)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1100
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(15)]
+      name: bound_to_inventory_fills_slot_for_each_item(15)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(15)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1101
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(16)]
+      name: bound_to_inventory_fills_slot_for_each_item(16)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(16)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1102
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(17)]
+      name: bound_to_inventory_fills_slot_for_each_item(17)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(17)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1103
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(18)]
+      name: bound_to_inventory_fills_slot_for_each_item(18)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(18)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1104
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(19)]
+      name: bound_to_inventory_fills_slot_for_each_item(19)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(19)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1105
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(20)]
+      name: bound_to_inventory_fills_slot_for_each_item(20)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(20)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1106
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(21)]
+      name: bound_to_inventory_fills_slot_for_each_item(21)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(21)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1107
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(22)]
+      name: bound_to_inventory_fills_slot_for_each_item(22)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(22)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1108
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(23)]
+      name: bound_to_inventory_fills_slot_for_each_item(23)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(23)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1109
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(24)]
+      name: bound_to_inventory_fills_slot_for_each_item(24)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(24)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1110
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/bound_to_inventory_fills_slot_for_each_item/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(25)]
+      name: bound_to_inventory_fills_slot_for_each_item(25)
+      fullName: InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item(25)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1111
+      parentUniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_inventory_fills_slot_for_each_item][suite]
+    - id: 1112
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_null_inventory_has_empty_slots]
+      name: bound_to_null_inventory_has_empty_slots
+      fullName: InventoryTests.inventory_panel_tests.bound_to_null_inventory_has_empty_slots
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1113
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.bound_to_valid_inventory_then_bound_to_null_inventory_has_empty_slots]
+      name: bound_to_valid_inventory_then_bound_to_null_inventory_has_empty_slots
+      fullName: InventoryTests.inventory_panel_tests.bound_to_valid_inventory_then_bound_to_null_inventory_has_empty_slots
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1083
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.has_25_slots]
+      name: has_25_slots
+      fullName: InventoryTests.inventory_panel_tests.has_25_slots
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1115
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.places_item_in_slot_when_item_added_to_inventory]
+      name: places_item_in_slot_when_item_added_to_inventory
+      fullName: InventoryTests.inventory_panel_tests.places_item_in_slot_when_item_added_to_inventory
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1114
+      uniqueId: PlayTests.dll/InventoryTests/inventory_panel_tests/[PlayTests][InventoryTests.inventory_panel_tests.updates_slots_when_items_are_moved]
+      name: updates_slots_when_items_are_moved
+      fullName: InventoryTests.inventory_panel_tests.updates_slots_when_items_are_moved
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_panel_tests][suite]
+    - id: 1116
+      uniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_selection_tests][suite]
+      name: inventory_selection_tests
+      fullName: InventoryTests.inventory_selection_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1158
+      parentUniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+    - id: 1118
+      uniqueId: PlayTests.dll/InventoryTests/inventory_selection_tests/[PlayTests][InventoryTests.inventory_selection_tests.clicking_empty_slot_does_NOT_select_slot]
+      name: clicking_empty_slot_does_NOT_select_slot
+      fullName: InventoryTests.inventory_selection_tests.clicking_empty_slot_does_NOT_select_slot
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1116
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_selection_tests][suite]
+    - id: 1117
+      uniqueId: PlayTests.dll/InventoryTests/inventory_selection_tests/[PlayTests][InventoryTests.inventory_selection_tests.clicking_non_empty_slots_selects_slot]
+      name: clicking_non_empty_slots_selects_slot
+      fullName: InventoryTests.inventory_selection_tests.clicking_non_empty_slots_selects_slot
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1116
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_selection_tests][suite]
+    - id: 1119
+      uniqueId: PlayTests.dll/InventoryTests/inventory_selection_tests/[PlayTests][InventoryTests.inventory_selection_tests.clicking_slot_with_item_selected_moves_item_to_clicked_slot]
+      name: clicking_slot_with_item_selected_moves_item_to_clicked_slot
+      fullName: InventoryTests.inventory_selection_tests.clicking_slot_with_item_selected_moves_item_to_clicked_slot
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1116
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_selection_tests][suite]
+    - id: 1120
+      uniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_tests][suite]
+      name: inventory_tests
+      fullName: InventoryTests.inventory_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1158
+      parentUniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+    - id: 1122
+      uniqueId: PlayTests.dll/InventoryTests/inventory_tests/[PlayTests][InventoryTests.inventory_tests.can_add_item_to_specific_slot]
+      name: can_add_item_to_specific_slot
+      fullName: InventoryTests.inventory_tests.can_add_item_to_specific_slot
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1120
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_tests][suite]
+    - id: 1121
+      uniqueId: PlayTests.dll/InventoryTests/inventory_tests/[PlayTests][InventoryTests.inventory_tests.can_add_items_to_inventory]
+      name: can_add_items_to_inventory
+      fullName: InventoryTests.inventory_tests.can_add_items_to_inventory
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1120
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_tests][suite]
+    - id: 1123
+      uniqueId: PlayTests.dll/InventoryTests/inventory_tests/[PlayTests][InventoryTests.inventory_tests.can_move_to_different_slot]
+      name: can_move_to_different_slot
+      fullName: InventoryTests.inventory_tests.can_move_to_different_slot
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1120
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.inventory_tests][suite]
+    - id: 1124
+      uniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.player_inventory_tests][suite]
+      name: player_inventory_tests
+      fullName: InventoryTests.player_inventory_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1158
+      parentUniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+    - id: 1125
+      uniqueId: PlayTests.dll/InventoryTests/player_inventory_tests/[PlayTests][InventoryTests.player_inventory_tests.Colliding_with_Item_Picks_Up_And_Equips_Item]
+      name: Colliding_with_Item_Picks_Up_And_Equips_Item
+      fullName: InventoryTests.player_inventory_tests.Colliding_with_Item_Picks_Up_And_Equips_Item
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.player_inventory_tests][suite]
+    - id: 1126
+      uniqueId: PlayTests.dll/InventoryTests/player_inventory_tests/[PlayTests][InventoryTests.player_inventory_tests.Equipping_Item_Changes_Crosshair_To_Item_Crosshair]
+      name: Equipping_Item_Changes_Crosshair_To_Item_Crosshair
+      fullName: InventoryTests.player_inventory_tests.Equipping_Item_Changes_Crosshair_To_Item_Crosshair
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.player_inventory_tests][suite]
+    - id: 1127
+      uniqueId: PlayTests.dll/InventoryTests/player_inventory_tests/[PlayTests][InventoryTests.player_inventory_tests.Equipping_Item_Changes_ItemIcon_In_Hotbar]
+      name: Equipping_Item_Changes_ItemIcon_In_Hotbar
+      fullName: InventoryTests.player_inventory_tests.Equipping_Item_Changes_ItemIcon_In_Hotbar
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.player_inventory_tests][suite]
+    - id: 1128
+      uniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_inventory_test][suite]
+      name: ui_inventory_test
+      fullName: InventoryTests.ui_inventory_test
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1158
+      parentUniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+    - id: 1129
+      uniqueId: PlayTests.dll/InventoryTests/ui_inventory_test/[PlayTests][InventoryTests.ui_inventory_test.when_image_is_set_sets_icon]
+      name: when_image_is_set_sets_icon
+      fullName: InventoryTests.ui_inventory_test.when_image_is_set_sets_icon
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1128
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_inventory_test][suite]
+    - id: 1131
+      uniqueId: PlayTests.dll/InventoryTests/ui_inventory_test/[PlayTests][InventoryTests.ui_inventory_test.when_item_is_NOT_set_image_is_disabled]
+      name: when_item_is_NOT_set_image_is_disabled
+      fullName: InventoryTests.ui_inventory_test.when_item_is_NOT_set_image_is_disabled
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1128
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_inventory_test][suite]
+    - id: 1130
+      uniqueId: PlayTests.dll/InventoryTests/ui_inventory_test/[PlayTests][InventoryTests.ui_inventory_test.when_item_is_set_image_is_enabled]
+      name: when_item_is_set_image_is_enabled
+      fullName: InventoryTests.ui_inventory_test.when_item_is_set_image_is_enabled
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1128
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_inventory_test][suite]
+    - id: 1132
+      uniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+      name: ui_selection_cursor_tests
+      fullName: InventoryTests.ui_selection_cursor_tests
+      resultStatus: 2
+      duration: 5.827993
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1158
+      parentUniqueId: PlayTests.dll/[PlayTests][InventoryTests][suite]
+    - id: 1138
+      uniqueId: PlayTests.dll/InventoryTests/ui_selection_cursor_tests/[PlayTests][InventoryTests.ui_selection_cursor_tests.disables_raycast_target]
+      name: disables_raycast_target
+      fullName: InventoryTests.ui_selection_cursor_tests.disables_raycast_target
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1132
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+    - id: 1133
+      uniqueId: PlayTests.dll/InventoryTests/ui_selection_cursor_tests/[PlayTests][InventoryTests.ui_selection_cursor_tests.in_default_state_shows_no_icon]
+      name: in_default_state_shows_no_icon
+      fullName: InventoryTests.ui_selection_cursor_tests.in_default_state_shows_no_icon
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1132
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+    - id: 1137
+      uniqueId: PlayTests.dll/InventoryTests/ui_selection_cursor_tests/[PlayTests][InventoryTests.ui_selection_cursor_tests.moves_with_mouse_cursor]
+      name: moves_with_mouse_cursor
+      fullName: InventoryTests.ui_selection_cursor_tests.moves_with_mouse_cursor
+      resultStatus: 2
+      duration: 5.813056
+      messages: "  Expected: (100.0, 100.0, 0.0)\r\n  But was:  (-52.3, 1099.6, 0.0)\r\n"
+      output: 
+      stacktrace: 'at InventoryTests.ui_selection_cursor_tests+<moves_with_mouse_cursor>d__4.MoveNext
+        () [0x000c8] in D:\unity\JW_M-Architecture\Assets\PlayTests\ui_selection_cursor_tests.cs:67
+
+        at
+        UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e]
+        in D:\unity\JW_M-Architecture\Library\PackageCache\com.unity.test-framework@1.1.29\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:46
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1132
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+    - id: 1136
+      uniqueId: PlayTests.dll/InventoryTests/ui_selection_cursor_tests/[PlayTests][InventoryTests.ui_selection_cursor_tests.when_item_is_unselected_sets_icon_to_not_visible]
+      name: when_item_is_unselected_sets_icon_to_not_visible
+      fullName: InventoryTests.ui_selection_cursor_tests.when_item_is_unselected_sets_icon_to_not_visible
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1132
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+    - id: 1135
+      uniqueId: PlayTests.dll/InventoryTests/ui_selection_cursor_tests/[PlayTests][InventoryTests.ui_selection_cursor_tests.when_item_selected_sets_icon_image_to_correct_sprite]
+      name: when_item_selected_sets_icon_image_to_correct_sprite
+      fullName: InventoryTests.ui_selection_cursor_tests.when_item_selected_sets_icon_image_to_correct_sprite
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1132
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+    - id: 1134
+      uniqueId: PlayTests.dll/InventoryTests/ui_selection_cursor_tests/[PlayTests][InventoryTests.ui_selection_cursor_tests.with_item_selected_shows_icon]
+      name: with_item_selected_shows_icon
+      fullName: InventoryTests.ui_selection_cursor_tests.with_item_selected_shows_icon
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1132
+      parentUniqueId: PlayTests.dll/InventoryTests/[PlayTests][InventoryTests.ui_selection_cursor_tests][suite]
+    - id: 1160
+      uniqueId: PlayTests.dll/[PlayTests][PlayerTests][suite]
+      name: PlayerTests
+      fullName: PlayerTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1157
+      parentUniqueId: '[PlayTests.dll][suite]'
+    - id: 1149
+      uniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_movement_tests][suite]
+      name: player_movement_tests
+      fullName: PlayerTests.player_movement_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1160
+      parentUniqueId: PlayTests.dll/[PlayTests][PlayerTests][suite]
+    - id: 1151
+      uniqueId: PlayTests.dll/PlayerTests/player_movement_tests/[PlayTests][PlayerTests.player_movement_tests.WSAD_mover_moves_backwards_with_negative_vertical_input]
+      name: WSAD_mover_moves_backwards_with_negative_vertical_input
+      fullName: PlayerTests.player_movement_tests.WSAD_mover_moves_backwards_with_negative_vertical_input
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1149
+      parentUniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_movement_tests][suite]
+    - id: 1150
+      uniqueId: PlayTests.dll/PlayerTests/player_movement_tests/[PlayTests][PlayerTests.player_movement_tests.WSAD_mover_moves_forward_with_positive_vertical_input]
+      name: WSAD_mover_moves_forward_with_positive_vertical_input
+      fullName: PlayerTests.player_movement_tests.WSAD_mover_moves_forward_with_positive_vertical_input
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1149
+      parentUniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_movement_tests][suite]
+    - id: 1152
+      uniqueId: PlayTests.dll/PlayerTests/player_movement_tests/[PlayTests][PlayerTests.player_movement_tests.WSAD_mover_moves_right_with_positive_horizontal_input]
+      name: WSAD_mover_moves_right_with_positive_horizontal_input
+      fullName: PlayerTests.player_movement_tests.WSAD_mover_moves_right_with_positive_horizontal_input
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1149
+      parentUniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_movement_tests][suite]
+    - id: 1153
+      uniqueId: PlayTests.dll/PlayerTests/player_movement_tests/[PlayTests][PlayerTests.player_movement_tests.wsadMover_moves_left]
+      name: wsadMover_moves_left
+      fullName: PlayerTests.player_movement_tests.wsadMover_moves_left
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1149
+      parentUniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_movement_tests][suite]
+    - id: 1154
+      uniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_rotation_tests][suite]
+      name: player_rotation_tests
+      fullName: PlayerTests.player_rotation_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1160
+      parentUniqueId: PlayTests.dll/[PlayTests][PlayerTests][suite]
+    - id: 1156
+      uniqueId: PlayTests.dll/PlayerTests/player_rotation_tests/[PlayTests][PlayerTests.player_rotation_tests.moveMouseLeft_rotates_player_left]
+      name: moveMouseLeft_rotates_player_left
+      fullName: PlayerTests.player_rotation_tests.moveMouseLeft_rotates_player_left
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1154
+      parentUniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_rotation_tests][suite]
+    - id: 1155
+      uniqueId: PlayTests.dll/PlayerTests/player_rotation_tests/[PlayTests][PlayerTests.player_rotation_tests.moveMouseRight_rotates_player_right]
+      name: moveMouseRight_rotates_player_right
+      fullName: PlayerTests.player_rotation_tests.moveMouseRight_rotates_player_right
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1154
+      parentUniqueId: PlayTests.dll/PlayerTests/[PlayTests][PlayerTests.player_rotation_tests][suite]
+    - id: 1159
+      uniqueId: PlayTests.dll/[PlayTests][StateMachineTests][suite]
+      name: StateMachineTests
+      fullName: StateMachineTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1157
+      parentUniqueId: '[PlayTests.dll][suite]'
+    - id: 1139
+      uniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.entity_state_machine_tests][suite]
+      name: entity_state_machine_tests
+      fullName: StateMachineTests.entity_state_machine_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1159
+      parentUniqueId: PlayTests.dll/[PlayTests][StateMachineTests][suite]
+    - id: 1143
+      uniqueId: PlayTests.dll/StateMachineTests/entity_state_machine_tests/[PlayTests][StateMachineTests.entity_state_machine_tests.does_NOT_switch_to_dead_after_takes_NON_lethal_hit]
+      name: does_NOT_switch_to_dead_after_takes_NON_lethal_hit
+      fullName: StateMachineTests.entity_state_machine_tests.does_NOT_switch_to_dead_after_takes_NON_lethal_hit
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1139
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.entity_state_machine_tests][suite]
+    - id: 1140
+      uniqueId: PlayTests.dll/StateMachineTests/entity_state_machine_tests/[PlayTests][StateMachineTests.entity_state_machine_tests.starts_in_idle_state]
+      name: starts_in_idle_state
+      fullName: StateMachineTests.entity_state_machine_tests.starts_in_idle_state
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1139
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.entity_state_machine_tests][suite]
+    - id: 1141
+      uniqueId: PlayTests.dll/StateMachineTests/entity_state_machine_tests/[PlayTests][StateMachineTests.entity_state_machine_tests.switches_to_chase_player_when_in_chase_range]
+      name: switches_to_chase_player_when_in_chase_range
+      fullName: StateMachineTests.entity_state_machine_tests.switches_to_chase_player_when_in_chase_range
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1139
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.entity_state_machine_tests][suite]
+    - id: 1142
+      uniqueId: PlayTests.dll/StateMachineTests/entity_state_machine_tests/[PlayTests][StateMachineTests.entity_state_machine_tests.switches_to_dead_after_takes_lethal_hit]
+      name: switches_to_dead_after_takes_lethal_hit
+      fullName: StateMachineTests.entity_state_machine_tests.switches_to_dead_after_takes_lethal_hit
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1139
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.entity_state_machine_tests][suite]
+    - id: 1144
+      uniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.game_state_machine_tests][suite]
+      name: game_state_machine_tests
+      fullName: StateMachineTests.game_state_machine_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1159
+      parentUniqueId: PlayTests.dll/[PlayTests][StateMachineTests][suite]
+    - id: 1148
+      uniqueId: PlayTests.dll/StateMachineTests/game_state_machine_tests/[PlayTests][StateMachineTests.game_state_machine_tests.only_one_instance_exists]
+      name: only_one_instance_exists
+      fullName: StateMachineTests.game_state_machine_tests.only_one_instance_exists
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1144
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.game_state_machine_tests][suite]
+    - id: 1147
+      uniqueId: PlayTests.dll/StateMachineTests/game_state_machine_tests/[PlayTests][StateMachineTests.game_state_machine_tests.switches_from_play_to_pause_when_pause_button_pressed]
+      name: switches_from_play_to_pause_when_pause_button_pressed
+      fullName: StateMachineTests.game_state_machine_tests.switches_from_play_to_pause_when_pause_button_pressed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1144
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.game_state_machine_tests][suite]
+    - id: 1145
+      uniqueId: PlayTests.dll/StateMachineTests/game_state_machine_tests/[PlayTests][StateMachineTests.game_state_machine_tests.switches_to_loading_when_level_to_load_selected]
+      name: switches_to_loading_when_level_to_load_selected
+      fullName: StateMachineTests.game_state_machine_tests.switches_to_loading_when_level_to_load_selected
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1144
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.game_state_machine_tests][suite]
+    - id: 1146
+      uniqueId: PlayTests.dll/StateMachineTests/game_state_machine_tests/[PlayTests][StateMachineTests.game_state_machine_tests.switches_to_play_when_level_to_load_loaded]
+      name: switches_to_play_when_level_to_load_loaded
+      fullName: StateMachineTests.game_state_machine_tests.switches_to_play_when_level_to_load_loaded
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1144
+      parentUniqueId: PlayTests.dll/StateMachineTests/[PlayTests][StateMachineTests.game_state_machine_tests][suite]
+    m_ResultText: "moves_with_mouse_cursor (5.813s)\n---\nExpected: (100.0, 100.0,
+      0.0)\r\n  But was:  (-52.3, 1099.6, 0.0)\n---\nat InventoryTests.ui_selection_cursor_tests+<moves_with_mouse_cursor>d__4.MoveNext
+      () [0x000c8] in D:\\unity\\JW_M-Architecture\\Assets\\PlayTests\\ui_selection_cursor_tests.cs:67\r\nat
+      UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in
+      D:\\unity\\JW_M-Architecture\\Library\\PackageCache\\com.unity.test-framework@1.1.29\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46"
+    m_ResultStacktrace: 'at InventoryTests.ui_selection_cursor_tests+<moves_with_mouse_cursor>d__4.MoveNext
+      () [0x000c8] in D:\unity\JW_M-Architecture\Assets\PlayTests\ui_selection_cursor_tests.cs:67
+
+      at
+      UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in
+      D:\unity\JW_M-Architecture\Library\PackageCache\com.unity.test-framework@1.1.29\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:46
+
+'
+    m_TestListState:
+      scrollPos: {x: 0, y: 240}
+      m_SelectedIDs: 79a3b59a
+      m_LastClickedID: -1699372167
+      m_ExpandedIDs: 05004889c8b0d8898ae24fc5c89a5ec59b835fceadd142f959f007ff80dc100becf12c16eba9fd20eb6e61282958753ffaff5c6198e79e61ca4c966c14068979ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 18}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Testing Ground][suite]'
+      name: Testing Ground
+      fullName: Testing Ground
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1008
+      uniqueId: '[EditTests.dll][suite]'
+      name: EditTests.dll
+      fullName: D:/unity/JW_M-Architecture/Library/ScriptAssemblies/EditTests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Testing Ground][suite]'
+    - id: 1009
+      uniqueId: EditTests.dll/[EditTests][StateMachineTests][suite]
+      name: StateMachineTests
+      fullName: StateMachineTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1008
+      parentUniqueId: '[EditTests.dll][suite]'
+    - id: 1001
+      uniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+      name: base_stateMachine_tests
+      fullName: StateMachineTests.base_stateMachine_tests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1009
+      parentUniqueId: EditTests.dll/[EditTests][StateMachineTests][suite]
+    - id: 1002
+      uniqueId: EditTests.dll/StateMachineTests/base_stateMachine_tests/[EditTests][StateMachineTests.base_stateMachine_tests.initial_set_state_switches_to_state]
+      name: initial_set_state_switches_to_state
+      fullName: StateMachineTests.base_stateMachine_tests.initial_set_state_switches_to_state
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+    - id: 1003
+      uniqueId: EditTests.dll/StateMachineTests/base_stateMachine_tests/[EditTests][StateMachineTests.base_stateMachine_tests.subsequent_set_state_switches_to_state]
+      name: subsequent_set_state_switches_to_state
+      fullName: StateMachineTests.base_stateMachine_tests.subsequent_set_state_switches_to_state
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+    - id: 1005
+      uniqueId: EditTests.dll/StateMachineTests/base_stateMachine_tests/[EditTests][StateMachineTests.base_stateMachine_tests.transition_does_NOT_switch_state_when_condition_failed]
+      name: transition_does_NOT_switch_state_when_condition_failed
+      fullName: StateMachineTests.base_stateMachine_tests.transition_does_NOT_switch_state_when_condition_failed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+    - id: 1006
+      uniqueId: EditTests.dll/StateMachineTests/base_stateMachine_tests/[EditTests][StateMachineTests.base_stateMachine_tests.transition_does_NOT_switch_state_when_NOT_in_correct_source_state]
+      name: transition_does_NOT_switch_state_when_NOT_in_correct_source_state
+      fullName: StateMachineTests.base_stateMachine_tests.transition_does_NOT_switch_state_when_NOT_in_correct_source_state
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+    - id: 1007
+      uniqueId: EditTests.dll/StateMachineTests/base_stateMachine_tests/[EditTests][StateMachineTests.base_stateMachine_tests.transition_from_any_switches_state_when_condition_met]
+      name: transition_from_any_switches_state_when_condition_met
+      fullName: StateMachineTests.base_stateMachine_tests.transition_from_any_switches_state_when_condition_met
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+    - id: 1004
+      uniqueId: EditTests.dll/StateMachineTests/base_stateMachine_tests/[EditTests][StateMachineTests.base_stateMachine_tests.transition_switches_state_when_condition_met]
+      name: transition_switches_state_when_condition_met
+      fullName: StateMachineTests.base_stateMachine_tests.transition_switches_state_when_condition_met
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditTests.dll/StateMachineTests/[EditTests][StateMachineTests.base_stateMachine_tests][suite]
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: add142f9f8e3354db957b166ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 8
+    y: 581
+    width: 1608
+    height: 599
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 1920, y: 1080}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -960
+    m_HBaseRangeMax: 960
+    m_VBaseRangeMin: -540
+    m_VBaseRangeMax: 540
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 1608
+      height: 578
+    m_Scale: {x: 0.53518516, y: 0.53518516}
+    m_Translation: {x: 804, y: 289}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -1502.2838
+      y: -540
+      width: 3004.5676
+      height: 1080
+    m_MinimalGUI: 1
+  m_defaultScale: 0.53518516
+  m_LastWindowPixelSize: {x: 1608, y: 599}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 8
+    y: 81
+    width: 1608
+    height: 479
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData:
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: -101, y: -26}
+      snapCorner: 3
+      id: Tool Settings
+      index: 0
+      layout: 1
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -141, y: 149}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-grid-and-snap-toolbar
+      index: 1
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-scene-view-toolbar
+      index: 0
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-search-toolbar
+      index: 1
+      layout: 1
+    - dockPosition: 0
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-transform-toolbar
+      index: 0
+      layout: 2
+    - dockPosition: 0
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 67.5, y: 86}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Orientation
+      index: 0
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Light Settings
+      index: 0
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Camera
+      index: 1
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Constraints
+      index: 2
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Collisions
+      index: 3
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Navmesh Display
+      index: 4
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Agent Display
+      index: 5
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Obstacle Display
+      index: 6
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Occlusion Culling
+      index: 7
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Physics Debugger
+      index: 8
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Scene Visibility
+      index: 9
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Particles
+      index: 10
+      layout: 4
+  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+  m_Gizmos: 1
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
+  m_SceneLighting: 1
+  m_2DMode: 0
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_ExposureSliderValue: 0
+  m_SceneViewState:
+    m_AlwaysRefresh: 0
+    showFog: 1
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+    showVisualEffectGraphs: 1
+    m_FxEnabled: 1
+  m_Grid:
+    xGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    yGrid:
+      m_Fade:
+        m_Target: 1
+        speed: 2
+        m_Value: 1
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    zGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 1
+    m_GridAxis: 1
+    m_gridOpacity: 0.5
+  m_Rotation:
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    speed: 2
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_Size:
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+  m_Ortho:
+    m_Target: 0
+    speed: 2
+    m_Value: 0
+  m_CameraSettings:
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+    m_SpeedMin: 0.001
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_AccelerationEnabled: 1
+    m_FieldOfViewHorizontalOrVertical: 60
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_LastSceneViewRotation: {x: -0.00956491, y: 0.9704799, z: -0.23781121, w: -0.039033383}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 1
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 2560
+    y: 73
+    width: 1624
+    height: 556
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: 6109961457858652146, guid: dbffd3618993d3846b999a2e6f70597a, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: dbffd3618993d3846b999a2e6f70597a, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 6109961457858652146, guid: dbffd3618993d3846b999a2e6f70597a, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 1
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &22
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 8
+    y: 1201
+    width: 1608
+    height: 190
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &23
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1617
+    y: 81
+    width: 392
+    height: 588
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: b66b0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 40fbffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 14}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
+--- !u!114 &24
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1617
+    y: 690
+    width: 392
+    height: 701
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets
+    m_Globs: []
+    m_OriginalText: 
+  m_ViewMode: 0
+  m_StartGridSize: 64
+  m_LastFolders: []
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: D:\unity\Milkyway Defence Force
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: d4490000
+    m_LastClickedID: 18900
+    m_ExpandedIDs: 00000000b469000000ca9a3bffffff7f
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff00000000b469000000ca9a3bffffff7f
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 15}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 110
+--- !u!114 &25
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 2011
+    y: 81
+    width: 540
+    height: 1310
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: -336
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &26
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12141, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 300, y: 360}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Navigation
+    m_Image: {fileID: 1087843850482249999, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: -544
+    y: 73
+    width: 543
+    height: 1326
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
