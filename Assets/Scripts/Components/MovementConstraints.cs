@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class MovementConstraints : MonoBehaviour
 {
     [SerializeField] private float _xMinRange;
-    public float XMinRange => _xMaxRange;
+    public float XMinRange => _xMinRange;
     [SerializeField] private float _xMaxRange;
     public float XMaxRange => _xMaxRange;
     [SerializeField] private float _yMinRange;
@@ -32,6 +32,9 @@ public class MovementConstraints : MonoBehaviour
             if (_actionOnYMinBoundBreach != null)
             {
                 _actionOnYMinBoundBreach.Invoke();
+                Debug.Log($"Fire y min breach event from {transform.name}");
+
+                
                 return;
             }
 
@@ -44,6 +47,8 @@ public class MovementConstraints : MonoBehaviour
             if (_actionOnYMaxBoundBreach != null)
             {
                 _actionOnYMaxBoundBreach.Invoke();
+                Debug.Log($"Fire y max breach event from {transform.name}");
+
                 return;
             }
 
@@ -54,14 +59,14 @@ public class MovementConstraints : MonoBehaviour
 
     private void CheckXPosition()
     {
-        if (_actionOnXMinBoundBreach != null)
-        {
-            _actionOnXMinBoundBreach.Invoke();
-            return;
-        }
-
         if (transform.position.x < _xMinRange)
         {
+            if (_actionOnXMinBoundBreach != null)
+            {
+                _actionOnXMinBoundBreach.Invoke();
+                Debug.Log($"Fire x min breach event from {transform.name}");
+                return;
+            }
             var currentPosition = transform.position;
             if (_xBounded)
             {
@@ -78,6 +83,8 @@ public class MovementConstraints : MonoBehaviour
             if (_actionOnXMaxBoundBreach != null)
             {
                 _actionOnXMaxBoundBreach.Invoke();
+                Debug.Log($"Fire x max breach event from {transform.name}");
+
                 return;
             }
 

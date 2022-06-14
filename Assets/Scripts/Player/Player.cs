@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Vector3 _startingPosition = Vector3.zero;
-    [SerializeField] private PlayerInputReader _input;
-    [SerializeField] private PlayerMovement playerMovement;
+    private PlayerInputReader _input;
+    private PlayerMovement _playerMovement;
 
     private void Awake()
     {
@@ -16,14 +16,13 @@ public class Player : MonoBehaviour
         if (_input == null)
             Debug.LogError("The player input reader is null");
 
-        playerMovement = GetComponent<PlayerMovement>();
-        if (playerMovement == null)
+        _playerMovement = GetComponent<PlayerMovement>();
+        if (_playerMovement == null)
             Debug.LogError("The movement controller is null");
     }
 
     void Start()
     {
-        transform.position = _startingPosition;
+        _playerMovement.Teleport(_startingPosition);
     }
-
 }

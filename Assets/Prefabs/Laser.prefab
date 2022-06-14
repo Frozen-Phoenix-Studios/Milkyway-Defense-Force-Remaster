@@ -130,15 +130,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _xMinRange: -10
   _xMaxRange: 10
-  _yMinRange: -10
-  _yMaxRange: 10
+  _yMinRange: -9
+  _yMaxRange: 9
   _xBounded: 0
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls: []
   _actionOnYMaxBoundBreach:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6132382906517384345}
+        m_TargetAssemblyTypeName: Laser, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _actionOnXMinBoundBreach:
     m_PersistentCalls:
       m_Calls: []
