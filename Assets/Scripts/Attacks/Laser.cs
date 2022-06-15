@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Laser : MonoBehaviour, IDoDamage
@@ -6,9 +7,12 @@ public class Laser : MonoBehaviour, IDoDamage
     [SerializeField] private int _damageAmount = 1;
     
     [SerializeField] private string[] _damageableTags;
+    private bool _destroyedFromCollision;
     public string[] DamageableTags => _damageableTags;
 
     public int DamageAmount => _damageAmount;
+
+    public event Action<bool> OnDestroy;
     public void DealDamage(int damageAmount, ITakeDamage damageable)
     {
         damageable.TakeDamage(damageAmount);
@@ -26,11 +30,10 @@ public class Laser : MonoBehaviour, IDoDamage
         {
             if (other.CompareTag(damageableTag))
             {
-                Debug.Log($"Collided with {damageableTag}");
                 var damageable = other.GetComponent<ITakeDamage>();
                 if (damageable != null)
                 {
-                    
+                    _destroyedFromCollision = true;
                     DealDamage(_damageAmount, damageable);
                 }
 
@@ -47,6 +50,7 @@ public class Laser : MonoBehaviour, IDoDamage
 
     public void Destroy()
     {
+        OnDestroy?.Invoke(_destroyedFromCollision);
         Destroy(this.gameObject);
     }
 

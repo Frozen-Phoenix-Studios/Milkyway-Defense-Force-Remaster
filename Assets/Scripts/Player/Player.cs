@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerInputReader))]
@@ -8,8 +7,12 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _startingPosition = Vector3.zero;
     private PlayerInputReader _input;
     private PlayerMovement _playerMovement;
+    private PlayerAttack _playerAttack;
+    private PlayerHealth _playerHealth;
 
-    private void Awake()
+    [Header("Debug")] [SerializeField] private WeaponSO _debugWeapon;
+
+        private void Awake()
     {
         _input = GetComponent<PlayerInputReader>();
         if (_input == null)
@@ -18,10 +21,29 @@ public class Player : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         if (_playerMovement == null)
             Debug.LogError("The movement controller is null");
+        
+        _playerAttack = GetComponent<PlayerAttack>();
+        if (_playerAttack == null)
+            Debug.LogError("The player attack component is null");
     }
 
     void Start()
     {
         _playerMovement.Teleport(_startingPosition);
+    }
+
+    [ContextMenu("Change Weapon")]
+    public void ChangeWeapon()
+    {
+        _playerAttack.ChangeWeapon(_debugWeapon);
+    }
+    public void ChangeWeapon(WeaponSO weapon)
+    {
+        _playerAttack.ChangeWeapon(weapon);
+    }
+
+    public void AddShields()
+    {
+        //shields need a game object
     }
 }

@@ -27,75 +27,62 @@ public class MovementConstraints : MonoBehaviour
 
     private void CheckYPosition()
     {
+        var currentPosition = transform.position;
+
         if (transform.position.y <= _yMinRange)
         {
+            transform.position = new Vector3(currentPosition.x, _yMinRange, currentPosition.z);
+
             if (_actionOnYMinBoundBreach != null)
             {
                 _actionOnYMinBoundBreach.Invoke();
-                Debug.Log($"Fire y min breach event from {transform.name}");
 
-                
                 return;
             }
-
-            var currentPosition = transform.position;
-            transform.position = new Vector3(currentPosition.x, _yMinRange, currentPosition.z);
         }
 
         if (transform.position.y > _yMaxRange)
         {
+            transform.position = new Vector3(currentPosition.x, _yMaxRange, currentPosition.z);
             if (_actionOnYMaxBoundBreach != null)
             {
                 _actionOnYMaxBoundBreach.Invoke();
-                Debug.Log($"Fire y max breach event from {transform.name}");
 
                 return;
             }
-
-            var currentPosition = transform.position;
-            transform.position = new Vector3(currentPosition.x, _yMaxRange, currentPosition.z);
         }
     }
 
     private void CheckXPosition()
     {
+        var currentPosition = transform.position;
+
         if (transform.position.x < _xMinRange)
         {
-            if (_actionOnXMinBoundBreach != null)
-            {
-                _actionOnXMinBoundBreach.Invoke();
-                Debug.Log($"Fire x min breach event from {transform.name}");
-                return;
-            }
-            var currentPosition = transform.position;
             if (_xBounded)
             {
                 transform.position = new Vector3(_xMinRange, currentPosition.y, currentPosition.z);
             }
-            else
+
+            if (_actionOnXMinBoundBreach != null)
             {
-                transform.position = new Vector3(_xMaxRange, currentPosition.y, currentPosition.z);
+                _actionOnXMinBoundBreach.Invoke();
+                return;
             }
         }
 
         if (transform.position.x > _xMaxRange)
         {
-            if (_actionOnXMaxBoundBreach != null)
-            {
-                _actionOnXMaxBoundBreach.Invoke();
-                Debug.Log($"Fire x max breach event from {transform.name}");
-
-                return;
-            }
-
-            var currentPosition = transform.position;
             if (_xBounded)
             {
                 transform.position = new Vector3(_xMaxRange, currentPosition.y, currentPosition.z);
             }
-            else
+
+            if (_actionOnXMaxBoundBreach != null)
             {
-                transform.position = new Vector3(_xMinRange, currentPosition.y, currentPosition.z);
+                _actionOnXMaxBoundBreach.Invoke();
+
+                return;
             }
         }
     }

@@ -6,19 +6,31 @@ using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoSingleton<SpawnManager>
 {
+    [Header("Enemy Values")]
     [SerializeField] private Transform _enemyContainer;
     [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private float _enemySpawnFrequency = 3.0f;
+    private WaitForSeconds _enemySpawnDelay;
+    
+    [Header("Spawn Range values")]
     [SerializeField] private float _xMinSpawn = -8.0f;
     [SerializeField] private float _xMaxSpawn = 8.0f;
     [SerializeField] private float _spawnHeight = 9.0f;
-    [SerializeField] private float _spawnSpeed = 3.0f;
+
+
+    private WaitForSeconds _powerupSpawnDelay;
+
+    [Header("Powerup Values")]
+    [SerializeField] private float _powerupSpawnFrequency = 3.0f;
+
     [SerializeField] private bool _gameOver;
-    private WaitForSeconds _spawnDelay;
+
 
     private void Start()
     {
         _gameOver = false;
-        _spawnDelay = new WaitForSeconds(_spawnSpeed);
+        _enemySpawnDelay = new WaitForSeconds(_enemySpawnFrequency);
+        _powerupSpawnDelay = new WaitForSeconds(_powerupSpawnFrequency);
         StartCoroutine(SpawnRoutine());
     }
 
@@ -43,11 +55,11 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private IEnumerator SpawnRoutine()
     {
-        yield return _spawnDelay;
+        yield return _enemySpawnDelay;
         while (!_gameOver)
         {
             SpawnEnemy();
-            yield return _spawnDelay;
+            yield return _enemySpawnDelay;
         }
     }
     private void SpawnEnemy() => Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
