@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using FrozenPhoenixStudiosUtilities;
 using UnityEngine;
@@ -18,12 +17,15 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [SerializeField] private float _spawnHeight = 9.0f;
 
 
+    [Header("Powerup Values")]
+    [SerializeField] private Transform _powerupContainer;
+
+    [SerializeField] private Powerup _powerupPrefab;
+    [SerializeField] private float _powerupSpawnFrequency = 3.0f;
     private WaitForSeconds _powerupSpawnDelay;
 
-    [Header("Powerup Values")]
-    [SerializeField] private float _powerupSpawnFrequency = 3.0f;
-
-    [SerializeField] private bool _gameOver;
+    
+    private bool _gameOver;
 
 
     private void Start()
@@ -31,7 +33,25 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         _gameOver = false;
         _enemySpawnDelay = new WaitForSeconds(_enemySpawnFrequency);
         _powerupSpawnDelay = new WaitForSeconds(_powerupSpawnFrequency);
-        StartCoroutine(SpawnRoutine());
+        StartSpawning();
+    }
+
+    private void StartSpawning()
+    {
+        StartCoroutine(EnemySpawnRoutine());
+        StartCoroutine(PowerupSpawnRoutine());
+        
+    }
+
+    private IEnumerator PowerupSpawnRoutine()
+    {
+        yield return _powerupSpawnDelay;
+        while (!_gameOver)
+        {
+            Instantiate(_powerupPrefab.gameObject, CreateRandomSpawnPoint(), Quaternion.identity, _powerupContainer);
+            yield return _powerupSpawnDelay;
+        }
+        
     }
 
     private void OnEnable()
@@ -53,7 +73,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         return new Vector2(x, y);
     }
 
-    private IEnumerator SpawnRoutine()
+    private IEnumerator EnemySpawnRoutine()
     {
         yield return _enemySpawnDelay;
         while (!_gameOver)

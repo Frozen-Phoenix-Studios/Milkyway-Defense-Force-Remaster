@@ -49,7 +49,6 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage
         {
             if (other.CompareTag(damageableTag))
             {
-                Debug.Log($"Collided with {damageableTag}");
                 var damageable = other.GetComponent<ITakeDamage>();
                 if (damageable != null)
                 {
