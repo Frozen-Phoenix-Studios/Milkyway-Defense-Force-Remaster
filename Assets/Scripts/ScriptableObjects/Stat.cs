@@ -11,6 +11,11 @@ public class Stat : ScriptableObject
     public float BaseValue;
     public List<StatModifier> AllModifiers;
 
+    public void OnValidate()
+    {
+        AllModifiers.Clear();
+    }
+
 
     private void NotifyValueChange()
     {

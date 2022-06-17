@@ -241,7 +241,7 @@ namespace FrozenPhoenixStudiosUtilities
         public static IEnumerator TextRandomColourFlickerEffect(TMP_Text objectToFlicker, float duration,
             float flickerSpeed, Color originalColour = default)
         {
-            // objectToFlicker.gameObject.SetActive(true);
+             objectToFlicker.gameObject.SetActive(true);
 
             if (duration == 0)
             {

@@ -75,7 +75,7 @@ public class Player : MonoBehaviour, IChangePoints
         OnPointsAction?.Invoke(PointsOnAction);
 
         Debug.Log("Player Died");
-        GameManager.Instance.SetGameOver();
+        GameStateManager.Instance.SetGameOver();
         Destroy(gameObject);
     }
 }
