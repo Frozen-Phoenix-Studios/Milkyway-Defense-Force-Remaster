@@ -103,6 +103,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GameMaager",
+            "id": "c97e4ebd-48b7-4ff2-b4d5-f52193c33bf5",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "a1d6fda7-c8d5-4261-b7ec-27222058f28e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "921fa3ed-4864-477e-8582-ef8e0e4735ee",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
