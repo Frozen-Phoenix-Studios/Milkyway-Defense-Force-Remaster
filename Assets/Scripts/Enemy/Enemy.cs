@@ -1,14 +1,18 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(IMove))]
-public class Enemy : MonoBehaviour, IRespawn, IDoDamage
+public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
 {
     private IMove _movement;
     private MovementConstraints _constraints;
     private EnemyHealth _health;
 
     [SerializeField] private int _damageAmount = 1;
+    [field: SerializeField] public int PointsOnAction { get; private set; } = 10;
+    public static event Action<int> OnPointsAction;
+
 
     public int DamageAmount => _damageAmount;
 
@@ -76,6 +80,8 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage
 
     public void Die()
     {
+        Debug.Log("Calling event");
+        OnPointsAction?.Invoke(PointsOnAction);
         Destroy(gameObject);
     }
 
@@ -83,4 +89,6 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage
     {
         damageable.TakeDamage(damageAmount);
     }
+
+
 }
