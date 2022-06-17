@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StatName: Move Speed
   BaseValue: 5
-  AllModifiers: []
+  AllModifiers:
+  - {fileID: 11400000, guid: a5cf84c57dbb7e34e990645b0bd0580d, type: 2}
+  - {fileID: 11400000, guid: a5cf84c57dbb7e34e990645b0bd0580d, type: 2}

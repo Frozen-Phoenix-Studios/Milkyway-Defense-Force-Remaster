@@ -5,26 +5,26 @@ using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoSingleton<SpawnManager>
 {
-    [Header("Enemy Values")]
-    [SerializeField] private Transform _enemyContainer;
+    [Header("Enemy Values")] [SerializeField]
+    private Transform _enemyContainer;
+
     [SerializeField] private Enemy _enemyPrefab;
     [SerializeField] private float _enemySpawnFrequency = 3.0f;
     private WaitForSeconds _enemySpawnDelay;
-    
-    [Header("Spawn Range values")]
-    [SerializeField] private float _xMinSpawn = -8.0f;
+
+    [Header("Spawn Range values")] [SerializeField]
+    private float _xMinSpawn = -8.0f;
     [SerializeField] private float _xMaxSpawn = 8.0f;
     [SerializeField] private float _spawnHeight = 9.0f;
 
 
-    [Header("Powerup Values")]
-    [SerializeField] private Transform _powerupContainer;
-
-    [SerializeField] private Powerup _powerupPrefab;
+    [Header("Powerup Values")] [SerializeField]
+    private Transform _powerupContainer;
+    [SerializeField] private Powerup[] _powerupArray;
     [SerializeField] private float _powerupSpawnFrequency = 3.0f;
     private WaitForSeconds _powerupSpawnDelay;
 
-    
+
     private bool _gameOver;
 
 
@@ -40,7 +40,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         StartCoroutine(EnemySpawnRoutine());
         StartCoroutine(PowerupSpawnRoutine());
-        
     }
 
     private IEnumerator PowerupSpawnRoutine()
@@ -48,21 +47,25 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         yield return _powerupSpawnDelay;
         while (!_gameOver)
         {
-            Instantiate(_powerupPrefab.gameObject, CreateRandomSpawnPoint(), Quaternion.identity, _powerupContainer);
+            Instantiate(ReturnRandomPowerup().gameObject, CreateRandomSpawnPoint(), Quaternion.identity, _powerupContainer);
             yield return _powerupSpawnDelay;
         }
-        
+    }
+
+    private Powerup ReturnRandomPowerup()
+    {
+        var max = _powerupArray.Length;
+        return _powerupArray[Random.Range(0, max)];
     }
 
     private void OnEnable()
     {
-        GameManager.OnGameOver += OnGameOver; 
+        GameManager.OnGameOver += OnGameOver;
     }
 
     private void OnDisable()
     {
-        GameManager.OnGameOver -= OnGameOver; 
-
+        GameManager.OnGameOver -= OnGameOver;
     }
 
     private Vector2 CreateRandomSpawnPoint()
@@ -82,7 +85,9 @@ public class SpawnManager : MonoSingleton<SpawnManager>
             yield return _enemySpawnDelay;
         }
     }
-    private void SpawnEnemy() => Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
+
+    private void SpawnEnemy() =>
+        Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
 
     private void OnGameOver() => _gameOver = true;
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Speed Modifier
   m_EditorClassIdentifier: 
   StatToModify: {fileID: 11400000, guid: cad31dd790cac63409b9e8436d77a1d2, type: 2}
-  Value: 10
+  Value: 5
   Length: 5
   IsStackable: 1
