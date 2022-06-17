@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour, ITakeDamage
 {
+    public static event Action<int> OnHealthChanged;
+    
     private Player _player;
     [SerializeField] private int _health = 3;
 
@@ -17,15 +18,14 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         _player = transform.GetComponent<Player>();
         if (_player == null)
             Debug.LogError("The Player is null on the player health component");
-
+        OnHealthChanged?.Invoke(_health);
     }
-
+    
     public void TakeDamage(int damageAmount)
     {
-        _health -= damageAmount;
+        _health = Mathf.Clamp(_health -= damageAmount, 0, 3);
+        OnHealthChanged?.Invoke(_health);
         if (_health <= 0)
-        {
             _player.Die();
-        }
     }
 }
