@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7639b4a0bce48fe822a564ce9c14213, type: 3}
+  m_Name: Speed Modifier
+  m_EditorClassIdentifier: 
+  StatToModify: {fileID: 11400000, guid: cad31dd790cac63409b9e8436d77a1d2, type: 2}
+  Value: 10
+  Length: 5
+  IsStackable: 1

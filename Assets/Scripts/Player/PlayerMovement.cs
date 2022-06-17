@@ -1,29 +1,42 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerInputReader _input;
-    [SerializeField] private float _speed = 5.0f;
+    private StatManager _statManager;
+    [SerializeField] private Stat _movementSpeed;
+    [SerializeField] private float _currentSpeed = 5.0f;
     private MovementConstraints _constraints;
 
     private void Start()
     {
         _input = GetComponent<PlayerInputReader>();
         if (_input == null)
-        {
             Debug.LogError("The Input is null");
-        }
+
+        _statManager = GetComponent<StatManager>();
+        if (_statManager == null)
+            Debug.LogError("The stat manager is null");
 
         _constraints = GetComponent<MovementConstraints>();
         if (_constraints == null)
-        {
             Debug.LogError("The movement constraints are null");
-        }
+
+        _movementSpeed = _statManager.BindStat(_movementSpeed);
+        _movementSpeed.OnValueChanged += HandleMovementSpeedChanged;
+        
+        _currentSpeed = _statManager.GetStatValue(_movementSpeed);
+    }
+
+    private void HandleMovementSpeedChanged(float newValue)
+    {
+        _currentSpeed = newValue;
     }
 
     void Update()
     {
-        transform.Translate((_input.move * Time.deltaTime * _speed));
+        transform.Translate((_input.move * Time.deltaTime * _currentSpeed));
     }
 
     public void Teleport(Vector3 newPosition)
@@ -63,3 +76,4 @@ public class PlayerMovement : MonoBehaviour
         transform.position = newPosition;
     }
 }
+

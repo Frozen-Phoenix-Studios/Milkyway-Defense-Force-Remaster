@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private PlayerMovement _playerMovement;
     private PlayerAttack _playerAttack;
     private PlayerHealth _playerHealth;
+    private StatManager _playerStatManager;
 
     [Header("Debug")] [SerializeField] private WeaponSO _debugWeapon;
 
@@ -25,6 +26,12 @@ public class Player : MonoBehaviour
         _playerAttack = GetComponent<PlayerAttack>();
         if (_playerAttack == null)
             Debug.LogError("The player attack component is null");
+        
+        _playerStatManager = GetComponent<StatManager>();
+        if (_playerStatManager == null)
+            Debug.LogError("The player stat ,anager is null");
+        
+        
     }
 
     void Start()
@@ -45,5 +52,10 @@ public class Player : MonoBehaviour
     public void AddShields()
     {
         //shields need a game object
+    }
+
+    public void AdjustStat(StatModifier statModifier)
+    {
+        _playerStatManager.ModifyStat(statModifier);
     }
 }

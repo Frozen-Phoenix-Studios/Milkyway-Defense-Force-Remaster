@@ -8,9 +8,7 @@ public class PlayerInputReader : MonoBehaviour
     public Vector2 move;
     public bool shoot;
     
-    
-    
-    private void Start()
+    private void Awake()
     {
         _controls = new PlayerControls();
         _controls.Player.Enable();
