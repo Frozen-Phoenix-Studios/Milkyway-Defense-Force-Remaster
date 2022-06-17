@@ -10,10 +10,11 @@ public class Player : MonoBehaviour
     private PlayerAttack _playerAttack;
     private PlayerHealth _playerHealth;
     private StatManager _playerStatManager;
+    private ComponentManager _componentManager;
 
     [Header("Debug")] [SerializeField] private WeaponSO _debugWeapon;
 
-        private void Awake()
+    private void Awake()
     {
         _input = GetComponent<PlayerInputReader>();
         if (_input == null)
@@ -29,9 +30,11 @@ public class Player : MonoBehaviour
         
         _playerStatManager = GetComponent<StatManager>();
         if (_playerStatManager == null)
-            Debug.LogError("The player stat ,anager is null");
+            Debug.LogError("The player stat manager is null");
         
-        
+        _componentManager = GetComponent<ComponentManager>();
+        if (_componentManager == null)
+            Debug.LogError("The player component manager is null");
     }
 
     void Start()
@@ -49,13 +52,14 @@ public class Player : MonoBehaviour
         _playerAttack.ChangeWeapon(weapon);
     }
 
-    public void AddShields()
-    {
-        //shields need a game object
-    }
 
     public void AdjustStat(StatModifier statModifier)
     {
         _playerStatManager.ModifyStat(statModifier);
+    }
+
+    public void AddAttachable(Attachable attachable)
+    {
+        _componentManager.Attach(attachable);
     }
 }

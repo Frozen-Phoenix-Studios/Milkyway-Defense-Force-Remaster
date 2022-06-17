@@ -6,6 +6,7 @@ public class Powerup : MonoBehaviour
     [SerializeField] private PowerupType _powerupType;
     [SerializeField] private StatModifier _statModifier;
     [SerializeField] private WeaponSO _weaponPowerup;
+    [SerializeField] public Attachable _attachable;
     [SerializeField] private float _speed = 3.0f;
 
     private void Update()
@@ -35,13 +36,20 @@ public class Powerup : MonoBehaviour
                 break;
             case PowerupType.Health:
                 break;
-            case PowerupType.Upgrade:
+            case PowerupType.Attachable:
+                AddAttachable(player, _attachable);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
         
         DestroySelf();
+    }
+
+    private void AddAttachable(Player player, Attachable attachable)
+    {
+        if (attachable != null)
+            player.AddAttachable(attachable);
     }
 
     private void AdjustStat(Player player, StatModifier statModifier)
