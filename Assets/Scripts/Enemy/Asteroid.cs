@@ -5,7 +5,7 @@ public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage
     public bool TakesCollisionDamage { get; }
     public int Health { get; } = 1;
     public int CollisionDamage { get; } = 1;
-    public int DamageAmount { get; }
+    public int DamageAmount { get; } = 1;
     private MovementConstraints _constraints;
     [field: SerializeField] public string[] DamageableTags { get; private set; }
     
