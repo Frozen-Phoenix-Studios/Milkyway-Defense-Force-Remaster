@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using FrozenPhoenixStudiosUtilities;
 using TMPro;
@@ -6,8 +5,6 @@ using UnityEngine;
 
 public class GameOverManager : MonoSingleton<GameOverManager>
 {
-    public static event Action OnGameOver;
-
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private TMP_Text _gameOverText;
     [SerializeField] private TMP_Text _restartText;
@@ -35,7 +32,6 @@ public class GameOverManager : MonoSingleton<GameOverManager>
     private IEnumerator GameOverRoutine()
     {
         _gameOverPanel.SetActive(_isGameOver);
-        OnGameOver?.Invoke();
         _restartText.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.25f);
  

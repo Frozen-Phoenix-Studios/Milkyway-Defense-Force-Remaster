@@ -15,7 +15,7 @@ public class PlayerInputReader : MonoBehaviour
     {
         _controls = new PlayerControls();
         _controls.Player.Enable();
-        _controls.GameMaager.Restart.performed += delegate(InputAction.CallbackContext context)
+        _controls.GameManager.Restart.performed += delegate(InputAction.CallbackContext context)
         {
             OnRestartPressed?.Invoke();
         };
@@ -23,12 +23,12 @@ public class PlayerInputReader : MonoBehaviour
 
     private void OnEnable()
     {
-        GameOverManager.OnGameOver += SwitchControls;
+        GameStateManager.OnGameOver += SwitchControls;
     }
 
     private void OnDisable()
     {
-        GameOverManager.OnGameOver -= SwitchControls;
+        GameStateManager.OnGameOver -= SwitchControls;
     }
 
 
@@ -38,10 +38,10 @@ public class PlayerInputReader : MonoBehaviour
         shoot = _controls.Player.Shoot.WasPerformedThisFrame();
     }
 
-    private void SwitchControls()
+    private void SwitchControls(bool onGameOver)
     {
         _controls.Player.Disable();
-        _controls.GameMaager.Enable();
+        _controls.GameManager.Enable();
     }
 
 }

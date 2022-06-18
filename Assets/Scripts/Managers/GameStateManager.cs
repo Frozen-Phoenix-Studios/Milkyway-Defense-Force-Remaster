@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameStateManager : MonoSingleton<GameStateManager>
 {
     public static event Action<bool> OnGameOver;
+    public static event Action OnGameStart;
     [field: SerializeField] public bool IsGameOver { get; private set; } = false;
 
 
@@ -39,4 +40,6 @@ public class GameStateManager : MonoSingleton<GameStateManager>
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void TriggerGameStart() => OnGameStart?.Invoke();
 }

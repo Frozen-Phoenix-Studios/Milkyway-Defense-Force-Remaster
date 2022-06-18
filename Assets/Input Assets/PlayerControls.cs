@@ -127,7 +127,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""GameMaager"",
+            ""name"": ""GameManager"",
             ""id"": ""c97e4ebd-48b7-4ff2-b4d5-f52193c33bf5"",
             ""actions"": [
                 {
@@ -161,9 +161,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
-        // GameMaager
-        m_GameMaager = asset.FindActionMap("GameMaager", throwIfNotFound: true);
-        m_GameMaager_Restart = m_GameMaager.FindAction("Restart", throwIfNotFound: true);
+        // GameManager
+        m_GameManager = asset.FindActionMap("GameManager", throwIfNotFound: true);
+        m_GameManager_Restart = m_GameManager.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -261,29 +261,29 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public PlayerActions @Player => new PlayerActions(this);
 
-    // GameMaager
-    private readonly InputActionMap m_GameMaager;
-    private IGameMaagerActions m_GameMaagerActionsCallbackInterface;
-    private readonly InputAction m_GameMaager_Restart;
-    public struct GameMaagerActions
+    // GameManager
+    private readonly InputActionMap m_GameManager;
+    private IGameManagerActions m_GameManagerActionsCallbackInterface;
+    private readonly InputAction m_GameManager_Restart;
+    public struct GameManagerActions
     {
         private @PlayerControls m_Wrapper;
-        public GameMaagerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Restart => m_Wrapper.m_GameMaager_Restart;
-        public InputActionMap Get() { return m_Wrapper.m_GameMaager; }
+        public GameManagerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Restart => m_Wrapper.m_GameManager_Restart;
+        public InputActionMap Get() { return m_Wrapper.m_GameManager; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameMaagerActions set) { return set.Get(); }
-        public void SetCallbacks(IGameMaagerActions instance)
+        public static implicit operator InputActionMap(GameManagerActions set) { return set.Get(); }
+        public void SetCallbacks(IGameManagerActions instance)
         {
-            if (m_Wrapper.m_GameMaagerActionsCallbackInterface != null)
+            if (m_Wrapper.m_GameManagerActionsCallbackInterface != null)
             {
-                @Restart.started -= m_Wrapper.m_GameMaagerActionsCallbackInterface.OnRestart;
-                @Restart.performed -= m_Wrapper.m_GameMaagerActionsCallbackInterface.OnRestart;
-                @Restart.canceled -= m_Wrapper.m_GameMaagerActionsCallbackInterface.OnRestart;
+                @Restart.started -= m_Wrapper.m_GameManagerActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_GameManagerActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_GameManagerActionsCallbackInterface.OnRestart;
             }
-            m_Wrapper.m_GameMaagerActionsCallbackInterface = instance;
+            m_Wrapper.m_GameManagerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Restart.started += instance.OnRestart;
@@ -292,13 +292,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             }
         }
     }
-    public GameMaagerActions @GameMaager => new GameMaagerActions(this);
+    public GameManagerActions @GameManager => new GameManagerActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
     }
-    public interface IGameMaagerActions
+    public interface IGameManagerActions
     {
         void OnRestart(InputAction.CallbackContext context);
     }

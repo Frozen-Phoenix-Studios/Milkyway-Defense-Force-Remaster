@@ -105,7 +105,7 @@
             ]
         },
         {
-            "name": "GameMaager",
+            "name": "GameManager",
             "id": "c97e4ebd-48b7-4ff2-b4d5-f52193c33bf5",
             "actions": [
                 {

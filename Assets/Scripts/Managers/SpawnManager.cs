@@ -26,14 +26,24 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
 
     private bool _gameOver;
+    
+    private void OnEnable()
+    {
+        GameStateManager.OnGameOver += OnGameOver;
+        GameStateManager.OnGameStart += StartSpawning;
+    }
 
+    private void OnDisable()
+    {
+        GameStateManager.OnGameOver -= OnGameOver;
+        GameStateManager.OnGameStart -= StartSpawning;
+    }
 
     private void Start()
     {
         _gameOver = false;
         _enemySpawnDelay = new WaitForSeconds(_enemySpawnFrequency);
         _powerupSpawnDelay = new WaitForSeconds(_powerupSpawnFrequency);
-        StartSpawning();
     }
 
     private void StartSpawning()
@@ -58,15 +68,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         return _powerupArray[Random.Range(0, max)];
     }
 
-    private void OnEnable()
-    {
-        GameOverManager.OnGameOver += OnGameOver;
-    }
 
-    private void OnDisable()
-    {
-        GameOverManager.OnGameOver -= OnGameOver;
-    }
 
     private Vector2 CreateRandomSpawnPoint()
     {
@@ -89,5 +91,5 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     private void SpawnEnemy() =>
         Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
 
-    private void OnGameOver() => _gameOver = true;
+    private void OnGameOver(bool state) => _gameOver = state;
 }
