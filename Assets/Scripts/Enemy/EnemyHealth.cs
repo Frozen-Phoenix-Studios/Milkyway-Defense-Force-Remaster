@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         _health -= damageAmount;
         if (_health <= 0)
         {
-            _enemy.Die();
+            _enemy.Explode();
         }
     }
 

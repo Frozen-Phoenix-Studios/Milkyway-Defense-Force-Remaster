@@ -5,14 +5,16 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(IMove))]
 public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
 {
+    public static event Action<int> OnPointsAction;
+    
     private IMove _movement;
     private MovementConstraints _constraints;
     private EnemyHealth _health;
+    private EnemyAnimationController _animationController;
+    private Collider2D _collider;
 
     [SerializeField] private int _damageAmount = 1;
     [field: SerializeField] public int PointsOnAction { get; private set; } = 10;
-    public static event Action<int> OnPointsAction;
-
 
     public int DamageAmount => _damageAmount;
 
@@ -40,12 +42,17 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
         _health = GetComponent<EnemyHealth>();
         if (_health == null)
             Debug.LogError("The enemy health is null on the enemy");
+        
+        _animationController = GetComponent<EnemyAnimationController>();
+        if (_animationController == null)
+            Debug.LogError("The enemy animation controller null on the enemy");         
+        
+        _collider = GetComponent<Collider2D>();
+        if (_collider == null)
+            Debug.LogError("The enemy collider is null on");
     }
-
-    private void Update()
-    {
-        _movement.Move();
-    }
+    
+    private void Update() => _movement.Move();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -65,10 +72,7 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
         }
     }
 
-    public void Respawn()
-    {
-        transform.position = CreateNewRandomSpawnPosition();
-    }
+    public void Respawn() => transform.position = CreateNewRandomSpawnPosition();
 
     private Vector3 CreateNewRandomSpawnPosition()
     {
@@ -78,10 +82,16 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
         return new Vector3(x, y, z);
     }
 
-    public void Die()
+    public void Explode()
     {
-        Debug.Log("Calling event");
+        _animationController.SetDeathTrigger();
         OnPointsAction?.Invoke(PointsOnAction);
+        _collider.enabled = false;
+        _movement.StopMovement();
+    }
+
+    private void Destroy()
+    {
         Destroy(gameObject);
     }
 
