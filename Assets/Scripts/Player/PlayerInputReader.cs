@@ -6,8 +6,6 @@ public class PlayerInputReader : MonoBehaviour
 {
     private PlayerControls _controls;
     public static event Action OnRestartPressed;
-
-
     public Vector2 move;
     public bool shoot;
     
@@ -38,10 +36,12 @@ public class PlayerInputReader : MonoBehaviour
         shoot = _controls.Player.Shoot.WasPerformedThisFrame();
     }
 
-    private void SwitchControls(bool onGameOver)
+    private void SwitchControls(bool gameOver)
     {
+        if (!gameOver) return;
         _controls.Player.Disable();
         _controls.GameManager.Enable();
+
     }
 
 }
