@@ -23,12 +23,12 @@ public class PlayerInputReader : MonoBehaviour
 
     private void OnEnable()
     {
-        GameStateManager.OnGameOver += SwitchControls;
+        GameOverManager.OnGameOver += SwitchControls;
     }
 
     private void OnDisable()
     {
-        GameStateManager.OnGameOver -= SwitchControls;
+        GameOverManager.OnGameOver -= SwitchControls;
     }
 
 

@@ -60,12 +60,12 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private void OnEnable()
     {
-        GameStateManager.OnGameOver += OnGameOver;
+        GameOverManager.OnGameOver += OnGameOver;
     }
 
     private void OnDisable()
     {
-        GameStateManager.OnGameOver -= OnGameOver;
+        GameOverManager.OnGameOver -= OnGameOver;
     }
 
     private Vector2 CreateRandomSpawnPoint()
