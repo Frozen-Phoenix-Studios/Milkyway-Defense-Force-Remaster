@@ -14,7 +14,7 @@ public class GameOverManager : MonoSingleton<GameOverManager>
     
     private void OnEnable() => GameStateManager.OnGameOver += SetGameOverState;
 
-    private void OnDisable() => GameStateManager.OnGameOver += SetGameOverState;
+    private void OnDisable() => GameStateManager.OnGameOver -= SetGameOverState;
 
     private void SetGameOverState(bool gameOverState)
     {

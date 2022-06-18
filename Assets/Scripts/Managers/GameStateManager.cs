@@ -14,14 +14,12 @@ public class GameStateManager : MonoSingleton<GameStateManager>
     {
         PlayerInputReader.OnRestartPressed += Restart;
         OnGameOver?.Invoke(IsGameOver);
-
     }
 
     private void OnDisable()
     {
         PlayerInputReader.OnRestartPressed -= Restart;
         OnGameOver?.Invoke(IsGameOver);
-
     }
 
     public void SetGameOver()
