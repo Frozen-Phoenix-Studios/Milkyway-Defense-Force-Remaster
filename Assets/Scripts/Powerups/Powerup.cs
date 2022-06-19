@@ -1,14 +1,17 @@
 using System;
 using UnityEngine;
 
-public class Powerup : MonoBehaviour
+public class Powerup : MonoBehaviour, IHaveAudio
 {
     [SerializeField] private PowerupType _powerupType;
     [SerializeField] private StatModifier _statModifier;
     [SerializeField] private WeaponSO _weaponPowerup;
     [SerializeField] public Attachable _attachable;
     [SerializeField] private float _speed = 3.0f;
+    [SerializeField] private AudioClip _audioClip;
+    public AudioClip AudioClip => _audioClip;
 
+ 
     private void Update()
     {
         transform.Translate(Vector3.down * _speed * Time.deltaTime );
@@ -64,9 +67,17 @@ public class Powerup : MonoBehaviour
         if (_weaponPowerup != null)
             player.ChangeWeapon(_weaponPowerup);
     }
+    
+    public void PlayAudio()
+    {
+        AudioManager.Instance.PlayPowerupAudioClip(this);
+    }
 
     public void DestroySelf()
     {
+        PlayAudio();
         Destroy(gameObject);
     }
+
+
 }
