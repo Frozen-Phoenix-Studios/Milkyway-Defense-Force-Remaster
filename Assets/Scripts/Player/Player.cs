@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerInputReader))]
-public class Player : MonoBehaviour, IChangePoints
+public class Player : MonoBehaviour, IChangePoints, IExplode
 {
     [SerializeField] private Vector3 _startingPosition = Vector3.zero;
     private PlayerInputReader _input;
@@ -14,8 +14,9 @@ public class Player : MonoBehaviour, IChangePoints
     private ComponentManager _componentManager;
 
     [Header("Debug")] [SerializeField] private WeaponSO _debugWeapon;
-
-
+    [SerializeField] private Explosion _explosion;
+    public Explosion Explosion => _explosion;
+    
     public int PointsOnAction { get; } = -50;
     public static event Action<int> OnPointsAction;
 
@@ -73,9 +74,13 @@ public class Player : MonoBehaviour, IChangePoints
     public void Die()
     {
         OnPointsAction?.Invoke(PointsOnAction);
-
-        Debug.Log("Player Died");
         GameStateManager.Instance.SetGameOver();
         Destroy(gameObject);
+    }
+    
+    public void Explode()
+    {
+        Instantiate(_explosion, transform.position, Quaternion.identity);
+        Die();
     }
 }

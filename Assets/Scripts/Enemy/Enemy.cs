@@ -3,7 +3,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(IMove))]
-public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
+public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
 {
     public static event Action<int> OnPointsAction;
     
@@ -22,7 +22,10 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
     public string[] DamageableTags => _damageableTags;
 
     [SerializeField] private float _respawnHeight;
+    [SerializeField] private Explosion _explosion;
     public float RespawnHeight => _respawnHeight;
+    public Explosion Explosion => _explosion;
+
 
     private void Start()
     {
@@ -51,8 +54,9 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
         if (_collider == null)
             Debug.LogError("The enemy collider is null on");
     }
-    
+
     private void Update() => _movement.Move();
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -74,6 +78,7 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
 
     public void Respawn() => transform.position = CreateNewRandomSpawnPosition();
 
+
     private Vector3 CreateNewRandomSpawnPosition()
     {
         var x = Random.Range(_constraints.XMinRange, _constraints.XMaxRange);
@@ -84,14 +89,8 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints
 
     public void Explode()
     {
-        _animationController.SetDeathTrigger();
+        Instantiate(_explosion, transform.position, Quaternion.identity);
         OnPointsAction?.Invoke(PointsOnAction);
-        _collider.enabled = false;
-        _movement.StopMovement();
-    }
-
-    private void Destroy()
-    {
         Destroy(gameObject);
     }
 

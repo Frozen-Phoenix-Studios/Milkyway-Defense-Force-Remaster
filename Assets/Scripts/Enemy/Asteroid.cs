@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage
+public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage, IExplode
 {
     public bool TakesCollisionDamage { get; }
     public int Health { get; } = 1;
@@ -8,20 +8,22 @@ public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage
     public int DamageAmount { get; } = 1;
     private MovementConstraints _constraints;
     [field: SerializeField] public string[] DamageableTags { get; private set; }
-    
+
 
     [SerializeField] private float _rotationSpeed = 3.0f;
-    private Vector3 _rotationDirection = new Vector3(0,0,1);
+    private Vector3 _rotationDirection = new Vector3(0, 0, 1);
     private Animator _anim;
+    [SerializeField] private Explosion _explosion;
+    public Explosion Explosion => _explosion;
 
     private void Start()
     {
         _anim = GetComponent<Animator>();
-        if(_anim == null)
+        if (_anim == null)
             Debug.LogError("The animator is null on the asteroid");
-        
+
         _constraints = GetComponent<MovementConstraints>();
-        if(_constraints == null)
+        if (_constraints == null)
             Debug.LogError("The constraints are null on the asteroid");
 
         SetRandomPosition();
@@ -47,25 +49,23 @@ public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage
                 {
                     DealDamage(DamageAmount, damageable);
                 }
+
                 return;
             }
         }
     }
-    
+
     public void TakeDamage(int damageAmount) => Explode();
-
-    private void Explode()
-    {
-        _anim.SetTrigger("Explode");
-        GameStateManager.Instance.TriggerGameStart();
-        
-    }
-
-    private void Destroy() => Destroy(gameObject);
 
     public void DealDamage(int damageAmount, ITakeDamage damageable)
     {
         damageable.TakeDamage(DamageAmount);
         Explode();
+    }
+    public void Explode()
+    {
+        Instantiate(_explosion, transform.position, Quaternion.identity);
+        GameStateManager.Instance.TriggerGameStart();
+        Destroy(gameObject);
     }
 }
