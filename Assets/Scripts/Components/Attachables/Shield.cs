@@ -4,12 +4,18 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 { 
     private SpriteRenderer _spriteRenderer;
     [field: SerializeField] public int Health { get; private set; }
+
+    [SerializeField]  private float _invulnerabilityLength = 0.25f;
+    public float InvulnerabilityLength => _invulnerabilityLength;
+
+    private float _invulnerabilityPeriod;
+
     [SerializeField] private int _maxHealth;
-    [field: SerializeField] public bool IsActive { get; private set; } = false;
-    
-    public bool TakesCollisionDamage { get; } = true;
+   [field: SerializeField] public bool IsActive { get; private set; } = false;
+
+   public bool TakesCollisionDamage { get; } = true;
     public int CollisionDamage { get; }
-    
+
 
     private Collider2D _collider;
 
@@ -44,6 +50,10 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 
     public void TakeDamage(int damageAmount)
     {
+        if (Time.time < _invulnerabilityPeriod)
+            return;
+        
+        _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
         Health -= damageAmount;
         if (Health < 1)
             Detach();

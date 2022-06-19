@@ -3,19 +3,24 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour, IDoDamage, IHaveAudio
 {
+    public event Action<bool> OnDestroy;
+
     [SerializeField] private float _movementSpeed = 8.0f;
     [SerializeField] private int _damageAmount = 1;
     [SerializeField] private string[] _damageableTags;
     private bool _destroyedFromCollision;
     public string[] DamageableTags => _damageableTags;
     public int DamageAmount => _damageAmount;
-    
+    [SerializeField] private bool _isEnemy;
+
     [field: SerializeField] public AudioClip AudioClip { get; private set; }
 
-    public event Action<bool> OnDestroy;
 
     private void OnEnable()
     {
+        if (_isEnemy)
+            _movementSpeed = -_movementSpeed;
+
         PlayAudio();
     }
 
@@ -36,7 +41,6 @@ public class Laser : MonoBehaviour, IDoDamage, IHaveAudio
                     _destroyedFromCollision = true;
                     DealDamage(_damageAmount, damageable);
                 }
-
                 return;
             }
         }
@@ -45,7 +49,7 @@ public class Laser : MonoBehaviour, IDoDamage, IHaveAudio
     public void DealDamage(int damageAmount, ITakeDamage damageable)
     {
         damageable.TakeDamage(damageAmount);
-        Destroy(gameObject);
+        Destroy();
     }
 
 
@@ -62,6 +66,14 @@ public class Laser : MonoBehaviour, IDoDamage, IHaveAudio
 
     public void PlayAudio()
     {
-        AudioManager.Instance.PlayPlayerAttackAudioClip(this);
+        if (_isEnemy)
+        {
+            AudioManager.Instance.EnemyAttackAudioClip(this);
+        }
+        else
+        {
+            AudioManager.Instance.PlayPlayerAttackAudioClip(this);
+        }
+
     }
 }

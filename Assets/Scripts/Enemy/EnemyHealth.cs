@@ -4,6 +4,11 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     private Enemy _enemy;
     [SerializeField] private int _health = 1;
+    [SerializeField] private float _invulnerabilityPeriod;
+
+    [SerializeField]  private float _invulnerabilityLength = 0.25f;
+    public float InvulnerabilityLength => _invulnerabilityLength;
+
     [field: SerializeField] public int CollisionDamage { get; private set; } = 1;
 
     [field: SerializeField] public bool TakesCollisionDamage { get; private set; } = true;
@@ -20,6 +25,11 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int damageAmount)
     {
+        if (Time.time < _invulnerabilityPeriod)
+            return;
+        
+        _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
+        
         _health -= damageAmount;
         if (_health <= 0)
         {

@@ -7,6 +7,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     [SerializeField] private AudioSource _enemyExplosionAudioSource;
     [SerializeField] private AudioSource _playerExplosionAudioSource;
     [SerializeField] private AudioSource _powerupAudioSource;
+    [SerializeField] private AudioSource _enemyAttackAudioSource;
 
     public void PlayPlayerAttackAudioClip(IHaveAudio audio)
     {
@@ -30,6 +31,11 @@ public class AudioManager : MonoSingleton<AudioManager>
     {
         _powerupAudioSource.clip = audio.AudioClip;
         _powerupAudioSource.Play();
-        
+    }
+
+    public void EnemyAttackAudioClip(IHaveAudio audio)
+    {
+        _enemyAttackAudioSource.clip = audio.AudioClip;
+        _enemyAttackAudioSource.Play();
     }
 }

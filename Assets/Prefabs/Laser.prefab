@@ -104,6 +104,7 @@ MonoBehaviour:
   _damageAmount: 1
   _damageableTags:
   - Enemy
+  _isEnemy: 0
   <AudioClip>k__BackingField: {fileID: 8300000, guid: 75676f361bdfeaf41a46623e95df3dbc,
     type: 3}
 --- !u!114 &-1220252556952620086
@@ -122,7 +123,7 @@ MonoBehaviour:
   _xMaxRange: 10.25
   _yMinRange: -6
   _yMaxRange: 6
-  _xBounded: 1
+  _xBounded: 0
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:

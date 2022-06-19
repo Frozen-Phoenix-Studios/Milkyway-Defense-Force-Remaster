@@ -7,6 +7,8 @@ public interface ITakeDamage
     public bool TakesCollisionDamage { get; }
 
     public int Health { get; }
+
+    public float InvulnerabilityLength { get; }
     public int CollisionDamage { get; }
     public void TakeDamage(int damageAmount);
     

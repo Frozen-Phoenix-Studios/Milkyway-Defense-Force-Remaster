@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LaserTripleShot : MonoBehaviour
+public class MultipleShotAttack : MonoBehaviour
 {
     private int _childCount;
 

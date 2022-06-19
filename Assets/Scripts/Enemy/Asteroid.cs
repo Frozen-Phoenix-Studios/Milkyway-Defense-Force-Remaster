@@ -4,6 +4,12 @@ public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage, IExplode
 {
     public bool TakesCollisionDamage { get; }
     public int Health { get; } = 1;
+
+    public float InvulnerabilityLength => _invulnerabilityLength;
+
+    private float _invulnerabilityPeriod;
+    public float InvulnerabilityPeriod => _invulnerabilityPeriod;
+
     public int CollisionDamage { get; } = 1;
     public int DamageAmount { get; } = 1;
     private MovementConstraints _constraints;
@@ -14,6 +20,8 @@ public class Asteroid : MonoBehaviour, ITakeDamage, IDoDamage, IExplode
     private Vector3 _rotationDirection = new Vector3(0, 0, 1);
     private Animator _anim;
     [SerializeField] private Explosion _explosion;
+    private float _invulnerabilityLength;
+
     public Explosion Explosion => _explosion;
 
     private void Start()

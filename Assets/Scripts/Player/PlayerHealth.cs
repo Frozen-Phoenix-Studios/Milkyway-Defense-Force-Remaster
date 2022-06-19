@@ -11,6 +11,11 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     [field: SerializeField] public bool TakesCollisionDamage { get; private set; }
     public int Health => _health;
+
+    [SerializeField] private float _invulnerabilityPeriod;
+    [SerializeField]  private float _invulnerabilityLength = 0.25f;
+    public float InvulnerabilityLength => _invulnerabilityLength;
+
     public int CollisionDamage { get; private set; } = 1;
 
     [SerializeField] private GameObject[] _fireballs;
@@ -26,6 +31,11 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int damageAmount)
     {
+        if (Time.time < _invulnerabilityPeriod)
+            return;
+        
+        _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
+        
         _health = Mathf.Clamp(_health -= damageAmount, 0, 3);
         OnHealthChanged?.Invoke(_health);
         HandleDamage();
@@ -35,6 +45,8 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     private void HandleDamage()
     {
+
+        
         if (_health == 2)
         {
             _fireballs[Random.Range(0, _fireballs.Length)].SetActive(true);

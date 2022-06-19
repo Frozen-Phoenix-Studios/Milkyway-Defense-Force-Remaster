@@ -65,7 +65,5 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(weapon.ActiveTime);
         _weapon = _defaultWeapon;
         _temporaryWeaponRoutine = null;
-
-
     }
 }
