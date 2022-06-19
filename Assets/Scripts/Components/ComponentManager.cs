@@ -19,26 +19,13 @@ public class ComponentManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        foreach (var attachable in _attachablesList)
-        {
-            Debug.Log(attachable);
-        }
-    }
-
     public void Attach(Attachable attachable)
     {
         var component = _attachablesList.First(t => t.name == attachable.AttachablePrefab.name).GetComponent<IAttachable>();
         if (component != null)
         {
-            Debug.Log("Found attachable");
             if (attachable.ActiveTime == 0)
                 component.Attach();
-        }
-        else
-        {
-            Debug.Log($"Attachable not found {attachable.IAttachable}");
         }
     }
 }
