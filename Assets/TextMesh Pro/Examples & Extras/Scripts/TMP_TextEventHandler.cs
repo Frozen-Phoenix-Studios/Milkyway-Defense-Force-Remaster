@@ -199,7 +199,7 @@ namespace TMPro
             }
             else
             {
-                // Restart all selections given we are hovering outside the text container bounds.
+                // Reset all selections given we are hovering outside the text container bounds.
                 m_selectedLink = -1;
                 m_lastCharIndex = -1;
                 m_lastWordIndex = -1;
