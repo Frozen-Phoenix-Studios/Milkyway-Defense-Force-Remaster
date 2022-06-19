@@ -13,12 +13,19 @@ public class GameStateManager : MonoSingleton<GameStateManager>
     private void OnEnable()
     {
         PlayerInputReader.OnRestartPressed += Restart;
+        PlayerInputReader.OnQuitPressed += HandleQuit;
         OnGameOver?.Invoke(IsGameOver);
+    }
+
+    private void HandleQuit()
+    {
+        Application.Quit();
     }
 
     private void OnDisable()
     {
         PlayerInputReader.OnRestartPressed -= Restart;
+        PlayerInputReader.OnQuitPressed -= HandleQuit;
         OnGameOver?.Invoke(IsGameOver);
     }
 
