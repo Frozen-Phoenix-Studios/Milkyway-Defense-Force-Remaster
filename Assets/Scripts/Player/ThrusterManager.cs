@@ -6,6 +6,17 @@ public class ThrusterManager : MonoBehaviour
     [SerializeField] private GameObject[] _thrustersArray;
     private float _speed;
     private int _index;
+    private bool _turboEngaged;
+
+    private void OnEnable()
+    {
+        PlayerInputReader.OnTurboChanged += SetTurboThruster;
+    }
+    
+    private void OnDisable()
+    {
+        PlayerInputReader.OnTurboChanged -= SetTurboThruster;
+    }
 
     private void Start()
     {
@@ -17,8 +28,12 @@ public class ThrusterManager : MonoBehaviour
     private void Update()
     {
         _speed = _input.move.y;
-        
-        if (_speed < 0)
+
+        if (_turboEngaged)
+        {
+            _index = 3;
+        }
+        else if (_speed < 0)
         {
             _index = 0;
         }
@@ -39,4 +54,6 @@ public class ThrusterManager : MonoBehaviour
         for (int i = 0; i < _thrustersArray.Length; i++)
             _thrustersArray[i].SetActive(i == index);
     }
+
+    private void SetTurboThruster(bool engaged) => _turboEngaged = engaged;
 }

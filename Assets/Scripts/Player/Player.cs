@@ -63,7 +63,7 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
 
     public void AdjustStat(StatModifier statModifier)
     {
-        _playerStatManager.ModifyStat(statModifier);
+        _playerStatManager.AddTemporaryStatModifier(statModifier);
     }
 
     public void AddAttachable(Attachable attachable)

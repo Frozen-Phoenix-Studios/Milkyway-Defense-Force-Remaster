@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class StatManager : MonoBehaviour
@@ -13,11 +14,31 @@ public class StatManager : MonoBehaviour
         return stat;
     }
 
-    public void ModifyStat(StatModifier modifier)
+    public void AddTemporaryStatModifier(StatModifier modifier)
     {
-        var stat = _allStats.First(t => modifier.StatToModify = t);
-        if (stat != null)
-            StartCoroutine(ModifyStat(stat, modifier));
+        if (VerifyStat(modifier, out var stat)) return;
+
+        if (modifier.Length > 0)
+        {
+            StartCoroutine(AddTemporaryStatRoutine(stat, modifier));
+        }
+    }
+    
+    private bool VerifyStat(StatModifier modifier, out Stat stat)
+    {
+        stat = _allStats.First(t => modifier.StatToModify = t);
+        return stat == null;
+    }
+
+    public void AddStatModifier(StatModifier modifier)
+    {
+        if (VerifyStat(modifier, out var stat)) return;
+        stat.AddStatModifier(modifier);
+    }
+    public void RemoveStatModifier(StatModifier modifier)
+    {
+        if (VerifyStat(modifier, out var stat)) return;
+        stat.RemoveStatModifier(modifier);
     }
 
     public float GetStatValue(Stat stat)
@@ -29,7 +50,7 @@ public class StatManager : MonoBehaviour
         return 0;
     }
 
-    private IEnumerator ModifyStat(Stat statToModify, StatModifier modifier)
+    private IEnumerator AddTemporaryStatRoutine(Stat statToModify, StatModifier modifier)
     {
         statToModify.AddStatModifier(modifier);
         yield return new WaitForSeconds(modifier.Length);
