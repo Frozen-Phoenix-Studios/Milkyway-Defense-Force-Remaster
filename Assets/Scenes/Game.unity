@@ -4209,6 +4209,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
         type: 3}
+      propertyPath: _maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _lowStrengthColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _lowStrengthColour.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _midStrengthColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _midStrengthColour.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _fullStrengthColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _fullStrengthColour.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _fullStrengthColour.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: _fullStrengthColour.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
+      propertyPath: <Health>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734825818843998449, guid: d988ec2900798614084b2388486d0c22,
+        type: 3}
       propertyPath: <IsActive>k__BackingField
       value: 0
       objectReference: {fileID: 0}

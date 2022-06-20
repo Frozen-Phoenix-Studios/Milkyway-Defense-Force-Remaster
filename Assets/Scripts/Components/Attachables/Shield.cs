@@ -1,21 +1,24 @@
 using UnityEngine;
 
 public class Shield : MonoBehaviour, IAttachable, ITakeDamage
-{ 
+{
     private SpriteRenderer _spriteRenderer;
     [field: SerializeField] public int Health { get; private set; }
 
-    [SerializeField]  private float _invulnerabilityLength = 0.25f;
+    [SerializeField] private float _invulnerabilityLength = 0.25f;
     public float InvulnerabilityLength => _invulnerabilityLength;
 
     private float _invulnerabilityPeriod;
 
     [SerializeField] private int _maxHealth;
-   [field: SerializeField] public bool IsActive { get; private set; } = false;
+    [field: SerializeField] public bool IsActive { get; private set; } = false;
 
-   public bool TakesCollisionDamage { get; } = true;
+    public bool TakesCollisionDamage { get; } = true;
     public int CollisionDamage { get; }
-
+    
+    [SerializeField] private Color _fullStrengthColour = Color.white;
+    [SerializeField] private Color _midStrengthColour = Color.green;
+    [SerializeField] private Color _lowStrengthColour = Color.red;
 
     private Collider2D _collider;
 
@@ -24,7 +27,7 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (_spriteRenderer == null)
             Debug.LogError($"The sprite renderer is null on the {transform.name}");
-        
+
         _collider = GetComponent<Collider2D>();
         if (_collider == null)
             Debug.LogError($"The collider is null on the {transform.name}");
@@ -38,26 +41,37 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
     public void Attach()
     {
         Health = _maxHealth;
+        SetColour();
         SetActiveState(true);
     }
-    
+
     public void Detach()
     {
         Health = 0;
         SetActiveState(false);
     }
 
-
     public void TakeDamage(int damageAmount)
     {
         if (Time.time < _invulnerabilityPeriod)
             return;
-        
+
         _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
         Health -= damageAmount;
+        SetColour();
         if (Health < 1)
             Detach();
+        
+    }
 
+    private void SetColour()
+    {
+        _spriteRenderer.color = Health switch
+        {
+            3 => _fullStrengthColour,
+            2 => _midStrengthColour,
+            _ => _lowStrengthColour
+        };
     }
 
     private void SetActiveState(bool isActive)
