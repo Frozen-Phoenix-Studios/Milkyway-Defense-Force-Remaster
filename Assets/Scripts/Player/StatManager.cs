@@ -44,7 +44,7 @@ public class StatManager : MonoBehaviour
     public float GetStatValue(Stat stat)
     {
         if (_allStats.Contains(stat))
-            return _allStats.First(t => t.StatName == stat.StatName).GetCurrentValue();
+            return _allStats.First(t => t.StatName == stat.StatName).GetCurrentModifiedValue();
 
         Debug.LogError($"Stat {stat.StatName} can not be found");
         return 0;

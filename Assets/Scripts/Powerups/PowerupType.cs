@@ -2,6 +2,6 @@ public enum PowerupType
 {
     Weapon,
     Stat,
-    Health,
+    Recharge,
     Attachable,
 }

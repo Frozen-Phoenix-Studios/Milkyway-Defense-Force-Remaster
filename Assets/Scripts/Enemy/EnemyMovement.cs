@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour, IMove
         CanMove = true;
         _movementSpeed = _statManager.BindStat(_movementSpeed);
         _movementSpeed.OnValueChanged += HandleMovementSpeedChanged;
-        _currentMoveSpeed = _movementSpeed.GetCurrentValue();
+        _currentMoveSpeed = _movementSpeed.GetCurrentModifiedValue();
     }
 
     private void HandleMovementSpeedChanged(float value) => _currentMoveSpeed = value;

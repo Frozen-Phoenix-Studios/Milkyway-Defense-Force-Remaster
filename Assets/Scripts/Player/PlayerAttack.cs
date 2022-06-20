@@ -1,5 +1,4 @@
 using System.Collections;
-using System.ComponentModel;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -8,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private WeaponSO _defaultWeapon;
     private WeaponSO _weapon;
+    private AmmoManager _ammoManager;
+    private StatManager _statManager;
     [SerializeField] private float _attackSpeed = 0.25f;
     private float _nextAttackTime;
     private Coroutine _temporaryWeaponRoutine;
@@ -16,9 +17,15 @@ public class PlayerAttack : MonoBehaviour
     {
         _weapon = _defaultWeapon;
         _nextAttackTime = 0;
+        
         _input = GetComponent<PlayerInputReader>();
         if (_input == null)
             Debug.LogError("The player input reader is null on the player attack");
+        
+        _ammoManager = GetComponent<AmmoManager>();
+        if (_ammoManager == null)
+            Debug.LogError("The ammo manager is null on the player attack");
+
     }
 
     private void Update()
@@ -29,11 +36,13 @@ public class PlayerAttack : MonoBehaviour
 
     private bool CanShoot()
     {
-        if (!(Time.time >= _nextAttackTime)) return false;
-        
+        if (!(Time.time >= _nextAttackTime && _ammoManager.UseAmmo())) return false;
+
         _nextAttackTime = Time.time + _attackSpeed;
         return true;
     }
+
+   
 
     private void Shoot()
     {

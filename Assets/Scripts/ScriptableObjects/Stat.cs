@@ -16,13 +16,12 @@ public class Stat : ScriptableObject
         AllModifiers.Clear();
     }
 
-
     private void NotifyValueChange()
     {
-        OnValueChanged?.Invoke(GetCurrentValue());
+        OnValueChanged?.Invoke(GetCurrentModifiedValue());
     }
 
-    public float GetCurrentValue()
+    public float GetCurrentModifiedValue()
     {
         if (AllModifiers == null)
             return BaseValue;

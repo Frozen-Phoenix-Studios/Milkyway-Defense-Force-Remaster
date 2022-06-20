@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("The movement constraints are null");
 
         _movementSpeed = _statManager.BindStat(_movementSpeed);
-        _currentSpeed = _movementSpeed.GetCurrentValue();
+        _currentSpeed = _movementSpeed.GetCurrentModifiedValue();
         _movementSpeed.OnValueChanged += HandleMovementSpeedChanged;
     }
 

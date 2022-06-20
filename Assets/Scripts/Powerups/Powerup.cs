@@ -37,7 +37,7 @@ public class Powerup : MonoBehaviour, IHaveAudio
             case PowerupType.Stat:
                 AdjustStat(player, _statModifier);
                 break;
-            case PowerupType.Health:
+            case PowerupType.Recharge:
                 break;
             case PowerupType.Attachable:
                 AddAttachable(player, _attachable);
