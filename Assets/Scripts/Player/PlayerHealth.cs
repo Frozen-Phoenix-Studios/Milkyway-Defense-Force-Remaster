@@ -2,11 +2,15 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerHealth : MonoBehaviour, ITakeDamage
+public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
 {
     public static event Action<int> OnHealthChanged;
+    
+    [SerializeField] private SupplyType _supplyType;
+    public SupplyType SupplyType => _supplyType;
 
-    private Player _player;
+    private Player _player; 
+    private int _maxHealth = 3;
     [SerializeField] private int _health = 3;
 
     [field: SerializeField] public bool TakesCollisionDamage { get; private set; }
@@ -24,6 +28,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     private void Start()
     {
+        _health = _maxHealth;
         _player = transform.GetComponent<Player>();
         if (_player == null)
             Debug.LogError("The Player is null on the player health component");
@@ -46,18 +51,48 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     private void HandleDamage()
     {
-        if (_health == 2)
+        switch (_health)
         {
-            _fireballs[Random.Range(0, _fireballs.Length)].SetActive(true);
-        }
-
-        if (_health == 1)
-        {
-            foreach (var fireball in _fireballs)
+            case 2:
+                _fireballs[Random.Range(0, _fireballs.Length)].SetActive(true);
+                break;
+            case 1:
             {
-                fireball.SetActive(true);
+                foreach (var fireball in _fireballs)
+                {
+                    fireball.SetActive(true);
+                }
+
+                break;
             }
         }
+    }
+
+    private void ExtinguishFire()
+    {
+        switch (_health)
+        {
+            case 3:
+            {
+                foreach (var fireball in _fireballs)
+                {
+                    fireball.SetActive(false);
+                }
+
+                break;
+            }
+            case 2:
+                _fireballs[Random.Range(0, _fireballs.Length)].SetActive(false);
+                break;
+        }
+    }
+    
+    
+    public void Resupply(float amount)
+    {
+        _health = Mathf.Clamp(_health += (int)amount, 0, _maxHealth);
+        ExtinguishFire();
+        OnHealthChanged?.Invoke(_health);
     }
     
 }
