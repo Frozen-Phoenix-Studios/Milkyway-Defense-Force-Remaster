@@ -1,24 +1,21 @@
+using System;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour, IHaveAudio
+public class Explosion : Attack
 {
-    [SerializeField] private AudioClip _audioClip;
-    public AudioClip AudioClip => _audioClip;
-
+    [SerializeField] private bool IsShrapnel;
     [SerializeField] private bool IsEnemy;
 
-    private void OnEnable() => PlayAudio();
-
-    public void PlayAudio()
+    private void OnEnable()
     {
-        if (IsEnemy)
-        {
-            AudioManager.Instance.PlayEnemyExplosionAudioClip(this);
-        }
-        else
-        {
-            AudioManager.Instance.PlayPlayerExplosionAudioClip(this);
-        }
+        Initialize();
+    }
+
+    protected override void HandleDamageDealing(int damageAmount, ITakeDamage damageable)
+    {
+        if (!IsShrapnel)
+            return;
+        damageable.TakeDamage(damageAmount);
     }
 
     private void FinishExplosion()

@@ -10,8 +10,8 @@ public class MultipleShotAttack : MonoBehaviour
         _childCount = transform.childCount;
         for (int i = 0; i < _childCount; i++)
         {
-            var laser = transform.GetChild(i).GetComponent<Laser>();
-            laser.OnDestroy += delegate(bool b) { AdjustChildCount(); };
+            var attack = transform.GetChild(i).GetComponent<Attack>();
+            attack.OnDestroy += delegate(bool b) { AdjustChildCount(); };
         }
     }
     
