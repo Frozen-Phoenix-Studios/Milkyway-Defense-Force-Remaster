@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     public int CollisionDamage { get; private set; } = 1;
 
     [SerializeField] private GameObject[] _fireballs;
+    private string _rechargeableName;
 
 
     private void Start()
@@ -45,8 +46,6 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
     private void HandleDamage()
     {
-
-        
         if (_health == 2)
         {
             _fireballs[Random.Range(0, _fireballs.Length)].SetActive(true);
@@ -60,4 +59,5 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
             }
         }
     }
+    
 }

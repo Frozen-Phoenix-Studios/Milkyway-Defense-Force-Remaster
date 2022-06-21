@@ -6,6 +6,7 @@ public class Powerup : MonoBehaviour, IHaveAudio
     [SerializeField] private PowerupType _powerupType;
     [SerializeField] private StatModifier _statModifier;
     [SerializeField] private WeaponSO _weaponPowerup;
+    [SerializeField] private SupplyBox _supplyBox;
     [SerializeField] public Attachable _attachable;
     [SerializeField] private float _speed = 3.0f;
     [SerializeField] private AudioClip _audioClip;
@@ -37,7 +38,8 @@ public class Powerup : MonoBehaviour, IHaveAudio
             case PowerupType.Stat:
                 AdjustStat(player, _statModifier);
                 break;
-            case PowerupType.Recharge:
+            case PowerupType.Resupply:
+                Resupply(player, _supplyBox);
                 break;
             case PowerupType.Attachable:
                 AddAttachable(player, _attachable);
@@ -59,7 +61,12 @@ public class Powerup : MonoBehaviour, IHaveAudio
     {
         if (statModifier != null)
             player.AdjustStat(statModifier);
+    }
 
+    private void Resupply(Player player, SupplyBox supplyBox)
+    {
+        if (supplyBox != null)
+            player.Resupply(supplyBox);
     }
 
     private void ChangeWeapon(Player player)

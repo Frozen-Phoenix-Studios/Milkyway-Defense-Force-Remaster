@@ -12,6 +12,7 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
     private PlayerHealth _playerHealth;
     private StatManager _playerStatManager;
     private ComponentManager _componentManager;
+    private SupplyManager _supplyManager;
 
     [Header("Debug")] [SerializeField] private WeaponSO _debugWeapon;
     [SerializeField] private Explosion _explosion;
@@ -42,6 +43,10 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
         _componentManager = GetComponent<ComponentManager>();
         if (_componentManager == null)
             Debug.LogError("The player component manager is null");
+        
+        _supplyManager = GetComponent<SupplyManager>();
+        if (_supplyManager == null)
+            Debug.LogError("The player recharge manager is null");
     }
 
     void Start()
@@ -69,6 +74,11 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
     public void AddAttachable(Attachable attachable)
     {
         _componentManager.Attach(attachable);
+    }
+
+    public void Resupply(SupplyBox supplyBox)
+    {
+        _supplyManager.Resupply(supplyBox);
     }
 
     public void Die()

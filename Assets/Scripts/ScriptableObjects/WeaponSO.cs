@@ -8,3 +8,6 @@ public class WeaponSO : ScriptableObject
     public float ActiveTime;
     public float Offset;
 }
+
+
+//todo: could break down all power ups into supply box then player could convert them into the correct location on their script

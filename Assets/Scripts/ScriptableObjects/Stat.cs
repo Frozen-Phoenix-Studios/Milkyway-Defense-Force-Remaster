@@ -10,6 +10,7 @@ public class Stat : ScriptableObject
     public string StatName;
     public float BaseValue;
     public List<StatModifier> AllModifiers;
+    
 
     public void OnValidate()
     {
