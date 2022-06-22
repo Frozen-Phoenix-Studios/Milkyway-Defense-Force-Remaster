@@ -39,9 +39,6 @@ public abstract class Attack : MonoBehaviour, IDoDamage, IHaveAudio
     
     public void PlayAudio()
     {
-        if (_audioClip == null)
-            return;
-
         if (_isEnemy)
         {
             AudioManager.Instance.EnemyAttackAudioClip(this);
