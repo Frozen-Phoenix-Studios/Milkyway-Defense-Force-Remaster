@@ -3,6 +3,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 {
     private SpriteRenderer _spriteRenderer;
+    private Player _player;
     [field: SerializeField] public int Health { get; private set; }
 
     [SerializeField] private float _invulnerabilityLength = 0.25f;
@@ -35,6 +36,10 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 
     private void Start()
     {
+        _player = GetComponentInParent<Player>();
+        if (_player == null)
+            Debug.LogError("The player is null");
+
         SetActiveState(IsActive);
     }
 
@@ -59,9 +64,16 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
         _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
         Health -= damageAmount;
         SetColour();
-        if (Health < 1)
-            Detach();
         
+        if (Health < 1)
+        {
+            Detach();
+            _player.ShakeTrigger.TriggerLongShake();
+        }
+        else
+        {
+            _player.ShakeTrigger.TriggerSmallShake();
+        }
     }
 
     private void SetColour()

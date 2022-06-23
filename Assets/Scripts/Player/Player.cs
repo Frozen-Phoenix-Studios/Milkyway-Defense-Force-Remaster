@@ -1,8 +1,13 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerInputReader))]
+[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerAttack))]
+[RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(StatManager))]
+[RequireComponent(typeof(ComponentManager))]
+[RequireComponent(typeof(SupplyManager))]
 public class Player : MonoBehaviour, IChangePoints, IExplode
 {
     [SerializeField] private Vector3 _startingPosition = Vector3.zero;
@@ -13,11 +18,13 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
     private StatManager _playerStatManager;
     private ComponentManager _componentManager;
     private SupplyManager _supplyManager;
+    private CameraShakeTrigger _shakeTrigger;
+    public CameraShakeTrigger ShakeTrigger => _shakeTrigger;
 
     [Header("Debug")] [SerializeField] private WeaponSO _debugWeapon;
     [SerializeField] private Explosion _explosion;
     public Explosion Explosion => _explosion;
-    
+
     public int PointsOnAction { get; } = -50;
     public static event Action<int> OnPointsAction;
 
@@ -43,10 +50,14 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
         _componentManager = GetComponent<ComponentManager>();
         if (_componentManager == null)
             Debug.LogError("The player component manager is null");
-        
+
         _supplyManager = GetComponent<SupplyManager>();
         if (_supplyManager == null)
             Debug.LogError("The player recharge manager is null");
+        
+        _shakeTrigger = GetComponent<CameraShakeTrigger>();
+        if (_shakeTrigger == null)
+            Debug.LogError("The camera shake trigger is null");
     }
 
     void Start()
@@ -80,17 +91,19 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
     {
         _supplyManager.Resupply(supplyBox);
     }
-
+    
+    
     public void Die()
     {
         OnPointsAction?.Invoke(PointsOnAction);
         GameStateManager.Instance.SetGameOver();
         Destroy(gameObject);
     }
-    
+
     public void Explode()
     {
         Instantiate(_explosion, transform.position, Quaternion.identity);
+        _shakeTrigger.TriggerLargeShake();
         Die();
     }
 }

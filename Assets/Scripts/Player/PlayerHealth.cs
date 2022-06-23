@@ -5,11 +5,11 @@ using Random = UnityEngine.Random;
 public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
 {
     public static event Action<int> OnHealthChanged;
-    
+
     [SerializeField] private SupplyType _supplyType;
     public SupplyType SupplyType => _supplyType;
 
-    private Player _player; 
+    private Player _player;
     private int _maxHealth = 3;
     [SerializeField] private int _health = 3;
 
@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
     public int Health => _health;
 
     [SerializeField] private float _invulnerabilityPeriod;
-    [SerializeField]  private float _invulnerabilityLength = 0.25f;
+    [SerializeField] private float _invulnerabilityLength = 0.25f;
     public float InvulnerabilityLength => _invulnerabilityLength;
 
     public int CollisionDamage { get; private set; } = 1;
@@ -39,14 +39,19 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
     {
         if (Time.time < _invulnerabilityPeriod)
             return;
-        
+
         _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
-        
+
         _health = Mathf.Clamp(_health -= damageAmount, 0, 3);
         OnHealthChanged?.Invoke(_health);
         HandleDamage();
         if (_health <= 0)
+        {
+            _player.ShakeTrigger.TriggerLongShake();
             _player.Die();
+            return;
+        }
+        _player.ShakeTrigger.TriggerSmallShake();
     }
 
     private void HandleDamage()
@@ -86,13 +91,12 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
                 break;
         }
     }
-    
-    
+
+
     public void Resupply(float amount)
     {
-        _health = Mathf.Clamp(_health += (int)amount, 0, _maxHealth);
+        _health = Mathf.Clamp(_health += (int) amount, 0, _maxHealth);
         ExtinguishFire();
         OnHealthChanged?.Invoke(_health);
     }
-    
 }

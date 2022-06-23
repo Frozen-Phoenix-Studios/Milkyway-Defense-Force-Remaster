@@ -1,8 +1,7 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
-public class ThrusterManager : MonoBehaviour
+public class ThrusterManager : MonoBehaviour, IHaveAudio
 {
     private  PlayerInputReader _input;
     [SerializeField] private GameObject[] _thrustersArray;
@@ -10,7 +9,6 @@ public class ThrusterManager : MonoBehaviour
     private int _index;
     private bool _turboEngaged;
     [SerializeField] private AudioClip _audioClip;
-    [SerializeField] private Stat _maxThrusterCharge;
     [SerializeField] private float _currentThrusterCharge;
     [SerializeField] [Range(0f, 1f)] private float _thrusterPercentUsedPerSecond = 0.25f;
     [SerializeField] [Range(0f, 1f)]  private float _thrusterPercentChargedPerSecond = 0.15f;
@@ -20,8 +18,6 @@ public class ThrusterManager : MonoBehaviour
     private Coroutine _chargeRoutine;
     private Coroutine _boostRoutine;
     public AudioClip AudioClip => _audioClip;
-
-
 
     private void OnEnable()
     {
@@ -139,10 +135,8 @@ public class ThrusterManager : MonoBehaviour
         }
     }
     
-    
-
     public void PlayAudio()
     {
-
+        AudioManager.Instance.PlayPlayerEffectAudioClip(this);
     }
 }
