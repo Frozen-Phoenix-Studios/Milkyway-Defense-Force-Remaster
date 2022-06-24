@@ -6,6 +6,7 @@ using UnityEngine;
 public class HudManager : MonoSingleton<HudManager>
 {
     [SerializeField] private TMP_Text _ammoText;
+    private float _maxAmmo;
 
     public IEnumerator AmmoFlashRoutine()
     {
@@ -14,6 +15,11 @@ public class HudManager : MonoSingleton<HudManager>
 
     public void UpdateAmmoText(float currentAmmo)
     {
-        _ammoText.SetText($"AMMO: {currentAmmo}");
+        _ammoText.SetText($"{currentAmmo}/{_maxAmmo}");
+    }
+
+    public void SetMaxAmmo(float maxAmmo)
+    {
+        _maxAmmo = maxAmmo;
     }
 }

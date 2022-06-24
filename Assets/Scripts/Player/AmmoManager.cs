@@ -16,6 +16,7 @@ public class AmmoManager : MonoBehaviour, IHaveAudio, ISuppliable
     private void Start()
     {
         _currentAmmo = _maxAmmo.BaseValue;
+        HudManager.Instance.SetMaxAmmo(_maxAmmo.BaseValue);
         HudManager.Instance.UpdateAmmoText(_currentAmmo);
     }
 
