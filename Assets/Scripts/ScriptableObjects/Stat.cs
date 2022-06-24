@@ -53,4 +53,12 @@ public class Stat : ScriptableObject
         AllModifiers.Remove(modifier);
         NotifyValueChange();
     }
+
+    public void RemoveAllModifiers()
+    {
+        foreach (var modifier in AllModifiers)
+        {
+            RemoveStatModifier(modifier);
+        }
+    }
 }

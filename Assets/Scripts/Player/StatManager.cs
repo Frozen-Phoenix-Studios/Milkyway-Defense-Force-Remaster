@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,14 @@ public class StatManager : MonoBehaviour
     {
         var stat = _allStats.First(t => t.StatName == statToBind.StatName);
         return stat;
+    }
+
+    private void Start()
+    {
+        foreach (var stat in _allStats)
+        {
+            stat.RemoveAllModifiers();
+        }
     }
 
     public void AddTemporaryStatModifier(StatModifier modifier)
@@ -40,6 +49,8 @@ public class StatManager : MonoBehaviour
         if (VerifyStat(modifier, out var stat)) return;
         stat.RemoveStatModifier(modifier);
     }
+    
+    
 
     public float GetStatValue(Stat stat)
     {

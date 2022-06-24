@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Max Ammo
   m_EditorClassIdentifier: 
   StatName: Max Ammo
-  BaseValue: 15
+  BaseValue: 30
   AllModifiers: []

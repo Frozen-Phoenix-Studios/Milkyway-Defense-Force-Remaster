@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ThrusterManager : MonoBehaviour, IHaveAudio
 {
-    private  PlayerInputReader _input;
+    private PlayerInputReader _input;
     [SerializeField] private GameObject[] _thrustersArray;
     private float _speed;
     private int _index;
@@ -11,10 +11,16 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private float _currentThrusterCharge;
     [SerializeField] [Range(0f, 1f)] private float _thrusterPercentUsedPerSecond = 0.25f;
-    [SerializeField] [Range(0f, 1f)]  private float _thrusterPercentChargedPerSecond = 0.15f;
+    [SerializeField] [Range(0f, 1f)] private float _thrusterPercentChargedPerSecond = 0.15f;
     [SerializeField] private float _delayBeforeRecharge = 1.0f;
     private float _chargeDelayEnd;
-    
+    private bool _charging;
+
+    private bool _boostActive;
+
+    [SerializeField] private StatModifier StatModifier;
+    private StatManager _statManager;
+
     private Coroutine _chargeRoutine;
     private Coroutine _boostRoutine;
     public AudioClip AudioClip => _audioClip;
@@ -23,7 +29,7 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
     {
         PlayerInputReader.OnTurboChanged += SetTurboThruster;
     }
-    
+
     private void OnDisable()
     {
         PlayerInputReader.OnTurboChanged -= SetTurboThruster;
@@ -35,32 +41,27 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
         _input = GetComponentInParent<PlayerInputReader>();
         if (_input == null)
             Debug.LogError("The player input is null on the thruster manager");
+        _statManager = GetComponentInParent<StatManager>();
+        if (_statManager == null)
+            Debug.LogError("The stat manager is null on the booster component");
     }
 
     private void Update()
     {
+        if (_turboEngaged)
+            return;
+
         _speed = _input.move.y;
 
-        if (_turboEngaged)
+        _index = _speed switch
         {
-            _index = 3;
-        }
-        else if (_speed < 0)
-        {
-            _index = 0;
-        }
-        else if (_speed == 0)
-        {
-            _index = 1;
-        }
-        else
-        {
-            _index = 2;
-        }
+            < 0 => 0,
+            0 => 1,
+            _ => 2
+        };
 
         SetThrusterActive(_index);
     }
-
 
     private void SetThrusterActive(int index)
     {
@@ -70,19 +71,38 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
 
     private IEnumerator ReduceThrusterCharge()
     {
+        if (_currentThrusterCharge > 0)
+        {
+            SetThrusterActive(3);
+            _statManager.AddStatModifier(StatModifier);
+            _charging = false;
+        }
+
         while (_turboEngaged && _currentThrusterCharge > 0)
         {
             _currentThrusterCharge -= Mathf.Clamp(_thrusterPercentUsedPerSecond * Time.deltaTime, 0, 1);
             ThrusterUIManager.Instance.UpdateThrusterFillAmount(GetThrusterChargePercentage());
+            _turboEngaged = _currentThrusterCharge > 0;
             yield return new WaitForEndOfFrame();
         }
+
+        _statManager.RemoveStatModifier(StatModifier);
         _chargeDelayEnd = Time.time + _delayBeforeRecharge;
+        _charging = true;
+        _chargeRoutine = StartCoroutine(IncreaseThrusterCharge());
         _boostRoutine = null;
     }
-    
+
     private IEnumerator IncreaseThrusterCharge()
     {
-        _chargeDelayEnd = Time.time + _delayBeforeRecharge;
+        _turboEngaged = false;
+        if (!_charging)
+        {
+            _charging = true;
+            _chargeDelayEnd = Time.time + _delayBeforeRecharge;
+            _statManager.RemoveStatModifier(StatModifier);
+        }
+
         while (!ChargeDelayServed())
             yield return new WaitForEndOfFrame();
 
@@ -92,8 +112,8 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
             ThrusterUIManager.Instance.UpdateThrusterFillAmount(GetThrusterChargePercentage());
             yield return new WaitForEndOfFrame();
         }
-        _chargeRoutine = null;
 
+        _chargeRoutine = null;
     }
 
     private bool ChargeDelayServed()
@@ -121,7 +141,7 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
         {
             ResetRoutine(_chargeRoutine);
             ResetRoutine(_boostRoutine);
-    
+
             _chargeRoutine = StartCoroutine(IncreaseThrusterCharge());
         }
     }
@@ -134,7 +154,7 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
             routine = null;
         }
     }
-    
+
     public void PlayAudio()
     {
         AudioManager.Instance.PlayPlayerEffectAudioClip(this);
