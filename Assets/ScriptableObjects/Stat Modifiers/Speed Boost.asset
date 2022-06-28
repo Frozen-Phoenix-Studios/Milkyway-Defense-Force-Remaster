@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7639b4a0bce48fe822a564ce9c14213, type: 3}
-  m_Name: Speed Modifier
+  m_Name: Speed Boost
   m_EditorClassIdentifier: 
   StatToModify: {fileID: 11400000, guid: cad31dd790cac63409b9e8436d77a1d2, type: 2}
   Value: 5
