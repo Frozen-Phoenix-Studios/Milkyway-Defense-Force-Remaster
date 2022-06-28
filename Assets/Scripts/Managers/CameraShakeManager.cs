@@ -36,7 +36,6 @@ public class CameraShakeManager : MonoBehaviour
 
     private void GenerateSmallShake()
     {
-        Debug.Log("Triggering small shake");
 
         _source.m_ImpulseDefinition.m_TimeEnvelope.m_AttackTime = _shortShakeLength;
         _source.m_ImpulseDefinition.m_FrequencyGain = _smallShakeFrequency;
@@ -46,7 +45,6 @@ public class CameraShakeManager : MonoBehaviour
 
     private void GenerateLargeShake()
     {
-        Debug.Log("Triggering large shake");
 
         _source.m_ImpulseDefinition.m_TimeEnvelope.m_AttackTime = _shortShakeLength;
         _source.m_ImpulseDefinition.m_FrequencyGain = _largeShakeFrequency;
@@ -56,7 +54,6 @@ public class CameraShakeManager : MonoBehaviour
 
     private void GenerateLongShake()
     {
-        Debug.Log("Triggering long shake");
         _source.m_ImpulseDefinition.m_TimeEnvelope.m_AttackTime = _longShakeLength;
         _source.m_ImpulseDefinition.m_FrequencyGain = _largeShakeFrequency;
 

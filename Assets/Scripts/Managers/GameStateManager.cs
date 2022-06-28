@@ -7,6 +7,7 @@ public class GameStateManager : MonoSingleton<GameStateManager>
 {
     public static event Action<bool> OnGameOver;
     public static event Action OnGameStart;
+    
     [field: SerializeField] public bool IsGameOver { get; private set; } = false;
 
 
