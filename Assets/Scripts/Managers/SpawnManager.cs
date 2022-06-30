@@ -128,8 +128,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         Debug.Log($"Increasing wave index to {_currentWave}");
     }
 
-    private void SpawnEnemy() =>
-        Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
+    private void SpawnEnemy() => Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
 
     private void OnGameOver(bool state) => _gameOver = state;
 }

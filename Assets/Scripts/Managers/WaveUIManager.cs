@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -11,32 +12,29 @@ public class WaveUIManager : MonoBehaviour
     [SerializeField] private GameObject _nextWaveCountDownContainer;
     [SerializeField] private GameObject _waveTextContainer;
 
-    private void Start()
+    private void OnEnable()
     {
+        Debug.Log("Starting wave ui manager");
         _waveTextContainer.SetActive(false);
         _currentWave = 0;
         SpawnManager.Instance.OnWaveComplete += StartCountdown;
-        GameStateManager.OnGameStart += ShowWaveText;
-    }
-
-    private void ShowWaveText()
-    {
-        _currentWave++;
-        _waveIndexText.SetText($"{_currentWave}");
-        _waveTextContainer.SetActive(true);
-    }
+        GameStateManager.OnGameStart += ShowWaveText;    }
 
     private void OnDisable()
     {
         SpawnManager.Instance.OnWaveComplete -= StartCountdown;
         GameStateManager.OnGameStart -= ShowWaveText;
-
     }
 
-    private void StartCountdown(float length)
+    private void ShowWaveText()
     {
-        StartCoroutine(StartCountDown(length));
+        Debug.Log("wave ui manager heard event");
+        _currentWave++;
+        _waveIndexText.SetText($"{_currentWave}");
+        _waveTextContainer.SetActive(true);
     }
+
+    private void StartCountdown(float length) => StartCoroutine(StartCountDown(length));
 
 
     private IEnumerator StartCountDown(float countDownLength)
