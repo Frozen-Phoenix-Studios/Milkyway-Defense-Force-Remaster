@@ -14,7 +14,9 @@ public abstract class Attack : MonoBehaviour, IDoDamage, IHaveAudio
     [SerializeField] protected string[] _damageableTags;
     
     [Header("Audio")]
-    [SerializeField] private AudioClip _audioClip;
+    [SerializeField] protected AudioClip _audioClip;
+    [SerializeField] protected AudioType _audioType;
+    public AudioType AudioType => _audioType;
     
     private protected bool _destroyedFromCollision;
     

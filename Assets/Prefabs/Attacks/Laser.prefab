@@ -106,6 +106,7 @@ MonoBehaviour:
   _damageableTags:
   - Enemy
   _audioClip: {fileID: 8300000, guid: 75676f361bdfeaf41a46623e95df3dbc, type: 3}
+  _audioType: 1
 --- !u!114 &-1220252556952620086
 MonoBehaviour:
   m_ObjectHideFlags: 0

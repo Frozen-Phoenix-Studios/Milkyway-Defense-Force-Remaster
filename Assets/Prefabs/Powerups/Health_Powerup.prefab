@@ -106,6 +106,7 @@ MonoBehaviour:
   _attachable: {fileID: 0}
   _startingSpeed: 3
   _tractorSpeed: 5
+  _audioType: 6
   _audioClip: {fileID: 8300000, guid: 7360788f070e405438bf106d34ab51f1, type: 3}
 --- !u!61 &5057321546823777856
 BoxCollider2D:

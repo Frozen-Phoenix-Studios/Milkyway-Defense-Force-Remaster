@@ -13,6 +13,8 @@ public class Powerup : MonoBehaviour, IHaveAudio
     [SerializeField] private float _tractorSpeed = 3.0f;
     private float _currentSpeed;
 
+    [SerializeField] private AudioType _audioType;
+    public AudioType AudioType => _audioType;
     [SerializeField] private AudioClip _audioClip;
     public AudioClip AudioClip => _audioClip;
     private static bool _tractorBeamActive = false;

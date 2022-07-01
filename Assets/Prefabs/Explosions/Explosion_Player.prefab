@@ -118,5 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50835d9f82a32f1429cbd043f3857e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isEnemy: 0
+  _movementSpeed: 8
+  _damageAmount: 1
+  _damageableTags: []
   _audioClip: {fileID: 8300000, guid: a885c043fab7e46438bba03ba9dab6bc, type: 3}
+  _audioType: 4
+  IsShrapnel: 0
   IsEnemy: 1

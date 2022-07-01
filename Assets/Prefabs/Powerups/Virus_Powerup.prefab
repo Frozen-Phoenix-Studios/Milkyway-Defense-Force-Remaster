@@ -107,6 +107,7 @@ MonoBehaviour:
   _attachable: {fileID: 0}
   _startingSpeed: 3
   _tractorSpeed: 7
+  _audioType: 6
   _audioClip: {fileID: 8300000, guid: ef4359ad3e7f63d40b08a0847368fcd3, type: 3}
 --- !u!114 &4950275468692037161
 MonoBehaviour:

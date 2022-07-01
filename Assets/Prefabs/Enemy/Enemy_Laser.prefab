@@ -100,13 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e148afe430cce7408fb2703136723e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isEnemy: 1
   _movementSpeed: 8
   _damageAmount: 1
   _damageableTags:
   - Player
-  _isEnemy: 1
-  <AudioClip>k__BackingField: {fileID: 8300000, guid: 58917527d72e6da4a90c06e3af6a2950,
-    type: 3}
+  _audioClip: {fileID: 8300000, guid: 58917527d72e6da4a90c06e3af6a2950, type: 3}
+  _audioType: 5
 --- !u!114 &2891818634053312008
 MonoBehaviour:
   m_ObjectHideFlags: 0

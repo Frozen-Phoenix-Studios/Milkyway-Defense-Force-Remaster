@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MagneticFieldManager : MonoBehaviour, IAttachable, IHaveAudio
@@ -11,6 +10,10 @@ public class MagneticFieldManager : MonoBehaviour, IAttachable, IHaveAudio
     private Animator _anim;
 
     [SerializeField] AudioClip _audioClip;
+
+    [SerializeField] private AudioType _audioType;
+    public AudioType AudioType => _audioType;
+
     public AudioClip AudioClip => _audioClip;
     private static readonly int MagneticFieldActive = Animator.StringToHash("MagneticFieldActive");
     private float _currentMagneticFieldCharge;

@@ -104,6 +104,7 @@ MonoBehaviour:
   _damageableTags:
   - Enemy
   _audioClip: {fileID: 8300000, guid: 5ded00c79a373644b82bede3250cf764, type: 3}
+  _audioType: 1
   _shrapnelPrefab: {fileID: 8841627294494009513, guid: 71452213b4a660e4ca3e2280aa7685df,
     type: 3}
 --- !u!58 &526917681

@@ -23,6 +23,9 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
 
     private Coroutine _chargeRoutine;
     private Coroutine _boostRoutine;
+    
+    [SerializeField] private AudioType _audioType;
+    public AudioType AudioType => _audioType;
     public AudioClip AudioClip => _audioClip;
 
     private void OnEnable()

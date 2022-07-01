@@ -12,6 +12,8 @@ public class AmmoManager : MonoBehaviour, IHaveAudio, ISuppliable
     private Coroutine _flashRoutine;
     [SerializeField] private AudioClip _noAmmoAudioClip;
     public AudioClip AudioClip => _noAmmoAudioClip;
+    [SerializeField] private AudioType _audioType;
+    public AudioType AudioType => _audioType;
 
     private void Start()
     {
@@ -49,6 +51,8 @@ public class AmmoManager : MonoBehaviour, IHaveAudio, ISuppliable
 
     public void PlayAudio()
     {
-        AudioManager.Instance.PlayPlayerAttackAudioClip(this);
+        // AudioManager.Instance.PlayPlayerAttackAudioClip(this);
+        AudioManager.Instance.PlayAudio(this);
     }
+
 }
