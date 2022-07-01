@@ -58,7 +58,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     
     public void PlayPlayerEffectAudioClip(IHaveAudio audio)
     {
-        if (audio == null)
+        if (audio == null || _playerEffectsAudioSource.isPlaying)
             return;
         
         _playerEffectsAudioSource.clip = audio.AudioClip;

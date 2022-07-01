@@ -103,8 +103,10 @@ MonoBehaviour:
   _powerupType: 1
   _statModifier: {fileID: 11400000, guid: a5cf84c57dbb7e34e990645b0bd0580d, type: 2}
   _weaponPowerup: {fileID: 0}
+  _supplyBox: {fileID: 0}
   _attachable: {fileID: 0}
-  _speed: 3
+  _startingSpeed: 3
+  _tractorSpeed: 5
   _audioClip: {fileID: 8300000, guid: 5ee343246919d2b4bba63ae629e95494, type: 3}
 --- !u!114 &8461859466201657479
 MonoBehaviour:

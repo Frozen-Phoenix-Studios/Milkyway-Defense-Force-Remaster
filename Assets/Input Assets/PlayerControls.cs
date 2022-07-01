@@ -62,6 +62,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MagneticFieldManager"",
+                    ""type"": ""Button"",
+                    ""id"": ""a56bbc2b-8be8-4f6e-b0d2-df74de0db195"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +172,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Turbo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49653362-fe6e-4ee0-a4a7-128681567e12"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MagneticFieldManager"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -203,6 +223,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
         m_Player_Turbo = m_Player.FindAction("Turbo", throwIfNotFound: true);
+        m_Player_MagneticField = m_Player.FindAction("MagneticFieldManager", throwIfNotFound: true);
         // GameManager
         m_GameManager = asset.FindActionMap("GameManager", throwIfNotFound: true);
         m_GameManager_Restart = m_GameManager.FindAction("Restart", throwIfNotFound: true);
@@ -269,6 +290,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Quit;
     private readonly InputAction m_Player_Turbo;
+    private readonly InputAction m_Player_MagneticField;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -277,6 +299,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Quit => m_Wrapper.m_Player_Quit;
         public InputAction @Turbo => m_Wrapper.m_Player_Turbo;
+        public InputAction @MagneticField => m_Wrapper.m_Player_MagneticField;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -298,6 +321,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Turbo.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurbo;
                 @Turbo.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurbo;
                 @Turbo.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurbo;
+                @MagneticField.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMagneticField;
+                @MagneticField.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMagneticField;
+                @MagneticField.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMagneticField;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -314,6 +340,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Turbo.started += instance.OnTurbo;
                 @Turbo.performed += instance.OnTurbo;
                 @Turbo.canceled += instance.OnTurbo;
+                @MagneticField.started += instance.OnMagneticField;
+                @MagneticField.performed += instance.OnMagneticField;
+                @MagneticField.canceled += instance.OnMagneticField;
             }
         }
     }
@@ -357,6 +386,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
         void OnTurbo(InputAction.CallbackContext context);
+        void OnMagneticField(InputAction.CallbackContext context);
     }
     public interface IGameManagerActions
     {

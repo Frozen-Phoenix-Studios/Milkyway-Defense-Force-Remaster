@@ -6,6 +6,7 @@ public class PlayerInputReader : MonoBehaviour
 {
     public static event Action OnRestartPressed;
     public static event Action<bool> OnTurboChanged;
+    public static event Action<bool> OnMagneticFieldStatusChanged;
     public static event Action OnQuitPressed;
     private PlayerControls _controls;
 
@@ -29,6 +30,15 @@ public class PlayerInputReader : MonoBehaviour
         {
             OnTurboChanged?.Invoke(false);
         };
+
+        _controls.Player.MagneticField.started += delegate(InputAction.CallbackContext context)
+        {
+            OnMagneticFieldStatusChanged?.Invoke(true);
+        };
+        _controls.Player.MagneticField.canceled += delegate(InputAction.CallbackContext context)
+        {
+            OnMagneticFieldStatusChanged?.Invoke(false);
+        };        
 
     }
 

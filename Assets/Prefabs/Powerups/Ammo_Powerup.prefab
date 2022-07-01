@@ -104,7 +104,8 @@ MonoBehaviour:
   _weaponPowerup: {fileID: 0}
   _supplyBox: {fileID: 11400000, guid: 2e544fa3dad8a5d4e8a64a7150aa07cc, type: 2}
   _attachable: {fileID: 0}
-  _speed: 3
+  _startingSpeed: 3
+  _tractorSpeed: 5
   _audioClip: {fileID: 8300000, guid: 0bf23fc9b5bd08f47bd6dbaa4e7a931a, type: 3}
 --- !u!95 &5424719725222715083
 Animator:

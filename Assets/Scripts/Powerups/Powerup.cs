@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Powerup : MonoBehaviour, IHaveAudio
 {
@@ -8,15 +9,41 @@ public class Powerup : MonoBehaviour, IHaveAudio
     [SerializeField] private WeaponSO _weaponPowerup;
     [SerializeField] private SupplyBox _supplyBox;
     [SerializeField] public Attachable _attachable;
-    [SerializeField] private float _speed = 3.0f;
+    [FormerlySerializedAs("_speed")] [SerializeField] private float _startingSpeed = 3.0f;
+    [SerializeField] private float _tractorSpeed = 3.0f;
+    private float _currentSpeed;
+
     [SerializeField] private AudioClip _audioClip;
     public AudioClip AudioClip => _audioClip;
+    private static bool _tractorBeamActive = false;
+    private static GameObject _target;
 
- 
+    private void OnEnable()
+    {
+        _currentSpeed = _startingSpeed;
+        MagneticFieldManager.OnTractorBeamActive += HandleTractorBeamChanged;
+    }
+
+    private void HandleTractorBeamChanged(bool isActive, GameObject tractorBeam)
+    {
+        _tractorBeamActive = isActive;
+        _target = tractorBeam;
+        _currentSpeed = _tractorBeamActive ? _tractorSpeed : _startingSpeed;
+    }
+
+
     private void Update()
     {
-        transform.Translate(Vector3.down * _speed * Time.deltaTime );
+        if (_tractorBeamActive)
+        {
+            transform.position =
+                Vector3.MoveTowards(transform.position, _target.transform.position, Time.deltaTime * _currentSpeed);
+            return;
+        }
+
+        transform.Translate(Vector3.down * _currentSpeed * Time.deltaTime);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -28,6 +55,7 @@ public class Powerup : MonoBehaviour, IHaveAudio
             }
         }
     }
+
     private void GivePowerup(Player player)
     {
         switch (_powerupType)
@@ -47,7 +75,7 @@ public class Powerup : MonoBehaviour, IHaveAudio
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        
+
         DestroySelf();
     }
 
@@ -74,7 +102,7 @@ public class Powerup : MonoBehaviour, IHaveAudio
         if (_weaponPowerup != null)
             player.ChangeWeapon(_weaponPowerup);
     }
-    
+
     public void PlayAudio()
     {
         AudioManager.Instance.PlayPowerupAudioClip(this);
@@ -85,6 +113,4 @@ public class Powerup : MonoBehaviour, IHaveAudio
         PlayAudio();
         Destroy(gameObject);
     }
-
-
 }
