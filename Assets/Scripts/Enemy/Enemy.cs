@@ -18,19 +18,24 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
 
     public int DamageAmount => _damageAmount;
 
-    [SerializeField] private string[] _damageableTags;
+    [SerializeField] [Tooltip("An array of all the tags this object can damage")] private string[] _damageableTags;
     public string[] DamageableTags => _damageableTags;
 
     [SerializeField] private float _respawnHeight;
     [SerializeField] private Explosion _explosion;
     public float RespawnHeight => _respawnHeight;
     public Explosion Explosion => _explosion;
+    
+    private void OnEnable() => GameStateManager.OnGameOver += HandleGameOverStatusChange;
 
+    private void OnDisable() => GameStateManager.OnGameOver -= HandleGameOverStatusChange;
 
-    private void Start()
+    private void HandleGameOverStatusChange(bool isGameOver)
     {
-        AssignComponents();
+        if (isGameOver) Destroy(gameObject);
     }
+
+    private void Start() => AssignComponents();
 
     private void AssignComponents()
     {
@@ -91,7 +96,13 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
     {
         Instantiate(_explosion, transform.position, Quaternion.identity);
         OnPointsAction?.Invoke(PointsOnAction);
-        Destroy(gameObject);
+
+        GameObject objectToDestroy = transform.gameObject;
+        
+        if (transform.parent != null && transform.parent.CompareTag("Container"))
+            objectToDestroy = transform.parent.gameObject;
+
+        Destroy(objectToDestroy);
     }
 
     public void DealDamage(int damageAmount, ITakeDamage damageable)

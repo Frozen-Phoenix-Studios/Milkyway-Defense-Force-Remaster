@@ -28,8 +28,18 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
     public int PointsOnAction { get; } = -50;
     public static event Action<int> OnPointsAction;
 
+    private void Awake() => CacheComponents();
 
-    private void Awake()
+    private void OnEnable() => GameStateManager.OnGameOver += HandleGameOverStatusChange;
+
+    private void OnDisable() => GameStateManager.OnGameOver -= HandleGameOverStatusChange;
+
+    private void HandleGameOverStatusChange(bool isGameOver)
+    {
+        if (isGameOver) Die();
+    }
+
+    private void CacheComponents()
     {
         _input = GetComponent<PlayerInputReader>();
         if (_input == null)
@@ -54,56 +64,33 @@ public class Player : MonoBehaviour, IChangePoints, IExplode
         _supplyManager = GetComponent<SupplyManager>();
         if (_supplyManager == null)
             Debug.LogError("The player recharge manager is null");
-        
+
         _shakeTrigger = GetComponent<CameraShakeTrigger>();
         if (_shakeTrigger == null)
             Debug.LogError("The camera shake trigger is null");
     }
 
-    void Start()
-    {
-        _playerMovement.Teleport(_startingPosition);
-    }
+    void Start() => _playerMovement.Teleport(_startingPosition);
 
     [ContextMenu("Change Weapon")]
-    public void ChangeWeapon()
-    {
-        _playerAttack.ChangeWeapon(_debugWeapon);
-    }
+    public void ChangeWeapon() => _playerAttack.ChangeWeapon(_debugWeapon);
 
-    public void ChangeWeapon(WeaponSO weapon)
-    {
-        _playerAttack.ChangeWeapon(weapon);
-    }
+    public void ChangeWeapon(WeaponSO weapon) => _playerAttack.ChangeWeapon(weapon);
 
 
-    public void AdjustStat(StatModifier statModifier)
-    {
-        _playerStatManager.AddTemporaryStatModifier(statModifier);
-    }
+    public void AdjustStat(StatModifier statModifier) => _playerStatManager.AddTemporaryStatModifier(statModifier);
 
-    public void AddAttachable(Attachable attachable)
-    {
-        _componentManager.Attach(attachable);
-    }
+    public void AddAttachable(Attachable attachable) => _componentManager.Attach(attachable);
 
-    public void Resupply(SupplyBox supplyBox)
-    {
-        _supplyManager.Resupply(supplyBox);
-    }
-    
-    
-    public void Die()
-    {
-        OnPointsAction?.Invoke(PointsOnAction);
-        GameStateManager.Instance.SetGameOver();
-        Destroy(gameObject);
-    }
+    public void Resupply(SupplyBox supplyBox) => _supplyManager.Resupply(supplyBox);
+
+    private void Die() => Destroy(gameObject);
 
     public void Explode()
     {
         Instantiate(_explosion, transform.position, Quaternion.identity);
         _shakeTrigger.TriggerLargeShake();
-        Die();
+        OnPointsAction?.Invoke(PointsOnAction);
+        GameStateManager.Instance.SetGameOver();
     }
 }

@@ -10,11 +10,10 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     [Header("Enemy Values")] [SerializeField]
     private Transform _enemyContainer;
-
-    [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private GameObject[] _enemyArray;
     [SerializeField] private float _enemySpawnFrequency = 3.0f;
     private WaitForSeconds _enemySpawnDelay;
-
+    private Coroutine _enemySpawnRoutine;
 
     [Header("Spawn Range values")] [SerializeField]
     private float _xMinSpawn = -8.0f;
@@ -35,10 +34,11 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     [Header("Powerup Values")] [SerializeField]
     private Transform _powerupContainer;
-
     [SerializeField] private Powerup[] _powerupArray;
     [SerializeField] private float _powerupSpawnFrequency = 3.0f;
     private WaitForSeconds _powerupSpawnDelay;
+    private Coroutine _powerupSpawnRoutine;
+
 
     private bool _gameOver;
     private int _index;
@@ -65,8 +65,8 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private void StartSpawning()
     {
-        StartCoroutine(EnemySpawnRoutine());
-        StartCoroutine(PowerupSpawnRoutine());
+        _enemySpawnRoutine = StartCoroutine(EnemySpawnRoutine());
+        _powerupSpawnRoutine =  StartCoroutine(PowerupSpawnRoutine());
     }
 
     private IEnumerator PowerupSpawnRoutine()
@@ -128,7 +128,15 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         Debug.Log($"Increasing wave index to {_currentWave}");
     }
 
-    private void SpawnEnemy() => Instantiate(_enemyPrefab, CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
+    private void SpawnEnemy() => Instantiate(PickRandomEnemy(), CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
 
-    private void OnGameOver(bool state) => _gameOver = state;
+    private GameObject PickRandomEnemy() => _enemyArray[Random.Range(0, _enemyArray.Length)];
+
+    private void OnGameOver(bool state)
+    {
+        _gameOver = state;
+        if (!_gameOver) return;
+        StopCoroutine(_enemySpawnRoutine);
+        StopCoroutine(_powerupSpawnRoutine);
+    }
 }

@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 9029419669810648745}
   - component: {fileID: 1056049951}
   - component: {fileID: -1691320621503941378}
+  - component: {fileID: 7375723816639792088}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -197,6 +198,7 @@ MonoBehaviour:
   _yMinRange: -9.5
   _yMaxRange: 9.5
   _xBounded: 1
+  _yBounded: 1
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:
@@ -318,3 +320,33 @@ MonoBehaviour:
   _weapon: {fileID: 11400000, guid: 3cbd17dfc79bedb4989c0349a7963129, type: 2}
   _attackSpeedMax: 9
   _attackSpeedMin: 1
+--- !u!114 &7375723816639792088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179869211832550910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709c6fc05da44de392fb56ba11e672bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xMinRange: -10
+  _xMaxRange: 10
+  _yMinRange: 5
+  _yMaxRange: 5
+  _xBounded: 0
+  _yBounded: 0
+  _actionOnYMinBoundBreach:
+    m_PersistentCalls:
+      m_Calls: []
+  _actionOnYMaxBoundBreach:
+    m_PersistentCalls:
+      m_Calls: []
+  _actionOnXMinBoundBreach:
+    m_PersistentCalls:
+      m_Calls: []
+  _actionOnXMaxBoundBreach:
+    m_PersistentCalls:
+      m_Calls: []

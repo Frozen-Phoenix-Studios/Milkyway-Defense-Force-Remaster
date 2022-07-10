@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
         if (_health <= 0)
         {
             _player.ShakeTrigger.TriggerLongShake();
-            _player.Die();
+            _player.Explode();
             return;
         }
         _player.ShakeTrigger.TriggerSmallShake();

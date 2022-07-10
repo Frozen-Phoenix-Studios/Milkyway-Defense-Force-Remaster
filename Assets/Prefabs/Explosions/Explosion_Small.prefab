@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50835d9f82a32f1429cbd043f3857e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isEnemy: 0
+  _isEnemy: 1
   _movementSpeed: 8
   _damageAmount: 1
   _damageableTags: []

@@ -1,8 +1,9 @@
+using System;
+
 public interface IMove
 {
-    MovementConstraints Constraints { get; }
+    MovementConstraints MovementConstraints { get; }
     float MoveSpeed { get; }
     bool CanMove { get; }
     void Move();
-    void StopMovement();
 }

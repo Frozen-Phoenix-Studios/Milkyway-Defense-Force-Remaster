@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
     private Enemy _enemy;
+    private IExplode _explodable;
     [SerializeField] private int _health = 1;
     [SerializeField] private float _invulnerabilityPeriod;
 
@@ -16,11 +17,13 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 
     private void Start()
     {
-        _enemy = GetComponent<Enemy>();
-        if (_enemy == null)
-        {
-            Debug.LogError("Enemy is null on the enemy health script");
-        }
+        _explodable = GetComponent<IExplode>();
+        if (_explodable == null)
+            Debug.LogError("Explodable is null on the enemy health script");
+        
+        // _enemy = GetComponent<Enemy>();
+        // if (_enemy == null)
+        //     Debug.LogError("Enemy is null on the enemy health script");
     }
 
     public void TakeDamage(int damageAmount)
@@ -33,7 +36,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         _health -= damageAmount;
         if (_health <= 0)
         {
-            _enemy.Explode();
+            _explodable.Explode();
         }
     }
 
