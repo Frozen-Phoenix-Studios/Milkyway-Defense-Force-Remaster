@@ -16,14 +16,12 @@ public class PositionAttackCondition: MonoBehaviour, IAttackCondition
         
         if (_constraints == null)
         {
-            Debug.LogError($"The attack constraints are null on the {transform.name}");
         }
     }
 
 
     public bool CheckIsMet()
     {
-        Debug.Log($"Condition {this} is met {_isPrimed}");
 
         return _isPrimed;
     }
@@ -31,7 +29,6 @@ public class PositionAttackCondition: MonoBehaviour, IAttackCondition
     public bool PrimeCondition()
     {
         _isPrimed = _constraints.IsWithinConstraints();
-        Debug.Log($"Condition {this} is primed {_isPrimed}");
 
         return _isPrimed;
     }

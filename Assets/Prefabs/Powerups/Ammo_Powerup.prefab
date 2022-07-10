@@ -104,6 +104,7 @@ MonoBehaviour:
   _weaponPowerup: {fileID: 0}
   _supplyBox: {fileID: 11400000, guid: 2e544fa3dad8a5d4e8a64a7150aa07cc, type: 2}
   _attachable: {fileID: 0}
+  _spawnChance: 1
   _startingSpeed: 3
   _tractorSpeed: 5
   _audioType: 6

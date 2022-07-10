@@ -5,7 +5,6 @@ public class AttackConstraints : Constraint
     public bool IsWithinConstraints()
     {
         var position = transform.position;
-        Debug.Log($"Position {position}");
         if
         (
             position.y >= YMinRange

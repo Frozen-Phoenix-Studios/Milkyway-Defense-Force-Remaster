@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy Minelayer  Movement Speed
   m_EditorClassIdentifier: 
   StatName: 
-  BaseValue: 2
+  BaseValue: 0.5
   AllModifiers: []

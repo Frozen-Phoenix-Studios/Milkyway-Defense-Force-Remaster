@@ -15,7 +15,6 @@ public class EnemyCircleMovement : EnemyMovementBase
 
     public override void Move()
     {
-        
         float x = MathF.Cos(Time.time * _frequency) * _amplitude;
         float y = MathF.Sin(Time.time * _frequency) * _amplitude;
         float z = 0;

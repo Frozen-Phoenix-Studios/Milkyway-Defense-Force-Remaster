@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0fec7a36beb834b9501d593e9f01b8, type: 3}
   m_Name: Laser
   m_EditorClassIdentifier: 
-  AttackPrefab: {fileID: 2568844736161184462, guid: bb7363a5ffa35df42a52d03fd2490241, type: 3}
+  AttackPrefab: {fileID: 2568844736161184462, guid: bb7363a5ffa35df42a52d03fd2490241,
+    type: 3}
   ActiveTime: 0
-  Offset: 1.05
+  OffsetX: 0
+  OffsetY: 1

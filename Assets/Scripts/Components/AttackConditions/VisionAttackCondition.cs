@@ -37,14 +37,12 @@ public class VisionAttackCondition : MonoBehaviour, IAttackCondition
             if (_damageables.Any(damageableTag => hitInfo.collider.CompareTag(damageableTag)))
             {
                 _isPrimed = true;
-                Debug.Log($"Condition {this} is met {_isPrimed}");
 
                 return _isPrimed;
             }
         }
 
         _isPrimed = false;
-        Debug.Log($"Condition {this} is met {_isPrimed}");
         return _isPrimed;
 
     }

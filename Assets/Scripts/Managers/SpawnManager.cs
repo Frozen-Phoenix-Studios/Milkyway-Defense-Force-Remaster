@@ -10,7 +10,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     [Header("Enemy Values")] [SerializeField]
     private Transform _enemyContainer;
-    [SerializeField] private GameObject[] _enemyArray;
+    [SerializeField] private Enemy[] _enemyArray;
     [SerializeField] private float _enemySpawnFrequency = 3.0f;
     private WaitForSeconds _enemySpawnDelay;
     private Coroutine _enemySpawnRoutine;
@@ -74,17 +74,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         yield return _powerupSpawnDelay;
         while (!_gameOver)
         {
-            Instantiate(ReturnRandomPowerup().gameObject, CreateRandomSpawnPoint(), Quaternion.identity,
+            Instantiate(PickRandomPowerup(), CreateRandomSpawnPoint(), Quaternion.identity,
                 _powerupContainer);
             yield return _powerupSpawnDelay;
         }
     }
 
-    private Powerup ReturnRandomPowerup()
-    {
-        var max = _powerupArray.Length;
-        return _powerupArray[Random.Range(0, max)];
-    }
+
 
     private Vector2 CreateRandomSpawnPoint()
     {
@@ -100,7 +96,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         {
             for (int i = 0; i < _enemiesPerWave; i++)
             {
-                Debug.Log($"Index: {i+1}/{_enemiesPerWave}");
                 SpawnEnemy();
                 yield return _enemySpawnDelay;
             }
@@ -110,7 +105,6 @@ public class SpawnManager : MonoSingleton<SpawnManager>
 
     private IEnumerator PrepNextWaveRoutine()
     {
-        Debug.Log("Prepping next wave");
         SetWaveComplete();
         yield return new WaitForSeconds(_delayBetweenWaves);
         IncreaseWaveIndex();
@@ -125,12 +119,29 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     {
         _enemiesPerWave += _extraEnemiesPerWave;
         _currentWave++;
-        Debug.Log($"Increasing wave index to {_currentWave}");
     }
 
     private void SpawnEnemy() => Instantiate(PickRandomEnemy(), CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
 
-    private GameObject PickRandomEnemy() => _enemyArray[Random.Range(0, _enemyArray.Length)];
+
+    private Enemy PickRandomEnemy()
+    {
+        var randomChance = Random.Range(0f, 1f);
+        var randomNumber  = Random.Range(0, _enemyArray.Length);
+        var enemy = _enemyArray[randomNumber];
+        Debug.Log($"Random chance {randomChance}, Random number {randomNumber}, spawn chance {enemy.SpawnChance}");
+        
+        return enemy.SpawnChance >= randomChance ? enemy : PickRandomEnemy();
+    }
+
+    private Powerup PickRandomPowerup()
+    {
+        var randomChance = Random.Range(0f, 1f);
+        var randomNumber  = Random.Range(0, _powerupArray.Length);
+        var powerup = _powerupArray[randomNumber];
+        
+        return powerup.SpawnChance >= randomChance ? powerup : PickRandomPowerup();
+    }
 
     private void OnGameOver(bool state)
     {

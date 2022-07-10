@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &17708524
 Rigidbody2D:
   serializedVersion: 4
@@ -4004,75 +4004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &909488050
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.037
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.814
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 358884800510692543, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7984531141893528252, guid: 2a4f7328d05ea1b45b010b46b422d8b3,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy_Sniper_Laser
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2a4f7328d05ea1b45b010b46b422d8b3, type: 3}
 --- !u!1 &944519187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,75 +4680,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &1224454792
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 911063928709985537, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_Name
-      value: Sniper_Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992442643939890197, guid: e83df3ae1eb28224d9b33080dd3efce7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e83df3ae1eb28224d9b33080dd3efce7, type: 3}
 --- !u!1 &1234714806
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,9 +6698,9 @@ MonoBehaviour:
   _destroyOnLoad: 1
   _enemyContainer: {fileID: 732361647}
   _enemyArray:
-  - {fileID: 8179869211832550910, guid: b97175fa4a649bc4fa021c808f8c56ea, type: 3}
-  - {fileID: 7998725992720799874, guid: f91133cb0f87a6c428da562cff6115e9, type: 3}
-  - {fileID: 911063928709985537, guid: e83df3ae1eb28224d9b33080dd3efce7, type: 3}
+  - {fileID: 2875507988728590199, guid: b97175fa4a649bc4fa021c808f8c56ea, type: 3}
+  - {fileID: 5076571368326432602, guid: f91133cb0f87a6c428da562cff6115e9, type: 3}
+  - {fileID: 6541442323836182408, guid: e83df3ae1eb28224d9b33080dd3efce7, type: 3}
   _enemySpawnFrequency: 0.5
   _xMinSpawn: -8
   _xMaxSpawn: 8

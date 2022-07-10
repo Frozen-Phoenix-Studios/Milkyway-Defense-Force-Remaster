@@ -24,7 +24,6 @@ public class TimedAttackCondition : MonoBehaviour, IAttackCondition
         if (Time.time >= _conditionValueToPass)
         {
             _isPrimed = true;
-            Debug.Log($"Condition {this} is primed");
 
         }
         return _isPrimed;
@@ -36,11 +35,9 @@ public class TimedAttackCondition : MonoBehaviour, IAttackCondition
         {
             _conditionValueToPass = Time.time + GetCoolDownValue();
             _isPrimed = false;
-            Debug.Log($"Condition {this} is met");
 
             return true;
         }
-        Debug.Log($"Condition {this} is NOT met");
 
         return false;
     }

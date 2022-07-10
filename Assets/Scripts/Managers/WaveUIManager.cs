@@ -14,7 +14,6 @@ public class WaveUIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Starting wave ui manager");
         _waveTextContainer.SetActive(false);
         _currentWave = 0;
         SpawnManager.Instance.OnWaveComplete += StartCountdown;
@@ -28,7 +27,6 @@ public class WaveUIManager : MonoBehaviour
 
     private void ShowWaveText()
     {
-        Debug.Log("wave ui manager heard event");
         _currentWave++;
         _waveIndexText.SetText($"{_currentWave}");
         _waveTextContainer.SetActive(true);

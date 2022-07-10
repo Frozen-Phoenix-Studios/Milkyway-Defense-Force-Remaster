@@ -161,6 +161,7 @@ MonoBehaviour:
   _respawnHeight: 9.5
   _explosion: {fileID: 8510113964889313078, guid: af03605aa203ceb41bbcb2e4d44ac035,
     type: 3}
+  _spawnChance: 1
 --- !u!114 &-6281953946812486688
 MonoBehaviour:
   m_ObjectHideFlags: 0

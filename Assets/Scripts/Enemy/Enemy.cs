@@ -3,10 +3,10 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(IMove))]
-public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
+public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode, ISpawnable
 {
     public static event Action<int> OnPointsAction;
-    
+
     private IMove _movement;
     private MovementConstraints _constraints;
     private EnemyHealth _health;
@@ -18,14 +18,19 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
 
     public int DamageAmount => _damageAmount;
 
-    [SerializeField] [Tooltip("An array of all the tags this object can damage")] private string[] _damageableTags;
+    [SerializeField] [Tooltip("An array of all the tags this object can damage")]
+    private string[] _damageableTags;
+
     public string[] DamageableTags => _damageableTags;
 
     [SerializeField] private float _respawnHeight;
     [SerializeField] private Explosion _explosion;
+    [SerializeField] [Range(0f, 1f)] private float _spawnChance;
+    public float SpawnChance => _spawnChance;
+
     public float RespawnHeight => _respawnHeight;
     public Explosion Explosion => _explosion;
-    
+
     private void OnEnable() => GameStateManager.OnGameOver += HandleGameOverStatusChange;
 
     private void OnDisable() => GameStateManager.OnGameOver -= HandleGameOverStatusChange;
@@ -39,18 +44,22 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
 
     private void AssignComponents()
     {
-        _constraints = GetComponent<MovementConstraints>();
-        if (_constraints == null)
-            Debug.LogError("The movement constraints are null on the enemy");
-
         _movement = GetComponent<IMove>();
         if (_movement == null)
             Debug.LogError("The movement is null on the enemy");
 
+        if (transform.CompareTag("Container"))
+            return;
+
+        _constraints = GetComponent<MovementConstraints>();
+        if (_constraints == null)
+            Debug.LogError("The movement constraints are null on the enemy");
+
+
         _health = GetComponent<EnemyHealth>();
         if (_health == null)
             Debug.LogError("The enemy health is null on the enemy");
-        
+
         _collider = GetComponent<Collider2D>();
         if (_collider == null)
             Debug.LogError("The enemy collider is null on");
@@ -72,6 +81,7 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
                     if (_health.TakesCollisionDamage)
                         _health.TakeDamage(_health.CollisionDamage);
                 }
+
                 return;
             }
         }
@@ -94,7 +104,7 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
         OnPointsAction?.Invoke(PointsOnAction);
 
         GameObject objectToDestroy = transform.gameObject;
-        
+
         if (transform.parent != null && transform.parent.CompareTag("Container"))
             objectToDestroy = transform.parent.gameObject;
 
@@ -105,6 +115,4 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
     {
         damageable.TakeDamage(damageAmount);
     }
-
-
 }

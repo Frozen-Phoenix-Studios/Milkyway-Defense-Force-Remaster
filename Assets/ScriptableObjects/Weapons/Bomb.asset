@@ -15,4 +15,5 @@ MonoBehaviour:
   AttackPrefab: {fileID: 5011989260748113872, guid: ace34c7ddce63a547a7f13803cb3ad87,
     type: 3}
   ActiveTime: 5
-  Offset: 1.36
+  OffsetX: 0
+  OffsetY: 1.158

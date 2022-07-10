@@ -1,7 +1,5 @@
-using System;
 using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class EnemyWeaponComponent : MonoBehaviour
 {
@@ -22,10 +20,7 @@ public class EnemyWeaponComponent : MonoBehaviour
             Debug.LogError($"The movement constraints are null on the {transform.name}");
 
         _attackConditions = GetComponents<IAttackCondition>();
-        foreach (var condition in _attackConditions)
-        {
-            Debug.Log($"Condition {condition} was found");
-        }
+
     }
 
     private void Update()
