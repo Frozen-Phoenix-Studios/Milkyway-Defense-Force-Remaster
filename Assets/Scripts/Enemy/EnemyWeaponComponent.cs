@@ -52,6 +52,7 @@ public class EnemyWeaponComponent : MonoBehaviour
         }
         var position = transform.position;
         position.y += _weapon.OffsetY;
+        position.x += _weapon.OffsetX;
 
         Instantiate(_weapon.AttackPrefab, position, Quaternion.identity);
     }
