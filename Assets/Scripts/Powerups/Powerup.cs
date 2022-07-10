@@ -1,24 +1,39 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Powerup : MonoBehaviour, IHaveAudio
+public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
 {
     [SerializeField] private PowerupType _powerupType;
     [SerializeField] private StatModifier _statModifier;
     [SerializeField] private WeaponSO _weaponPowerup;
     [SerializeField] private SupplyBox _supplyBox;
     [SerializeField] public Attachable _attachable;
-    [FormerlySerializedAs("_speed")] [SerializeField] private float _startingSpeed = 3.0f;
+
+    [FormerlySerializedAs("_speed")] [SerializeField]
+    private float _startingSpeed = 3.0f;
+
     [SerializeField] private float _tractorSpeed = 3.0f;
     private float _currentSpeed;
 
     [SerializeField] private AudioType _audioType;
     public AudioType AudioType => _audioType;
     [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private bool _takesCollisionDamage;
+    private int _health;
+    private float _invulnerabilityLength;
+    private int _collisionDamage;
+    [SerializeField] private Explosion _explosion;
     public AudioClip AudioClip => _audioClip;
     private static bool _tractorBeamActive = false;
     private static GameObject _target;
+    
+    public bool TakesCollisionDamage => _takesCollisionDamage;
+    public Explosion Explosion => _explosion;
+    public int Health => _health;
+    public float InvulnerabilityLength => _invulnerabilityLength;
+    public int CollisionDamage => _collisionDamage;
 
     private void OnEnable()
     {
@@ -113,6 +128,19 @@ public class Powerup : MonoBehaviour, IHaveAudio
     public void DestroySelf()
     {
         PlayAudio();
+        Destroy(gameObject);
+    }
+
+
+    public void TakeDamage(int damageAmount)
+    {
+        Explode();
+    }
+
+
+    public void Explode()
+    {
+        Instantiate(_explosion, transform.position, quaternion.identity);
         Destroy(gameObject);
     }
 }

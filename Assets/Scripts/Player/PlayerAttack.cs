@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
     private void Shoot()
     {
         var position = transform.position;
-        position.y += _weapon.Offset;
+        position.y += _weapon.OffsetY;
 
         Instantiate(_weapon.AttackPrefab, position, Quaternion.identity);
     }

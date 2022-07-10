@@ -51,10 +51,6 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
         if (_health == null)
             Debug.LogError("The enemy health is null on the enemy");
         
-        _animationController = GetComponent<EnemyAnimationController>();
-        if (_animationController == null)
-            Debug.LogError("The enemy animation controller null on the enemy");         
-        
         _collider = GetComponent<Collider2D>();
         if (_collider == null)
             Debug.LogError("The enemy collider is null on");

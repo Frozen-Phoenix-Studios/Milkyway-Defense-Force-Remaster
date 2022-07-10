@@ -151,6 +151,8 @@ GameObject:
   - component: {fileID: 795962003905483508}
   - component: {fileID: 7173367665048317205}
   - component: {fileID: 795962005211565998}
+  - component: {fileID: 8644487910053711812}
+  - component: {fileID: 3124260904824858984}
   m_Layer: 0
   m_Name: MineLayer_Enemy_Model
   m_TagString: Enemy
@@ -446,3 +448,32 @@ MonoBehaviour:
   _moveDirection: {x: 0, y: -1, z: 0}
   _frequency: 2
   _amplitude: 2
+--- !u!114 &8644487910053711812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831392345202334741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eeeef600b4c46698b37d1cc1bcecdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coolDownIsRandom: 1
+  _coolDown: 0
+  _coolDownMin: 8
+  _coolDownMax: 10
+--- !u!114 &3124260904824858984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831392345202334741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83ba89e34814db4b7ca5e97facf21fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints: {fileID: 795962005211565999}

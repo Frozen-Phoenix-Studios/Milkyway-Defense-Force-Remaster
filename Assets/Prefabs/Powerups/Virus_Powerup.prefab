@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8436527509101087559}
   m_Layer: 0
   m_Name: Virus_Powerup
-  m_TagString: Untagged
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,9 @@ MonoBehaviour:
   _tractorSpeed: 7
   _audioType: 6
   _audioClip: {fileID: 8300000, guid: ef4359ad3e7f63d40b08a0847368fcd3, type: 3}
+  _takesCollisionDamage: 0
+  _explosion: {fileID: 8510113964889313078, guid: af03605aa203ceb41bbcb2e4d44ac035,
+    type: 3}
 --- !u!114 &4950275468692037161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +129,7 @@ MonoBehaviour:
   _yMinRange: -9
   _yMaxRange: 9
   _xBounded: 1
+  _yBounded: 1
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:

@@ -1,6 +1,6 @@
-using Unity.Mathematics;
+using System;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class EnemyWeaponComponent : MonoBehaviour
@@ -12,13 +12,20 @@ public class EnemyWeaponComponent : MonoBehaviour
     [SerializeField] private float _attackSpeedMin = 5.0f;
     private float _nextAttackTime;
     private AttackConstraints _constraints;
+    private IAttackCondition[] _attackConditions;
 
     private void Start()
     {
-        _nextAttackTime = Time.time + GetRandomAttackCoolDown();
+        // _nextAttackTime = Time.time + GetRandomAttackCoolDown();
         _constraints = GetComponent<AttackConstraints>();
         if (_constraints == null)
             Debug.LogError($"The movement constraints are null on the {transform.name}");
+
+        _attackConditions = GetComponents<IAttackCondition>();
+        foreach (var condition in _attackConditions)
+        {
+            Debug.Log($"Condition {condition} was found");
+        }
     }
 
     private void Update()
@@ -27,32 +34,27 @@ public class EnemyWeaponComponent : MonoBehaviour
             Attack();
     }
 
-    private bool CanAttack() => Time.time >= _nextAttackTime && InAttackPosition();
-
-    private bool InAttackPosition()
+    private bool CanAttack()
     {
-        var position = transform.position;
-        Debug.Log($"{position}");
+        foreach (var condition in _attackConditions)
+        {
+            if (condition.PrimeCondition() == false) return false;
+        }
 
-        if
-        (
-            position.y >= _constraints.YMinRange
-            && position.y <= _constraints.YMaxRange
-            && position.x >= _constraints.XMinRange
-            && position.x <= _constraints.XMaxRange
-        ) 
-            return true;
-        return false;
+        return true;
     }
-
-    private float GetRandomAttackCoolDown() => Random.Range(_attackSpeedMin, _attackSpeedMax);
 
     private void Attack()
     {
+        if (_attackConditions.Any(condition => condition.CheckIsMet() == false))
+        {
+            return;
+        }
         var position = transform.position;
-        position.y += _weapon.Offset;
+        position.y += _weapon.OffsetY;
 
         Instantiate(_weapon.AttackPrefab, position, Quaternion.identity);
-        _nextAttackTime = Time.time + GetRandomAttackCoolDown();
     }
+
+    // private float GetRandomAttackCoolDown() => Random.Range(_attackSpeedMin, _attackSpeedMax);
 }

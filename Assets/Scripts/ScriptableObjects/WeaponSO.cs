@@ -6,7 +6,8 @@ public class WeaponSO : ScriptableObject
 {
     public GameObject AttackPrefab;
     public float ActiveTime;
-    public float Offset;
+    public float OffsetX;
+    public float OffsetY;
 }
 
 
