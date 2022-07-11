@@ -466,8 +466,8 @@ MonoBehaviour:
   _movementSpeed: {fileID: 11400000, guid: 2df1fb49fb7434f49a7f390b4614dd83, type: 2}
   _currentMoveSpeed: 4
   _moveDirection: {x: 0, y: -1, z: 0}
-  _frequency: 3
-  _amplitude: 1.5
+  _frequency: 1.5
+  _amplitude: 3
 --- !u!114 &8644487910053711812
 MonoBehaviour:
   m_ObjectHideFlags: 0

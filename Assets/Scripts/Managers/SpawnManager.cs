@@ -129,7 +129,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         var randomChance = Random.Range(0f, 1f);
         var randomNumber  = Random.Range(0, _enemyArray.Length);
         var enemy = _enemyArray[randomNumber];
-        Debug.Log($"Random chance {randomChance}, Random number {randomNumber}, spawn chance {enemy.SpawnChance}");
+        // Debug.Log($"Random chance {randomChance}, Random number {randomNumber}, spawn chance {enemy.SpawnChance}");
         
         return enemy.SpawnChance >= randomChance ? enemy : PickRandomEnemy();
     }

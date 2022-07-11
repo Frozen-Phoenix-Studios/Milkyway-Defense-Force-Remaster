@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4864170618848298067}
   - component: {fileID: 6541442323836182408}
   - component: {fileID: 6193012774187162399}
-  - component: {fileID: 9016211285948917383}
+  - component: {fileID: -248002813035955228}
   - component: {fileID: 9016211285948917381}
   - component: {fileID: 9016211287057841120}
   - component: {fileID: 1560282584392909825}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911063928709985537}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.254, y: 7.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   _actionOnXMinBoundBreach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9016211285948917383}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
         m_MethodName: BlockLeft
         m_Mode: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
   _actionOnXMaxBoundBreach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9016211285948917383}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
         m_MethodName: BlockRight
         m_Mode: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9016211285948917383
+--- !u!114 &-248002813035955228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,11 +239,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 911063928709985537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209048d20a2804e439a657a3e66db357, type: 3}
+  m_Script: {fileID: 11500000, guid: 4329fdb3877fc3a498e252230550797d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: {fileID: 11400000, guid: 2df1fb49fb7434f49a7f390b4614dd83, type: 2}
-  _currentMoveSpeed: 4
+  _movementSpeed: {fileID: 11400000, guid: 8e83a483788365b4ca76532df91780f7, type: 2}
+  _currentMoveSpeed: 3
   _moveDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &9016211285948917381
 MonoBehaviour:
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allStats:
-  - {fileID: 11400000, guid: 2df1fb49fb7434f49a7f390b4614dd83, type: 2}
+  - {fileID: 11400000, guid: 8e83a483788365b4ca76532df91780f7, type: 2}
 --- !u!114 &1560282584392909825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _xMinRange: -10
   _xMaxRange: 10
-  _yMinRange: -5
+  _yMinRange: 0
   _yMaxRange: 5
   _xBounded: 0
   _yBounded: 0
@@ -366,4 +366,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _raycastDirection: {x: 0, y: -1}
-  _raycastDistance: 5
+  _raycastDistance: 8

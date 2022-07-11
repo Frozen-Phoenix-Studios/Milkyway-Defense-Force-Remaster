@@ -10,10 +10,10 @@ public class DownwardsMover : EnemyMovementBase
         _respawnHeight = MovementConstraints.YMaxRange;
     }
 
-    private void Update()
-    {
-        Move();
-    }
+    // private void Update()
+    // {
+    //     Move();
+    // }
 
     public override void Move()
     {

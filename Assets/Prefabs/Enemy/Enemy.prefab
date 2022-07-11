@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209048d20a2804e439a657a3e66db357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: {fileID: 11400000, guid: 2df1fb49fb7434f49a7f390b4614dd83, type: 2}
-  _currentMoveSpeed: 4
+  _movementSpeed: {fileID: 11400000, guid: a260624db56f34644bdf8f76e2ac37e7, type: 2}
+  _currentMoveSpeed: 3
   _moveDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &1893422714
 MonoBehaviour:
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allStats:
-  - {fileID: 11400000, guid: 2df1fb49fb7434f49a7f390b4614dd83, type: 2}
+  - {fileID: 11400000, guid: a260624db56f34644bdf8f76e2ac37e7, type: 2}
 --- !u!114 &-1691320621503941378
 MonoBehaviour:
   m_ObjectHideFlags: 0
