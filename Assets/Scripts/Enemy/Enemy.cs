@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
             if (other.CompareTag(damageableTag))
             {
                 var damageable = other.GetComponent<ITakeDamage>();
-                if (damageable != null)
+                if (damageable != null && damageable.TakesCollisionDamage)
                 {
                     DealDamage(_damageAmount, damageable);
                     if (_health.TakesCollisionDamage)

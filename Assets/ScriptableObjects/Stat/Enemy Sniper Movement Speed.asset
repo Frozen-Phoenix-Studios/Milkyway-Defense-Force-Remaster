@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy Sniper Movement Speed
   m_EditorClassIdentifier: 
   StatName: 
-  BaseValue: 0.5
+  BaseValue: 2
   AllModifiers: []

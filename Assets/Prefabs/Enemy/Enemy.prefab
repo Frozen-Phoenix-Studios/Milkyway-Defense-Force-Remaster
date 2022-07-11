@@ -303,7 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _xMinRange: -10
   _xMaxRange: 10
-  _yMinRange: 5
+  _yMinRange: -5
   _yMaxRange: 5
   _xBounded: 0
   _yBounded: 0

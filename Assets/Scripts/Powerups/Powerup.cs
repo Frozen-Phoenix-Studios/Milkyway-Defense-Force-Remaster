@@ -1,7 +1,6 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
 {

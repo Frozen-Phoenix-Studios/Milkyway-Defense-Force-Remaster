@@ -148,7 +148,7 @@ MonoBehaviour:
   _damageableTags: []
   _respawnHeight: 0
   _explosion: {fileID: 0}
-  _spawnChance: 0.45
+  _spawnChance: 0.25
 --- !u!1 &8831392345202334741
 GameObject:
   m_ObjectHideFlags: 0
