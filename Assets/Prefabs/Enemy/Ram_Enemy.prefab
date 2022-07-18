@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4114450470670268197}
   - component: {fileID: 4114450470670268196}
   - component: {fileID: 4114450470670268251}
-  - component: {fileID: 4114450470670268250}
+  - component: {fileID: 5291005876759556250}
   - component: {fileID: 4114450470670268248}
   - component: {fileID: 4114450470670268199}
   - component: {fileID: 4114450470670268193}
@@ -141,7 +141,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13889265, y: 0.9152876}
   m_EdgeRadius: 0
---- !u!114 &4114450470670268250
+--- !u!114 &5291005876759556250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,17 +150,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4114450470670268255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00da49593c394f468a896c4f62b06e5, type: 3}
+  m_Script: {fileID: 11500000, guid: db633f7deb5fed747a22f1e0ddfa3951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 1
-  <PointsOnAction>k__BackingField: 10
+  _pointsOnAction: 10
   _damageableTags:
   - Player
   _respawnHeight: 9.5
   _explosion: {fileID: 8510113964889313078, guid: af03605aa203ceb41bbcb2e4d44ac035,
     type: 3}
-  _spawnChance: 0.5
+  _spawnChance: 0.3
 --- !u!114 &4114450470670268248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4114450470670268250}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
         m_MethodName: Respawn
         m_Mode: 1

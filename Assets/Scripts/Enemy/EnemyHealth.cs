@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, ITakeDamage
 {
-    private Enemy _enemy;
+    private EnemyBase _enemy;
     private IExplode _explodable;
     [SerializeField] private int _health = 1;
     [SerializeField] private float _invulnerabilityPeriod;

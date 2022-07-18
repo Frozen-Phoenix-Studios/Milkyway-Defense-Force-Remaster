@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7998725992720799903}
   - component: {fileID: 7998725992720799873}
   - component: {fileID: 7998725992720799902}
-  - component: {fileID: 5076571368326432602}
+  - component: {fileID: 114339271532052902}
   m_Layer: 0
   m_Name: MineLayer_Enemy
   m_TagString: Container
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allStats:
   - {fileID: 11400000, guid: 2df1fb49fb7434f49a7f390b4614dd83, type: 2}
---- !u!114 &5076571368326432602
+--- !u!114 &114339271532052902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,15 +140,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7998725992720799874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00da49593c394f468a896c4f62b06e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e8913e4cff4486ebbdca49d63af682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 1
-  <PointsOnAction>k__BackingField: 10
+  _pointsOnAction: 10
   _damageableTags: []
-  _respawnHeight: 0
+  _respawnHeight: 9.5
   _explosion: {fileID: 0}
-  _spawnChance: 0.25
+  _spawnChance: 0.345
 --- !u!1 &8831392345202334741
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 795962003800956112}
   - component: {fileID: 4368549670337088572}
   - component: {fileID: 3867138753153068359}
-  - component: {fileID: 3236971570899170972}
+  - component: {fileID: 3200204889843162387}
   - component: {fileID: 2583332336391975435}
   - component: {fileID: 795962005211565999}
   - component: {fileID: 795962005211565969}
@@ -313,7 +313,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8204999, y: 1.2280254}
   m_EdgeRadius: 0
---- !u!114 &3236971570899170972
+--- !u!114 &3200204889843162387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,11 +322,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8831392345202334741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00da49593c394f468a896c4f62b06e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e8913e4cff4486ebbdca49d63af682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 1
-  <PointsOnAction>k__BackingField: 10
+  _pointsOnAction: 10
   _damageableTags:
   - Player
   _respawnHeight: 9.5
@@ -449,8 +449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 11400000, guid: d78a232ae6fe8354185386b33ad8a344, type: 2}
-  _attackSpeedMax: 10
-  _attackSpeedMin: 5
 --- !u!114 &795962005211565998
 MonoBehaviour:
   m_ObjectHideFlags: 0

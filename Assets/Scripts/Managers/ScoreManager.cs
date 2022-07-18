@@ -9,13 +9,13 @@ public class ScoreManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Enemy.OnPointsAction += UpdateScore;
+        EnemyBase.OnPointsAction += UpdateScore;
         Player.OnPointsAction += UpdateScore;
     }
 
     private void OnDisable()
     {
-        Enemy.OnPointsAction -= UpdateScore;
+        EnemyBase.OnPointsAction -= UpdateScore;
         Player.OnPointsAction -= UpdateScore;
     }
 

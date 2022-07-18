@@ -11,7 +11,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
     [Header("Enemy Values")] [SerializeField]
     private Transform _enemyContainer;
 
-    [SerializeField] private Enemy[] _enemyArray;
+    [SerializeField] private EnemyBase[] _enemyArray;
     [SerializeField] private float _enemySpawnFrequency = 3.0f;
     private WaitForSeconds _enemySpawnDelay;
     private Coroutine _enemySpawnRoutine;
@@ -127,7 +127,7 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         Instantiate(PickRandomEnemy(), CreateRandomSpawnPoint(), Quaternion.identity, _enemyContainer);
 
 
-    private Enemy PickRandomEnemy()
+    private EnemyBase PickRandomEnemy()
     {
         var randomChance = Random.Range(0f, 1f);
         var randomNumber = Random.Range(0, _enemyArray.Length);
