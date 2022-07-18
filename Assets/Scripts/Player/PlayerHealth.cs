@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
     [field: SerializeField] public bool TakesCollisionDamage { get; private set; }
     public int Health => _health;
 
-    [SerializeField] private float _invulnerabilityPeriod;
+    private float _invulnerabilityPeriod;
     [SerializeField] private float _invulnerabilityLength = 0.25f;
     public float InvulnerabilityLength => _invulnerabilityLength;
 
@@ -51,6 +51,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, ISuppliable
             _player.Explode();
             return;
         }
+
         _player.ShakeTrigger.TriggerSmallShake();
     }
 

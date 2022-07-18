@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0fec7a36beb834b9501d593e9f01b8, type: 3}
-  m_Name: Enemy Laser
+  m_Script: {fileID: 11500000, guid: 43dc5b14b65748fd89e9d703c0e5a8b9, type: 3}
+  m_Name: Enemy Ram Charge Speed
   m_EditorClassIdentifier: 
-  AttackPrefab: {fileID: 7248360905313687308, guid: 0c53c616a5f19024ea5fa6ee9f78ba51,
-    type: 3}
-  ActiveTime: 0
-  OffsetX: 0
-  OffsetY: -1
+  StatName: Enemy Ram Charge Speed
+  BaseValue: 5
+  AllModifiers: []

@@ -149,5 +149,5 @@ public class MagneticFieldManager : MonoBehaviour, IAttachable, IHaveAudio
     private bool ChargeDelayServed() => Time.time > _chargingDelayEnd;
 
 
-    public void PlayAudio() => AudioManager.Instance.PlayPlayerEffectAudioClip(this);
+    public void PlayAudio() => AudioManager.Instance.PlayAudio(this);
 }

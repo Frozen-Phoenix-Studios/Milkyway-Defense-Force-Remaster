@@ -4,17 +4,12 @@ using UnityEngine;
 public class EnemyWeaponComponent : MonoBehaviour
 {
     [SerializeField] private WeaponSO _weapon;
-
-    [SerializeField] private float _attackSpeedMax = 10.0f;
-
-    [SerializeField] private float _attackSpeedMin = 5.0f;
     private float _nextAttackTime;
     private AttackConstraints _constraints;
     private IAttackCondition[] _attackConditions;
 
     private void Start()
     {
-        // _nextAttackTime = Time.time + GetRandomAttackCoolDown();
         _constraints = GetComponent<AttackConstraints>();
         if (_constraints == null)
             Debug.LogError($"The movement constraints are null on the {transform.name}");
@@ -52,5 +47,4 @@ public class EnemyWeaponComponent : MonoBehaviour
         Instantiate(_weapon.AttackPrefab, position, Quaternion.identity);
     }
 
-    // private float GetRandomAttackCoolDown() => Random.Range(_attackSpeedMin, _attackSpeedMax);
 }

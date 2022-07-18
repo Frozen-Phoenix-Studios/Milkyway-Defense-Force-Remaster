@@ -4,6 +4,8 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 {
     private SpriteRenderer _spriteRenderer;
     private Player _player;
+
+    [SerializeField] private bool _isEnemy;
     [field: SerializeField] public int Health { get; private set; }
 
     [SerializeField] private float _invulnerabilityLength = 0.25f;
@@ -16,7 +18,7 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 
     public bool TakesCollisionDamage { get; } = true;
     public int CollisionDamage { get; }
-    
+
     [SerializeField] private Color _fullStrengthColour = Color.white;
     [SerializeField] private Color _midStrengthColour = Color.green;
     [SerializeField] private Color _lowStrengthColour = Color.red;
@@ -36,11 +38,12 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
 
     private void Start()
     {
+        SetActiveState(IsActive);
+        if(_isEnemy)
+            return;
         _player = GetComponentInParent<Player>();
         if (_player == null)
             Debug.LogError("The player is null");
-
-        SetActiveState(IsActive);
     }
 
     public void Attach()
@@ -64,14 +67,18 @@ public class Shield : MonoBehaviour, IAttachable, ITakeDamage
         _invulnerabilityPeriod = Time.time + _invulnerabilityLength;
         Health -= damageAmount;
         SetColour();
-        
+
         if (Health < 1)
         {
-            Detach();
+            Invoke(nameof(Detach), _invulnerabilityLength);
+            if(_isEnemy)
+                return;
             _player.ShakeTrigger.TriggerLongShake();
         }
         else
         {
+            if(_isEnemy)
+                return;
             _player.ShakeTrigger.TriggerSmallShake();
         }
     }

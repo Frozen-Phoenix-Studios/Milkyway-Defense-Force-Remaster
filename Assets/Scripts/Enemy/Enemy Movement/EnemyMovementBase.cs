@@ -5,7 +5,7 @@ public abstract class EnemyMovementBase : MonoBehaviour, IMove
     [SerializeField] private Stat _movementSpeed;
     [SerializeField] private float _currentMoveSpeed = 4.0f;
     [SerializeField] protected Vector3 _moveDirection;
-    private StatManager _statManager;
+    protected StatManager _statManager;
     public MovementConstraints MovementConstraints { get; private set; }
     public float MoveSpeed => _currentMoveSpeed;
     public bool CanMove { get; protected set; }

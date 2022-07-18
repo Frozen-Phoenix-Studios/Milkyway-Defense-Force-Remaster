@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dc5b14b65748fd89e9d703c0e5a8b9, type: 3}
   m_Name: Enemy Base Movement Speed
   m_EditorClassIdentifier: 
-  StatName: 
+  StatName: Enemy Base Movement Speed
   BaseValue: 4
   AllModifiers: []

@@ -46,57 +46,5 @@ public class AudioManager : MonoSingleton<AudioManager>
         source.Play();
     }
 
-    public void PlayPlayerAttackAudioClip(IHaveAudio audio)
-    {
-        if (audio == null)
-            return;
-        
-        _playerAttackAudioSource.clip = audio.AudioClip;
-        _playerAttackAudioSource.Play();
-    }
-
-    public void PlayEnemyExplosionAudioClip(IHaveAudio audio)
-    {
-        if (audio == null)
-            return;
-        
-        _enemyExplosionAudioSource.clip = audio.AudioClip;
-        _enemyExplosionAudioSource.Play();
-    }
-
-    public void PlayPlayerExplosionAudioClip(IHaveAudio audio)
-    {
-        if (audio == null)
-            return;
-        
-        _playerExplosionAudioSource.clip = audio.AudioClip;
-        _playerExplosionAudioSource.Play();
-    }
-
-    public void PlayPowerupAudioClip(IHaveAudio audio)
-    {
-        if (audio == null)
-            return;
-        
-        _powerupAudioSource.clip = audio.AudioClip;
-        _powerupAudioSource.Play();
-    }
-
-    public void EnemyAttackAudioClip(IHaveAudio audio)
-    {
-        if (audio == null)
-            return;
-        
-        _enemyAttackAudioSource.clip = audio.AudioClip;
-        _enemyAttackAudioSource.Play();
-    }
     
-    public void PlayPlayerEffectAudioClip(IHaveAudio audio)
-    {
-        if (audio == null || _playerEffectsAudioSource.isPlaying)
-            return;
-        
-        _playerEffectsAudioSource.clip = audio.AudioClip;
-        _playerEffectsAudioSource.Play();
-    }
 }

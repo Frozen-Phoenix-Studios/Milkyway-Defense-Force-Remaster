@@ -28,4 +28,5 @@ public class ComponentManager : MonoBehaviour
                 component.Attach();
         }
     }
+
 }

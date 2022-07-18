@@ -89,7 +89,6 @@ public class Enemy : MonoBehaviour, IRespawn, IDoDamage, IChangePoints, IExplode
 
     public void Respawn() => transform.position = CreateNewRandomSpawnPosition();
 
-
     private Vector3 CreateNewRandomSpawnPosition()
     {
         var x = Random.Range(_constraints.XMinRange, _constraints.XMaxRange);

@@ -124,7 +124,7 @@ public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
 
     public void PlayAudio()
     {
-        AudioManager.Instance.PlayPowerupAudioClip(this);
+        AudioManager.Instance.PlayAudio(this);
     }
 
     public void DestroySelf()

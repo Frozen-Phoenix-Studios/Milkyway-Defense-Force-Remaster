@@ -43,11 +43,11 @@ public abstract class Attack : MonoBehaviour, IDoDamage, IHaveAudio
     {
         if (_isEnemy)
         {
-            AudioManager.Instance.EnemyAttackAudioClip(this);
+            AudioManager.Instance.PlayAudio(this);
         }
         else
         {
-            AudioManager.Instance.PlayPlayerAttackAudioClip(this);
+            AudioManager.Instance.PlayAudio(this);
         }
     }
     

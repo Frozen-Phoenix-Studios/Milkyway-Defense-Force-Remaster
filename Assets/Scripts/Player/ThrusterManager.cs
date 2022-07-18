@@ -160,6 +160,6 @@ public class ThrusterManager : MonoBehaviour, IHaveAudio
 
     public void PlayAudio()
     {
-        AudioManager.Instance.PlayPlayerEffectAudioClip(this);
+        AudioManager.Instance.PlayAudio(this);
     }
 }

@@ -16,6 +16,7 @@ public class PositionAttackCondition: MonoBehaviour, IAttackCondition
         
         if (_constraints == null)
         {
+            Debug.LogError($"The attack constraints are null on the {transform.name}");
         }
     }
 
