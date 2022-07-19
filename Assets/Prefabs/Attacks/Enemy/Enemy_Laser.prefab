@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4119261329107874156}
   m_Layer: 0
   m_Name: Enemy_Laser
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   _yMinRange: -8
   _yMaxRange: 8
   _xBounded: 1
+  _yBounded: 1
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:

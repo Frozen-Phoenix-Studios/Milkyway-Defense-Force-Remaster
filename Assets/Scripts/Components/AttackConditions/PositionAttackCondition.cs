@@ -20,15 +20,13 @@ public class PositionAttackCondition: MonoBehaviour, IAttackCondition
     }
 
 
-    public bool CheckIsMet()
+    public void Activate()
     {
-        return PrimeCondition();
+        PrimeCondition();
     }
 
-    public bool PrimeCondition()
+    public void PrimeCondition()
     {
         _isPrimed = _constraints.IsWithinConstraints();
-
-        return _isPrimed;
     }
 }

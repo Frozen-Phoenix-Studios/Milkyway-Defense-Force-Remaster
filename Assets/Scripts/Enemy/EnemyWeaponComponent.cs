@@ -23,9 +23,7 @@ public class EnemyWeaponComponent : MonoBehaviour
 
     private void Attack()
     {
-      
         Instantiate(_weapon.AttackPrefab, CalculateAttackOffset(), Quaternion.identity);
-
     }
 
     private Vector3 CalculateAttackOffset()

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9087007447867169966}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   _yMinRange: -6
   _yMaxRange: 6
   _xBounded: 0
+  _yBounded: 1
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:

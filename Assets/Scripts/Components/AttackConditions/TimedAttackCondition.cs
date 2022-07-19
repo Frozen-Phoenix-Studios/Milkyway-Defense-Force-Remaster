@@ -4,34 +4,41 @@ using Random = UnityEngine.Random;
 
 public class TimedAttackCondition : MonoBehaviour, IAttackCondition
 {
-    private float _conditionValueToPass;
+    [SerializeField] private float _currentTime;
+    [SerializeField] private float _nextAttackTime;
     [SerializeField] private bool _coolDownIsRandom = true;
-    private float _coolDownTimer;
+    [SerializeField][Tooltip("Used if cool downs are not random")]private float _coolDownTimer;
     [SerializeField] private float _coolDownMin;
     [SerializeField] private float _coolDownMax;
-    private bool _isPrimed;
+    [SerializeField] private bool _isPrimed;
     public bool IsPrimed => _isPrimed;
 
-    private void Start() => _conditionValueToPass = GetCoolDownValue();
+
+    private void Start() => _nextAttackTime = GetCoolDownValue();
+
+    private void Update()
+    {
+        _currentTime = Time.time;
+    }
 
     private float GetCoolDownValue() => _coolDownIsRandom ? Random.Range(_coolDownMin, _coolDownMax) : _coolDownTimer;
 
 
-    public bool PrimeCondition()
+    public void PrimeCondition()
     {
-        _isPrimed = Time.time > _conditionValueToPass;
-        return _isPrimed;
+        _isPrimed = Time.time > _nextAttackTime;
     }
 
-    public bool CheckIsMet()
+    public void Activate()
     {
         if (_isPrimed)
         {
-            _conditionValueToPass = Time.time + GetCoolDownValue();
             _isPrimed = false;
-            return true;
+            _nextAttackTime = Time.time + GetCoolDownValue();
         }
-
-        return false;
     }
+
+    
+    
+
 }

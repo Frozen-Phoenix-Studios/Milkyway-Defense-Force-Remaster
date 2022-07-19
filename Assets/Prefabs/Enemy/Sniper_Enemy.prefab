@@ -19,10 +19,10 @@ GameObject:
   - component: {fileID: 9016211287057841120}
   - component: {fileID: 1560282584392909825}
   - component: {fileID: -8695608229446471298}
-  - component: {fileID: 31231889729398355}
   - component: {fileID: 1980407216099111719}
   - component: {fileID: 31231889729398356}
   - component: {fileID: 31231889729398357}
+  - component: {fileID: 31231889729398355}
   m_Layer: 0
   m_Name: Sniper_Enemy
   m_TagString: Enemy
@@ -160,10 +160,11 @@ MonoBehaviour:
   _pointsOnAction: 10
   _damageableTags:
   - Player
+  - Powerup
   _respawnHeight: 9.5
   _explosion: {fileID: 8510113964889313078, guid: af03605aa203ceb41bbcb2e4d44ac035,
     type: 3}
-  _spawnChance: 0.35
+  _spawnChance: 0.75
 --- !u!114 &6193012774187162399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,22 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7523975f444a06b02e88876b9e6972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &31231889729398355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911063928709985537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eeeef600b4c46698b37d1cc1bcecdc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coolDownIsRandom: 1
-  _coolDown: 0
-  _coolDownMin: 4
-  _coolDownMax: 10
 --- !u!114 &1980407216099111719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _constraints: {fileID: 1980407216099111719}
+  _isPrimed: 0
 --- !u!114 &31231889729398357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,3 +363,23 @@ MonoBehaviour:
     m_Bits: 64
   _raycastDirection: {x: 0, y: -1}
   _raycastDistance: 8
+  _isPrimed: 0
+--- !u!114 &31231889729398355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911063928709985537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eeeef600b4c46698b37d1cc1bcecdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentTime: 0
+  _nextAttackTime: 0
+  _coolDownIsRandom: 1
+  _coolDownTimer: 0
+  _coolDownMin: 4
+  _coolDownMax: 10
+  _isPrimed: 0

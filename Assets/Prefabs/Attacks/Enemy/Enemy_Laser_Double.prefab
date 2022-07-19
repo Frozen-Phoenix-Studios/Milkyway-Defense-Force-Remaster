@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5536686202414193141}
   m_Layer: 0
   m_Name: Enemy_Laser_Double
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +168,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7248360905313687308, guid: 0c53c616a5f19024ea5fa6ee9f78ba51,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c53c616a5f19024ea5fa6ee9f78ba51, type: 3}
 --- !u!4 &1532503211920160731 stripped
@@ -297,6 +302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248360905313687308, guid: 0c53c616a5f19024ea5fa6ee9f78ba51,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c53c616a5f19024ea5fa6ee9f78ba51, type: 3}

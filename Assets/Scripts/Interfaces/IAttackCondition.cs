@@ -1,6 +1,8 @@
 ﻿public interface IAttackCondition
 {
     public bool IsPrimed { get; }
-    public bool CheckIsMet();
-    public bool PrimeCondition();
+    public void Activate();
+    public void PrimeCondition();
+    
+    //todo: un-expose primed bool
 }

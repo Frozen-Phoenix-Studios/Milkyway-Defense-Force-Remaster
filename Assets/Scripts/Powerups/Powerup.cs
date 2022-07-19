@@ -12,9 +12,8 @@ public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
 
     [SerializeField] [Range(0f, 1f)] private float _spawnChance;
     public float SpawnChance => _spawnChance;
-    
-    [SerializeField]
-    private float _startingSpeed = 3.0f;
+
+    [SerializeField] private float _startingSpeed = 3.0f;
 
     [SerializeField] private float _tractorSpeed = 3.0f;
     private float _currentSpeed;
@@ -30,7 +29,7 @@ public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
     public AudioClip AudioClip => _audioClip;
     private static bool _tractorBeamActive = false;
     private static GameObject _target;
-    
+
     public bool TakesCollisionDamage => _takesCollisionDamage;
     public Explosion Explosion => _explosion;
     public int Health => _health;
@@ -94,6 +93,7 @@ public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
         PlayAudio();
         DestroySelf();
     }
@@ -129,7 +129,6 @@ public class Powerup : MonoBehaviour, IHaveAudio, ITakeDamage, IExplode
 
     public void DestroySelf()
     {
-       
         Destroy(gameObject);
     }
 

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 
 public class VisionAttackCondition : MonoBehaviour, IAttackCondition
@@ -8,7 +9,7 @@ public class VisionAttackCondition : MonoBehaviour, IAttackCondition
     [SerializeField] private LayerMask LayerMask;
     [SerializeField] private Vector2 _raycastDirection;
     [SerializeField] private float _raycastDistance;
-    private bool _isPrimed;
+    [SerializeField] private bool _isPrimed;
     public bool IsPrimed => _isPrimed;
 
 
@@ -19,17 +20,20 @@ public class VisionAttackCondition : MonoBehaviour, IAttackCondition
     }
 
 
-    public bool CheckIsMet()
+    public void Activate()
     {
         if (_isPrimed)
-        {
             _isPrimed = false;
-            return true;
-        }
-        return _isPrimed;
+
     }
 
-    public bool PrimeCondition()
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, _raycastDirection * _raycastDistance); 
+    }
+
+    public void PrimeCondition()
     {
         var hitInfo = Physics2D.Raycast(transform.position, _raycastDirection, _raycastDistance, LayerMask);
         if (hitInfo.collider != null)
@@ -37,13 +41,11 @@ public class VisionAttackCondition : MonoBehaviour, IAttackCondition
             if (_damageables.Any(damageableTag => hitInfo.collider.CompareTag(damageableTag)))
             {
                 _isPrimed = true;
-
-                return _isPrimed;
+                return;
             }
         }
 
         _isPrimed = false;
-        return _isPrimed;
 
     }
 }

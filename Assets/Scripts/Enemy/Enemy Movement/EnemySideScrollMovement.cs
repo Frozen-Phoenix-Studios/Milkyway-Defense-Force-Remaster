@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,7 +26,7 @@ public class EnemySideScrollMovement : EnemyMovementBase
         var position = transform.position;
         var direction = _moveDirection * MoveSpeed * Time.deltaTime;
         transform.Translate(direction);
-        if (position.y < _attackHeight)
+        if (position.y <= _attackHeight)
         {
             _moveDirection.y = 0;
             _targetHeightReached = true;

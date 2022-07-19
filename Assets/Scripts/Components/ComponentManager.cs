@@ -29,4 +29,13 @@ public class ComponentManager : MonoBehaviour
         }
     }
 
+    public void Detach(Attachable attachable)
+    {
+        var component = _attachablesList.First(t => t.name == attachable.AttachablePrefab.name).GetComponent<IAttachable>();
+        if (component != null)
+        {
+            component.Detach();
+        }
+    }
+
 }
