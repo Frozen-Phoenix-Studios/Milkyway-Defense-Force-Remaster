@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1893422714}
   - component: {fileID: 1056049951}
   - component: {fileID: -1691320621503941378}
+  - component: {fileID: -5832935081076492678}
   - component: {fileID: 7375723816639792088}
   - component: {fileID: -5499718516474646355}
   - component: {fileID: -1309899636393920042}
@@ -183,8 +184,8 @@ MonoBehaviour:
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+      - m_Target: {fileID: 6015420554234243755}
+        m_TargetAssemblyTypeName: EnemyBase, Assembly-CSharp
         m_MethodName: Respawn
         m_Mode: 1
         m_Arguments:
@@ -287,6 +288,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 11400000, guid: 3cbd17dfc79bedb4989c0349a7963129, type: 2}
+--- !u!114 &-5832935081076492678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179869211832550910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7523975f444a06b02e88876b9e6972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7375723816639792088
 MonoBehaviour:
   m_ObjectHideFlags: 0

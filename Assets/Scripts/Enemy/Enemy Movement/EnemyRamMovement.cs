@@ -1,130 +1,129 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyRamMovement : EnemyMovementBase, IHaveAudio
 {
+    public Action<bool> OnTargetReached;
+    [Header("Stats")]
     [SerializeField] private Stat _chargeSpeedStat;
     [SerializeField] private float _chaseDelay = 1.5f;
-    private Transform _player;
-    [SerializeField] private float _chaseDistance = 4.0f;
-    private bool _canChasePlayer;
     [SerializeField] private float _rotationSpeed;
-    private Coroutine _facePlayerRoutine;
-    [SerializeField] private float _chargeSpeed;
+    private float _chargeSpeed;
+
+    private Transform _targetTransform;
+    private bool _lockedOn;
+    private Coroutine _targetLockRoutine;
     private Quaternion _startingRotation;
-    private bool _hasSeenPlayer;
+    private Vector3 _targetPosition;
+    
+    [Header("Audio")]
     [SerializeField] private AudioType _audioType;
+
     [SerializeField] private AudioClip _audioClip;
     private float _audioPlayedTimeStamp;
     private float _audioPlayedDelay = 1.0f;
+    public AudioClip AudioClip => _audioClip;
     public AudioType AudioType => _audioType;
 
-    public AudioClip AudioClip => _audioClip;
+    [SerializeField] private GameObject _thruster;
+    private bool _targetAcquired;
 
     protected override void Initialize()
     {
         base.Initialize();
-        _player = GameObject.Find("Player").transform;
-        if (_player == null)
-            Debug.LogError($"The player is null on the {transform.name}");
-
-
+        GetComponent<RamAttack>().OnTargetAcquired += SetTarget;
         _chargeSpeedStat = _statManager.BindStat(_chargeSpeedStat);
         _chargeSpeedStat.OnValueChanged += HandleChargeSpeedChanged;
         _chargeSpeed = _chargeSpeedStat.GetCurrentModifiedValue();
 
         _startingRotation = transform.rotation;
     }
-
+    
     private void HandleChargeSpeedChanged(float value) => _chargeSpeed = value;
 
-
-    private void Update()
+    private void SetTarget(Transform targetTransform)
     {
-        CheckPlayerDistance();
+        _targetTransform = targetTransform;
+        _targetLockRoutine = StartCoroutine(TargetLockRoutine());
     }
 
-    private void CheckPlayerDistance()
+    private IEnumerator TargetLockRoutine()
     {
-        if (_facePlayerRoutine != null)
-            return;
-
-        var distance = Vector2.Distance(transform.position, _player.transform.position);
-        if (distance > _chaseDistance)
-        {
-            _canChasePlayer = false;
-            _hasSeenPlayer = false;
-            ResetCoroutine();
-        }
-        else
-        {
-            if (!_hasSeenPlayer)
-            {
-                ResetCoroutine();
-                _facePlayerRoutine = StartCoroutine(RotateToLookAtPlayerRoutine());
-            }
-        }
-
-        _hasSeenPlayer = distance <= _chaseDistance;
-    }
-
-    private void ResetCoroutine()
-    {
-        if (_facePlayerRoutine != null)
-        {
-            StopCoroutine(_facePlayerRoutine);
-            _facePlayerRoutine = null;
-        }
-    }
-
-    private IEnumerator RotateToLookAtPlayerRoutine()
-    {
+        _targetAcquired = true;
         PlayAudio();
         float timer = 0;
         while (timer < _chaseDelay)
         {
+            _targetPosition = _targetTransform.position;
             var angle = GetAngle();
             var endRotation = Quaternion.Euler(0, 0, angle);
             transform.rotation = Quaternion.Lerp(transform.rotation, endRotation, Time.deltaTime * _rotationSpeed);
             yield return new WaitForEndOfFrame();
             timer += Time.deltaTime;
         }
+        
+        _lockedOn = true;
+        _thruster.SetActive(_lockedOn);
+    }
 
-        _canChasePlayer = true;
-        _facePlayerRoutine = null;
+    public override void Move()
+    {
+        if (!_targetAcquired)
+        {
+            MoveDown();
+            return;
+        }
+
+        if (!_lockedOn) return;
+        MoveToTargetPosition();
+    }
+
+    private void MoveDown()
+    {
+        var direction = _moveDirection * Time.deltaTime * MoveSpeed;
+        transform.rotation =
+            Quaternion.Lerp(transform.rotation, _startingRotation, Time.deltaTime * _rotationSpeed);
+        transform.Translate(direction);
+    }
+
+    private void MoveToTargetPosition()
+    {
+        transform.position =
+            Vector2.MoveTowards(transform.position, _targetPosition, _chargeSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(0, 0, GetAngle());
+        
+        var distance = Vector2.Distance(transform.position, _targetPosition);
+        if (distance <= 0.1f)
+        {
+            ResetTargeting();
+            OnTargetReached?.Invoke(true);
+        }
+    }
+
+    private void ResetTargeting()
+    {
+        _lockedOn = false;
+        _targetAcquired = false;
+        _thruster.SetActive(_lockedOn);
     }
 
     private float GetAngle()
     {
         var position = transform.position;
-        var direction = (_player.transform.position - position).normalized;
+        var direction = (_targetPosition - position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        angle += 90;
+        return angle;
+    }
+    
+    private float GetAngle(Vector3 positionFrom, Vector3 positionTo)
+    {
+        var direction = (positionTo - positionFrom).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         angle += 90;
         return angle;
     }
 
-
-    public override void Move()
-    {
-        if (!_hasSeenPlayer)
-        {
-            var direction = _moveDirection * Time.deltaTime * MoveSpeed;
-            transform.rotation =
-                Quaternion.Lerp(transform.rotation, _startingRotation, Time.deltaTime * _rotationSpeed);
-            transform.Translate(direction);
-            return;
-        }
-
-        if (!_canChasePlayer) return;
-        transform.position =
-            Vector2.MoveTowards(transform.position, _player.position, _chargeSpeed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(0, 0, GetAngle());
-    }
-
-
-    public void PlayAudio()
-    {
-        AudioManager.Instance.PlayAudio(this);
-        _audioPlayedTimeStamp = Time.time + _audioPlayedDelay;
-    }
+    public void PlayAudio() => AudioManager.Instance.PlayAudio(this);
 }

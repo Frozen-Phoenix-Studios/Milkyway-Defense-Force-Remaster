@@ -2,10 +2,9 @@
 
 public class PositionAttackCondition: MonoBehaviour, IAttackCondition
 {
-    [SerializeField ]private AttackConstraints _constraints;
-    private bool _isPrimed;
+    [SerializeField] private AttackConstraints _constraints;
+    [SerializeField] private bool _isPrimed;
     public bool IsPrimed => _isPrimed;
-
 
     private void Start()
     {
@@ -23,8 +22,7 @@ public class PositionAttackCondition: MonoBehaviour, IAttackCondition
 
     public bool CheckIsMet()
     {
-
-        return _isPrimed;
+        return PrimeCondition();
     }
 
     public bool PrimeCondition()

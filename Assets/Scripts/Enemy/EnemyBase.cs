@@ -15,7 +15,7 @@ public abstract class EnemyBase : MonoBehaviour, IRespawn, IDoDamage, IChangePoi
     private Collider2D _collider;
 
     [SerializeField] private int _damageAmount = 1;
-    [field: SerializeField] public int PointsOnAction => _pointsOnAction;
+    public int PointsOnAction => _pointsOnAction;
     [SerializeField] private int _pointsOnAction = 10;
 
     public int DamageAmount => _damageAmount;

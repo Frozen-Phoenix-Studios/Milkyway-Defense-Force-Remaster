@@ -20,7 +20,8 @@ GameObject:
   - component: {fileID: 8669406374295716419}
   - component: {fileID: 8544179835308979557}
   - component: {fileID: 2550656784170894864}
-  - component: {fileID: 9014692192974933867}
+  - component: {fileID: 4049317986785479573}
+  - component: {fileID: 775430624423539087}
   m_Layer: 0
   m_Name: Dodge_Enemy
   m_TagString: Enemy
@@ -183,8 +184,8 @@ MonoBehaviour:
   _actionOnYMinBoundBreach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+      - m_Target: {fileID: 1217667822926172019}
+        m_TargetAssemblyTypeName: EnemyBase, Assembly-CSharp
         m_MethodName: Respawn
         m_Mode: 1
         m_Arguments:
@@ -330,10 +331,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coolDownIsRandom: 1
-  _coolDown: 0
   _coolDownMin: 2
   _coolDownMax: 8
---- !u!114 &9014692192974933867
+--- !u!114 &4049317986785479573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011093364145566531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7523975f444a06b02e88876b9e6972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &775430624423539087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,4 +357,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83ba89e34814db4b7ca5e97facf21fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _constraints: {fileID: 8544179835308979557}
+  _constraints: {fileID: 0}

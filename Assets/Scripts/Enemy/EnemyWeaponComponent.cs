@@ -1,8 +1,8 @@
-using System.Linq;
 using UnityEngine;
 
 public class EnemyWeaponComponent : MonoBehaviour
 {
+    private AttackConditionManager _attackConditionManager;
     [SerializeField] private WeaponSO _weapon;
     private float _nextAttackTime;
     private AttackConstraints _constraints;
@@ -10,41 +10,29 @@ public class EnemyWeaponComponent : MonoBehaviour
 
     private void Start()
     {
-        _constraints = GetComponent<AttackConstraints>();
-        if (_constraints == null)
-            Debug.LogError($"The movement constraints are null on the {transform.name}");
-
-        _attackConditions = GetComponents<IAttackCondition>();
-
+        _attackConditionManager = GetComponent<AttackConditionManager>();
+        if (_attackConditionManager == null)
+            Debug.LogError($"The attack condition manage us null on the {transform.name}");
     }
 
     private void Update()
     {
-        if (CanAttack())
+        if (_attackConditionManager.CanAttack())
             Attack();
-    }
-
-    private bool CanAttack()
-    {
-        foreach (var condition in _attackConditions)
-        {
-            if (condition.PrimeCondition() == false) return false;
-        }
-
-        return true;
     }
 
     private void Attack()
     {
-        if (_attackConditions.Any(condition => condition.CheckIsMet() == false))
-        {
-            return;
-        }
+      
+        Instantiate(_weapon.AttackPrefab, CalculateAttackOffset(), Quaternion.identity);
+
+    }
+
+    private Vector3 CalculateAttackOffset()
+    {
         var position = transform.position;
         position.y += _weapon.OffsetY;
         position.x += _weapon.OffsetX;
-
-        Instantiate(_weapon.AttackPrefab, position, Quaternion.identity);
+        return position;
     }
-
 }

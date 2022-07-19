@@ -21,7 +21,6 @@ public class EnemySideScrollMovement : EnemyMovementBase
             Debug.LogError($"The attack constraints are null on {transform.name}");
         
         _attackHeight = Random.Range(_attackConstraints.YMinRange, _attackConstraints.YMaxRange);
-        Debug.Log($"Attack height is {_attackHeight}");
     }
 
 
