@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VisionAttackCondition : MonoBehaviour, IAttackCondition
 {
+    
     private string[] _damageables;
     private IDoDamage _damageable;
     [SerializeField] private LayerMask LayerMask;
@@ -15,16 +16,17 @@ public class VisionAttackCondition : MonoBehaviour, IAttackCondition
 
     private void Start()
     {
-        _damageable = GetComponent<IDoDamage>();
+        _damageable = GetComponent<IDoDamage>() ?? GetComponentInParent<IDoDamage>();
+        if (_damageable == null)
+            Debug.LogError($"The damageable is null on {transform.name}");
+
         _damageables = _damageable.DamageableTags;
     }
-
 
     public void Activate()
     {
         if (_isPrimed)
             _isPrimed = false;
-
     }
 
     private void OnDrawGizmos()
@@ -44,7 +46,6 @@ public class VisionAttackCondition : MonoBehaviour, IAttackCondition
                 return;
             }
         }
-
         _isPrimed = false;
 
     }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3852636417853092513}
   - component: {fileID: 4119261329107874156}
   m_Layer: 0
-  m_Name: Enemy_Laser
+  m_Name: Enemy_Backwards_Laser
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,14 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e148afe430cce7408fb2703136723e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movesUpScreen: 0
+  _isEnemy: 1
   _movementSpeed: 8
   _damageAmount: 1
   _damageableTags:
   - Player
   _audioClip: {fileID: 8300000, guid: 58917527d72e6da4a90c06e3af6a2950, type: 3}
   _audioType: 5
-  _destroyedFromCollision: 0
 --- !u!114 &2891818634053312008
 MonoBehaviour:
   m_ObjectHideFlags: 0

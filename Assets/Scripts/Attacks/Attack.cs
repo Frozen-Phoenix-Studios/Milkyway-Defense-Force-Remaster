@@ -6,7 +6,8 @@ public abstract class Attack : MonoBehaviour, IDoDamage, IHaveAudio
     public event Action<bool> OnDestroy;
     
     [Header("Movement")]
-    [SerializeField] private bool _isEnemy;
+    [SerializeField] private bool _movesUpScreen = true;
+    private Vector2 _moveDirection = Vector2.zero;
     [SerializeField] protected float _movementSpeed = 8.0f;
     
     [Header("Damage")]
@@ -18,7 +19,7 @@ public abstract class Attack : MonoBehaviour, IDoDamage, IHaveAudio
     [SerializeField] protected AudioType _audioType;
     public AudioType AudioType => _audioType;
     
-    private protected bool _destroyedFromCollision;
+    [SerializeField] private protected bool _destroyedFromCollision;
     
     public string[] DamageableTags => _damageableTags;
 
@@ -28,27 +29,19 @@ public abstract class Attack : MonoBehaviour, IDoDamage, IHaveAudio
 
     protected virtual void Initialize()
     {
-        if (_isEnemy)
-            _movementSpeed = -_movementSpeed;
-
         PlayAudio();
+        _moveDirection.y = _movesUpScreen ? 1 : -1;
+
     }
     
     protected void Movement()
     {
-        transform.Translate(Vector3.up * _movementSpeed * Time.deltaTime);
+        transform.Translate(_moveDirection * _movementSpeed * Time.deltaTime);
     }
     
     public void PlayAudio()
     {
-        if (_isEnemy)
-        {
-            AudioManager.Instance.PlayAudio(this);
-        }
-        else
-        {
-            AudioManager.Instance.PlayAudio(this);
-        }
+        AudioManager.Instance.PlayAudio(this);
     }
     
     protected virtual void Destroy()

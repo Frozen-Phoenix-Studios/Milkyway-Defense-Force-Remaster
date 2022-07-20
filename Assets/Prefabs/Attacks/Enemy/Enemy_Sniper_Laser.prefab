@@ -100,14 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e148afe430cce7408fb2703136723e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isEnemy: 1
-  _movementSpeed: 8
+  _movesUpScreen: 0
+  _movementSpeed: 5
   _damageAmount: 1
   _damageableTags:
   - Player
   - Powerup
   _audioClip: {fileID: 8300000, guid: 604e761c6de764d4889afdd4c1fe4df2, type: 3}
   _audioType: 5
+  _destroyedFromCollision: 0
 --- !u!114 &2483828291837678520
 MonoBehaviour:
   m_ObjectHideFlags: 0
