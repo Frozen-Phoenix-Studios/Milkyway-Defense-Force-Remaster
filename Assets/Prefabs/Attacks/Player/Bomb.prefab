@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5011989260748113873}
   - component: {fileID: 622167383403816835}
   - component: {fileID: 526917681}
+  - component: {fileID: -3118767748244598877}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: PlayerAttack
@@ -98,13 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808320f263074e90a372bddbe233fc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isEnemy: 0
+  _movesUpScreen: 1
   _movementSpeed: 3
   _damageAmount: 1
   _damageableTags:
   - Enemy
   _audioClip: {fileID: 8300000, guid: 5ded00c79a373644b82bede3250cf764, type: 3}
   _audioType: 1
+  _destroyedFromCollision: 0
   _shrapnelPrefab: {fileID: 8841627294494009513, guid: 71452213b4a660e4ca3e2280aa7685df,
     type: 3}
 --- !u!58 &526917681
@@ -123,3 +125,57 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.44166666
+--- !u!114 &-3118767748244598877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5011989260748113872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23140a91756e69541ac038328a45490a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xMinRange: -10
+  _xMaxRange: 10
+  _yMinRange: -6
+  _yMaxRange: 6
+  _xBounded: 1
+  _yBounded: 1
+  _actionOnYMinBoundBreach:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 622167383403816835}
+        m_TargetAssemblyTypeName: Attack, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionOnYMaxBoundBreach:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 622167383403816835}
+        m_TargetAssemblyTypeName: Attack, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionOnXMinBoundBreach:
+    m_PersistentCalls:
+      m_Calls: []
+  _actionOnXMaxBoundBreach:
+    m_PersistentCalls:
+      m_Calls: []

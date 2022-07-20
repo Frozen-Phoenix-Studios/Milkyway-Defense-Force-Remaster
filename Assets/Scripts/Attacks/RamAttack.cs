@@ -23,7 +23,6 @@ public class RamAttack : MonoBehaviour
 
         GetComponent<EnemyRamMovement>().OnTargetReached += delegate(bool targetReached)
         {
-            Debug.Log($"Target reached {targetReached}");
             _canAttack = targetReached;
         };
     }

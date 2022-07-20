@@ -6718,6 +6718,7 @@ MonoBehaviour:
   - {fileID: 117313560466299987, guid: ac538999f4a057d40a1905119870bfae, type: 3}
   - {fileID: 6014416791215951839, guid: 95441e24afcbf4b4683c16ebb817a5da, type: 3}
   - {fileID: 4950275468692037334, guid: 00fae3635da846541b9540b41c990228, type: 3}
+  - {fileID: 7004451825617360586, guid: 325a6937b16564f47ad2f7feaaf207cf, type: 3}
   _powerupSpawnFrequency: 5
 --- !u!1 &1944936421
 GameObject:

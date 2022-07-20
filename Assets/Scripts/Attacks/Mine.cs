@@ -10,19 +10,16 @@ public class Mine : Attack, IExplode
     public Explosion Explosion => _explosion;
     private bool _canChasePlayer = true;
 
-    private void OnEnable() => Initialize();
-
     protected override void Initialize()
     {
-       PlayAudio();
-       
-       _playerTransform = FindObjectOfType<Player>().transform;
+        PlayAudio();
+
+        _playerTransform = FindObjectOfType<Player>().transform;
         if (_playerTransform == null)
             Debug.LogError($"The player is null on the {transform.name}");
-        
+
         MagneticFieldManager.OnTractorBeamActive += HandleTractorBeamChanges;
         GameStateManager.OnGameOver += HandleGameOverStateChange;
-
     }
 
     private void HandleGameOverStateChange(bool isGameOver)
@@ -34,22 +31,23 @@ public class Mine : Attack, IExplode
     {
         MagneticFieldManager.OnTractorBeamActive -= HandleTractorBeamChanges;
         GameStateManager.OnGameOver -= HandleGameOverStateChange;
-
     }
 
     private void HandleTractorBeamChanges(bool isActive, GameObject tractorBeamSource) => _tractorBeamActive = isActive;
 
     private void Update()
     {
-        if(!_canChasePlayer) return;
-        
+        if (!_canChasePlayer) return;
+
         if (_tractorBeamActive || CheckPlayerInRange())
             ChasePlayer();
     }
 
-    private void ChasePlayer() => transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _movementSpeed * Time.deltaTime);
+    private void ChasePlayer() => transform.position =
+        Vector2.MoveTowards(transform.position, _playerTransform.position, _movementSpeed * Time.deltaTime);
 
-    private bool CheckPlayerInRange() => Vector2.Distance(transform.position, _playerTransform.position) <= _attractionRadius;
+    private bool CheckPlayerInRange() =>
+        Vector2.Distance(transform.position, _playerTransform.position) <= _attractionRadius;
 
 
     protected override void HandleDamageDealing(int damageAmount, ITakeDamage damageable)
@@ -57,6 +55,7 @@ public class Mine : Attack, IExplode
         Explode();
         base.HandleDamageDealing(damageAmount, damageable);
     }
+
     public void Explode()
     {
         if (_explosionPrefab != null)
@@ -65,7 +64,4 @@ public class Mine : Attack, IExplode
             Destroy(gameObject);
         }
     }
-
-
-
 }

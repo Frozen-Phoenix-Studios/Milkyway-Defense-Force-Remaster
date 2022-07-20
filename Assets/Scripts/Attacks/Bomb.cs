@@ -4,10 +4,6 @@ using UnityEngine;
 public class Bomb : Attack
 {
     [SerializeField] private Explosion _shrapnelPrefab;
-    private void OnEnable()
-    {
-        Initialize();
-    }
 
     private void Update()
     {
